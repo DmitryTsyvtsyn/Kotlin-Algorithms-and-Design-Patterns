@@ -1,6 +1,8 @@
 package sorting
 
+import search.BinarySearch
+import kotlin.random.Random
+
 fun main() {
-    val sort = QuickSort()
-    print(sort.sort(arrayOf(3, 2, 1)).toList())
+
 }
