@@ -1,7 +1,21 @@
 package sorting
 
+/**
+ * алгоритм сортировки слиянием
+ *
+ * лучший случай: n * log(n)
+ * средний случай: n * log(n)
+ * худший случай: n * log(n)
+ *
+ * объем памяти: n
+ */
 class MergeSort : SortAlgo<Int>() {
 
+    /**
+     * сортирует указанный в параметре массив
+     *
+     * @array - массив
+     */
     override fun sortAlgo(array: Array<Int>) {
         if (array.size < 2)
             return

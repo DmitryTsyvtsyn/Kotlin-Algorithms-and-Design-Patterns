@@ -2,8 +2,22 @@ package sorting
 
 import kotlin.random.Random
 
+/**
+ * алгоритм быстрой сортировки
+ *
+ * лучший случай: n * log(n)
+ * средний случай: n * log(n)
+ * худший случай: n²
+ *
+ * объем памяти: n
+ */
 class QuickSort : SortAlgo<Int>() {
 
+    /**
+     * сортирует указанный в параметре массив
+     *
+     * @array - массив
+     */
     override fun sortAlgo(array: Array<Int>) {
         sort(array, 0)
     }
@@ -37,4 +51,5 @@ class QuickSort : SortAlgo<Int>() {
         if (i < end) sort(array, i, end)
         if (0 < j) sort(array, start, j)
     }
+
 }

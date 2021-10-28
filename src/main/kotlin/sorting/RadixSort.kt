@@ -1,7 +1,19 @@
 package sorting
 
+/**
+ * алгоритм поразрядной сортировки применяется только для целых чисел
+ *
+ * худший случай: <количество бит целого числа> * n
+ *
+ * количество памяти: 2 * n
+ */
 class RadixSort : SortAlgo<Int>() {
 
+    /**
+     * сортирует указанный в параметре массив
+     *
+     * @array - массив
+     */
     override fun sortAlgo(array: Array<Int>) {
         val array1 = Array(array.size) { 0 }
         val array2 = Array(array.size) { 0 }

@@ -1,6 +1,21 @@
 package sorting
 
+/**
+ * алгоритм сортировки вставками
+ *
+ * худший случай: n²
+ * средний случай: n²
+ * лучший случай: n
+ *
+ * объем памяти: 1
+ */
 class InsertionSort<T : Comparable<T>> : SortAlgo<T>() {
+
+    /**
+     * сортирует указанный в параметре массив
+     *
+     * @array - массив
+     */
     override fun sortAlgo(array: Array<T>) {
         for (i in 1 until array.size) {
             val current = array[i]
@@ -12,4 +27,5 @@ class InsertionSort<T : Comparable<T>> : SortAlgo<T>() {
             array[j + 1] = current
         }
     }
+
 }

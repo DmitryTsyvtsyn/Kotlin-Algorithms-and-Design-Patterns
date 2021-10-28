@@ -4,7 +4,7 @@ package search
  * алгоритм бинарного поиска
  *
  * худший случай: log(n)
- * лудший случай: 1
+ * количество памяти: 1
  */
 class BinarySearch<T : Comparable<T>> : Search<T> {
 

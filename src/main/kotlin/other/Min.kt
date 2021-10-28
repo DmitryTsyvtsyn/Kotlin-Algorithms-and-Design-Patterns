@@ -10,6 +10,7 @@ class Min<T : Comparable<T>> {
 
     /**
      * возвращает минимальный элемент из списка
+     *
      * @items - список элементов
      */
     fun compute(items: List<T>) : T {

@@ -2,6 +2,9 @@ package search
 
 /**
  * алгоритм бинарного поиска , реализованный рекурсивным способом
+ *
+ * худший случай: log(n)
+ * количество памяти: log(n) - стэк рекурсии
  */
 class BinarySearchRecursive<T : Comparable<T>> : Search<T>  {
 
