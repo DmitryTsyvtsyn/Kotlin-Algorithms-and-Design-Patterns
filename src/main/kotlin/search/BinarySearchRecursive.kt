@@ -1,15 +1,40 @@
 package search
 
+/**
+ * алгоритм бинарного поиска , реализованный рекурсивным способом
+ */
 class BinarySearchRecursive<T : Comparable<T>> : Search<T>  {
 
+    /**
+     * проверяет присутствие элемента в массиве
+     * возвращает индекс искомого элемента, в противном случае -1
+     *
+     * @array - отсортированный массив
+     * @element - искомый элемент
+     */
     override fun search(array: Array<T>, element: T): Int {
         return searchRecursive(array, 0, array.size - 1, element)
     }
 
+    /**
+     * проверяет присутствие элемента в массиве
+     * возвращает true или false
+     *
+     * @array - отсортированный массив
+     * @element - искомый элемент
+     */
     override fun exists(array: Array<T>, element: T): Boolean {
         return searchRecursive(array, 0, array.size - 1, element) != -1
     }
 
+    /**
+     * возвращает индекс искомого элемента, в противном случае -1
+     *
+     * @array - отсортированный массив
+     * @left - левая граница
+     * @right - правая граница
+     * @element - искомый элемент
+     */
     private tailrec fun searchRecursive(array: Array<T>, left: Int, right: Int, element: T) : Int {
         if (left <= right) {
             val middle = left + (right - left) / 2
