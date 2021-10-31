@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="design_patterns.ScreenFactoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-31T03:35:17" hostname="freeIt" time="0.007">
+  <properties/>
+  <testcase name="test" classname="design_patterns.ScreenFactoryTest" time="0.007"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
