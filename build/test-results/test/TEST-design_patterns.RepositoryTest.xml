@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="design_patterns.RepositoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-31T12:27:33" hostname="freeIt" time="0.023">
-  <properties/>
-  <testcase name="test" classname="design_patterns.RepositoryTest" time="0.023"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
