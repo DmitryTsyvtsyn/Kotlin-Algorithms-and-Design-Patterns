@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="design_patterns.PonyTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-31T03:21:26" hostname="freeIt" time="0.006">
+  <properties/>
+  <testcase name="test" classname="design_patterns.PonyTest" time="0.006"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
