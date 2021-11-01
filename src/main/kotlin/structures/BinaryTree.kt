@@ -2,39 +2,113 @@ package structures
 
 import java.util.*
 
+/**
+ * представляет узел дерева
+ *
+ * @value - значение узла
+ * @left - левый дочерний элемент
+ * @right - правый дочерний элемент
+ */
 class Node(
     private var value: Int,
     private var left: Node? = null,
     private var right: Node? = null
 ) {
+    /**
+     * возвращает значение узла
+     */
     fun value() = value
+
+    /**
+     * изменяет значение узла
+     */
     fun changeValue(value: Int) {
         this.value = value
     }
+
+    /**
+     * изменяет левый дочерний узел
+     */
     fun changeLeft(left: Node?) {
         this.left = left
     }
+
+    /**
+     * изменяет правый дочерний узел
+     */
     fun changeRight(right: Node?) {
         this.right = right
     }
+
+    /**
+     * возвращает левый дочерний узел
+     */
     fun leftNode() = left
+
+    /**
+     * возвращает правый дочерний узел
+     */
     fun rightNode() = right
 }
 
+/**
+ * бинарное дерево состоит из узлов, каждый из которых имеет максимум два дочерних элемента
+ * дочерние узлы удовлетворяют следующим требованиям:
+ *  - левый дочерний элемент меньше родителя;
+ *  - правый дочерний элемент больше родителя;
+ */
 class BinaryTree {
 
+    /**
+     * корень дерева
+     */
     private var root: Node? = null
 
+    /**
+     * добавление в дерево нового значения
+     *
+     * @value - значение
+     */
     fun add(value: Int) = addRec(root, value)
 
+    /**
+     * удаление из дерева элемента
+     *
+     * @value - значение элемента, который нужно удалить
+     */
     fun remove(value: Int) = removeRec(root, value)
 
+    /**
+     * проверка на существование элемента в дереве
+     *
+     * @value - значение элемента
+     */
     fun contains(value: Int) = containsRec(root, value)
 
+    /**
+     * обход в глубину
+     *
+     * сначала левый дочерний элемент, потом родитель, затем правый дочерний
+     */
     fun traverseInOrder() = traverseInOrderRec(root)
+
+    /**
+     * обход в глубину
+     *
+     * сначала родитель, затем левый и правый дочерние элементы
+     */
     fun traversePreOrder() = traversePreOrderRec(root)
+
+    /**
+     * обход в глубину
+     *
+     * сначала левый и правый дочерние элементы, затем родитель
+     */
     fun traversePostOrder() = traversePostOrderRec(root)
 
+    /**
+     * обход в ширину
+     */
     fun traverseLevelOrder() {
         val root = this.root ?: return
 
