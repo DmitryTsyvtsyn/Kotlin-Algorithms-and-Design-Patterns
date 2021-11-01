@@ -1,5 +1,6 @@
 package design_patterns
 
+import design_patterns.helpers.ViewContext
 import org.junit.Test
 import org.junit.jupiter.api.Assertions.*
 

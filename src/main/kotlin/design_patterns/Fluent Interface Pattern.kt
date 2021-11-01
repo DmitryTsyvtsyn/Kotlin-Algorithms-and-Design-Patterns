@@ -1,6 +1,6 @@
 package design_patterns
 
-class ViewContext
+import design_patterns.helpers.ViewContext
 
 class View(ctx: ViewContext) {
     private var isFocusable = false
