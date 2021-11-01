@@ -3,7 +3,7 @@ package design_patterns
 import org.junit.Test
 import org.junit.jupiter.api.Assertions.*
 
-internal class RubleExchangeRateTest {
+internal class StrategyTest {
 
     @Test
     fun test() {

@@ -4,7 +4,7 @@ import org.junit.Test
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.*
 
-internal class PonyTest {
+internal class BuilderTest {
 
     @Test
     fun test() {

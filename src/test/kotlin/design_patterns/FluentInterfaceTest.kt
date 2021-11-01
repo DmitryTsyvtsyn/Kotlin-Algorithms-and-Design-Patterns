@@ -4,7 +4,7 @@ import design_patterns.helpers.ViewContext
 import org.junit.Test
 import org.junit.jupiter.api.Assertions.*
 
-internal class ViewTest {
+internal class FluentInterfaceTest {
 
     @Test
     fun test() {
