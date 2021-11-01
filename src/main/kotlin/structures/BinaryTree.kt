@@ -69,14 +69,23 @@ class BinaryTree {
      *
      * @value - значение
      */
-    fun add(value: Int) = addRec(root, value)
+    fun add(value: Int) {
+        root = addRec(root, value)
+    }
+
+    /**
+     * возвращает true, если дерево не содержит ни одного узла
+     */
+    fun isEmpty() = root == null
 
     /**
      * удаление из дерева элемента
      *
      * @value - значение элемента, который нужно удалить
      */
-    fun remove(value: Int) = removeRec(root, value)
+    fun remove(value: Int) {
+        root = removeRec(root, value)
+    }
 
     /**
      * проверка на существование элемента в дереве
@@ -125,6 +134,29 @@ class BinaryTree {
                 queue.add(node.rightNode()!!)
             }
         }
+    }
+
+    /**
+     * с помощью алгоритма обхода в ширину получает все элементы дерева и возвращает их
+     */
+    fun items() : List<Int> {
+        val root = this.root ?: return listOf()
+
+        val queue = LinkedList<Node>()
+        queue.add(root)
+
+        val items = mutableListOf<Int>()
+        while (queue.isNotEmpty()) {
+            val node = queue.remove()
+            items.add(node.value())
+            if (node.leftNode() != null) {
+                queue.add(node.leftNode()!!)
+            }
+            if (node.rightNode() != null) {
+                queue.add(node.rightNode()!!)
+            }
+        }
+        return items
     }
 
     private fun traverseInOrderRec(node: Node?) {
