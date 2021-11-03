@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="design_patterns.DecoratorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-11-02T04:08:18" hostname="freeIt" time="0.005">
-  <properties/>
-  <testcase name="test" classname="design_patterns.DecoratorTest" time="0.005"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

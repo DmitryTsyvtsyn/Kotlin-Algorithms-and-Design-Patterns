@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="design_patterns.AdapterTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-11-03T03:18:18" hostname="freeIt" time="0.019">
+  <properties/>
+  <testcase name="test" classname="design_patterns.AdapterTest" time="0.019"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
