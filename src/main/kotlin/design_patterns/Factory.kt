@@ -1,5 +1,9 @@
 package design_patterns
 
+/**
+ * Название: паттерн Factory
+ */
+
 abstract class Screen {
     abstract  fun size() : Pair<Float, Float>
 }

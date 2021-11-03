@@ -1,6 +1,12 @@
 package design_patterns
 
 /**
+ * Название: паттерн Facade
+ * Применение: используется для упрощения доступа к объекту со сложной реализацией
+ * Сущность: сложный объект содержит внутри себя несколько зависимостей, который он комбинирует между собой
+ */
+
+/**
  * имитация локального хранилища данных (база данных)
  */
 class LocalDataSource {
@@ -28,7 +34,7 @@ class NetworkDataSource {
 }
 
 /**
- * паттерн Facade упрощает доступ к объекту со сложной внутренней реализацией
+ * имитация репозитория данных
  */
 class Repository(private val localSource: LocalDataSource, private val networkSource: NetworkDataSource) {
 
