@@ -3,9 +3,10 @@ package other
 import java.lang.IllegalArgumentException
 
 /**
- * нахождение минимального значения из списка
- * @T - тип элемента списка
+ * Алгоритм нахождения минимального значения из списка
+ *
  */
+
 class Min<T : Comparable<T>> {
 
     /**

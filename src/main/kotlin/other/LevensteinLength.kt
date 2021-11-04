@@ -5,6 +5,7 @@ import java.lang.Integer.min
 /**
  * определяет расстояние Левенштейна
  */
+
 class LevenshteinLength {
 
     /**

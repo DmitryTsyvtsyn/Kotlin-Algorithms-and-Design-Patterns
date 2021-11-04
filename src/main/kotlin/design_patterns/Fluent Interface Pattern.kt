@@ -2,6 +2,13 @@ package design_patterns
 
 import design_patterns.helpers.ViewContext
 
+/**
+ * Название: паттерн Fluent Interface
+ * Применение: используется для реализации методов цепочек
+ * Сущность: объект имеет специальные методы, которые изменяют его и
+ * возвращают с новым состоянием для дальнейших манипуляций
+ */
+
 class View(ctx: ViewContext) {
     private var isFocusable = false
     private var isClickable = false

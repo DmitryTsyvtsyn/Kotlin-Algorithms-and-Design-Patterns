@@ -1,5 +1,10 @@
 package design_patterns
 
+/**
+ * Название: Strategy
+ * Применение: используется, когда нам нужно изменять поведение объекта
+ */
+
 interface ExchangeStrategy {
     fun into(price: Double) : Double
 
@@ -16,7 +21,7 @@ interface ExchangeStrategy {
     }
 }
 
-class RubleExchangeRate() {
+class RubleExchangeRate {
     private var strategy : ExchangeStrategy = ExchangeStrategy.Dollar()
 
     fun changeStrategy(strategy: ExchangeStrategy) {

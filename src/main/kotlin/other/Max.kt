@@ -3,9 +3,10 @@ package other
 import java.lang.IllegalArgumentException
 
 /**
- * нахождение максимального значения из списка
- * @T - тип элемента списка
+ * Алгоритм нахождения максимального значения из списка
+ *
  */
+
 class Max<T : Comparable<T>> {
 
     /**
