@@ -2,6 +2,7 @@ package other
 
 /**
  * Алгоритм поиска квадратного корня из числа
+ *
  * википедия: https://shorturl.at/pvAQ7
  */
 
@@ -9,6 +10,7 @@ class Sqrt {
 
     /**
      * возвращает корень из числа
+     *
      * @number - число, корень которого нужно найти
      */
     fun compute(number: Double) : Double {
