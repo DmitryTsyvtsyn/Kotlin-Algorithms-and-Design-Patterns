@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="structures.DynamicArrayTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-11-05T11:16:42" hostname="freeIt" time="0.024">
+<testsuite name="structures.DynamicArrayTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-11-06T03:12:00" hostname="freeIt" time="0.025">
   <properties/>
-  <testcase name="test_increasing" classname="structures.DynamicArrayTest" time="0.024"/>
+  <testcase name="test_contains" classname="structures.DynamicArrayTest" time="0.023"/>
+  <testcase name="test_add" classname="structures.DynamicArrayTest" time="0.001"/>
+  <testcase name="test_set" classname="structures.DynamicArrayTest" time="0.0"/>
+  <testcase name="test_remove" classname="structures.DynamicArrayTest" time="0.0"/>
+  <testcase name="test_increasing" classname="structures.DynamicArrayTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
