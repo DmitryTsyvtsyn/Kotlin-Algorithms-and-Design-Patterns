@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="structures.BinaryTreeTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2021-11-06T03:45:37" hostname="freeIt" time="0.027">
+  <properties/>
+  <testcase name="test_contains" classname="structures.BinaryTreeTest" time="0.006"/>
+  <testcase name="test_add" classname="structures.BinaryTreeTest" time="0.018"/>
+  <testcase name="test_is_empty" classname="structures.BinaryTreeTest" time="0.0"/>
+  <testcase name="test_traverse_post_order" classname="structures.BinaryTreeTest" time="0.0"/>
+  <testcase name="test_remove" classname="structures.BinaryTreeTest" time="0.0"/>
+  <testcase name="test_traverse_in_order" classname="structures.BinaryTreeTest" time="0.0"/>
+  <testcase name="test_traverse_pre_order" classname="structures.BinaryTreeTest" time="0.0"/>
+  <testcase name="test_traverse_level_order" classname="structures.BinaryTreeTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
