@@ -77,7 +77,7 @@ interface Stack<T> {
      * @T - тип элементов стэка
      */
     class LinkedListStack<T> : Stack<T> {
-        private val data = LinkedList<T>()
+        private val data = java.util.LinkedList<T>()
 
         override fun push(item: T) {
             data.add(item)

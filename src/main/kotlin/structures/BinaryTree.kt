@@ -103,7 +103,7 @@ class BinaryTree {
     fun traverseLevelOrder() : List<Int> {
         val root = this.root ?: return listOf()
 
-        val queue = LinkedList<Node>()
+        val queue = java.util.LinkedList<Node>()
         queue.add(root)
 
         val items = mutableListOf<Int>()

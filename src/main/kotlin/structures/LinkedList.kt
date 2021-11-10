@@ -76,9 +76,13 @@ class LinkedList<T>(
                     first = null
                     last = null
                 } else if (node.isFirst()) {
-                    first = node.next()
+                    val next = node.next()
+                    next?.changePrev(null)
+                    first = next
                 } else if (node.isLast()) {
-                    last = node.prev()
+                    val prev = node.prev()
+                    prev?.changeNext(null)
+                    last = prev
                 } else {
                     node.prev()?.changeNext(node.next())
                     node.next()?.changePrev(node.prev())
@@ -125,7 +129,11 @@ class LinkedList<T>(
         } else {
             val newNode = Node(value)
             newNode.changeNext(firstNode)
+            firstNode.changePrev(newNode)
             newNode
+        }
+        if (last == null) {
+            last = first
         }
     }
 
@@ -136,7 +144,11 @@ class LinkedList<T>(
         } else {
             val newNode = Node(value)
             lastNode.changeNext(newNode)
+            newNode.changePrev(lastNode)
             newNode
+        }
+        if (first == null) {
+            first = last
         }
     }
 

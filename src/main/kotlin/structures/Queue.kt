@@ -104,7 +104,7 @@ interface Queue<T> {
      *
      */
     class LinkedListQueue<T> : Queue<T> {
-        private val data = LinkedList<T>()
+        private val data = java.util.LinkedList<T>()
 
         override fun offer(item: T) = data.add(0, item)
 
