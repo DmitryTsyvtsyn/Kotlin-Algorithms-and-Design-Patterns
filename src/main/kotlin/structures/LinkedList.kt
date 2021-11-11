@@ -15,11 +15,32 @@ package structures
  */
 
 class LinkedList<T>(
+    /**
+     * хранит ссылку на первый элемент списка
+     *
+     * если список пустой, то ссылка null
+     */
     private var first: Node<T>? = null,
+    /**
+     * хранит ссылку на последний элемент списка
+     *
+     * если список пустой, то ссылка null
+     */
     private var last: Node<T>? = null
 ) {
 
-    class Node<T>(private val value: T, private var prev: Node<T>? = null, private var next: Node<T>? = null) {
+    /**
+     * узел связанного списка
+     *
+     * @value - значение узла
+     * @prev - ссылка на предыдущий элемент (при условии, что элемент не первый)
+     * @next - ссылка на следующий элемент (при условии, что элемент не последний)
+     */
+    class Node<T>(
+        private val value: T,
+        private var prev: Node<T>? = null,
+        private var next: Node<T>? = null
+    ) {
 
         fun changeNext(next: Node<T>? = null) {
             this.next = next
@@ -38,6 +59,11 @@ class LinkedList<T>(
         fun isLast() = next == null
     }
 
+    /**
+     * простая функция, которая преобразует связанный список в обычной Kotlin список для наглядного представления
+     *
+     * @return возвращает Kotlin список элементов
+     */
     fun toList() : List<T> {
         if (first == null) return listOf()
 
@@ -50,6 +76,13 @@ class LinkedList<T>(
         return list
     }
 
+    /**
+     * проверяет, есть ли элемент в списке
+     *
+     * @value - значение элемента
+     *
+     * @return возвращает true, если значение существует в списке
+     */
     fun contains(value: T) : Boolean {
         if (first == null) return false
 
@@ -63,8 +96,20 @@ class LinkedList<T>(
         return false
     }
 
+    /**
+     * проверка на пустоту списка
+     *
+     * @return возвращает true, если список пустой
+     */
     fun isEmpty() = first == null
 
+    /**
+     * удаляет элемент из списка
+     *
+     * @value - значение элемента
+     *
+     * @return возвращает true, если элемент был успешно удален
+     */
     fun remove(value: T) : Boolean {
         if (first == null) return false
 
@@ -95,6 +140,14 @@ class LinkedList<T>(
         return false
     }
 
+    /**
+     * добавляет элемент по индексу
+     *
+     * @index - индекс, куда нужно добавить новый элемент
+     * @value - значение нового элемента
+     *
+     * @return возвращает true, если элемент был успешно добавлен по указанному индексу
+     */
     fun add(index: Int, value: T) : Boolean {
 
         if (first == null) return false
@@ -120,8 +173,17 @@ class LinkedList<T>(
         return false
     }
 
+    /**
+     * аналогичный метод addLast
+     *
+     */
     fun add(value: T) = addLast(value)
 
+    /**
+     * добавляет элемент в начало списка
+     *
+     * @value - значение элемента
+     */
     fun addFirst(value: T) {
         val firstNode = first
         first = if (firstNode == null) {
@@ -137,6 +199,11 @@ class LinkedList<T>(
         }
     }
 
+    /**
+     * добавляет элемент в конец списка
+     *
+     * @value - значение элемента
+     */
     fun addLast(value: T) {
         val lastNode = last
         last = if (lastNode == null) {
