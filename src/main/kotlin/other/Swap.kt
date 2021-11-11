@@ -8,17 +8,17 @@ class Swap {
     
     fun swap(list: MutableList<Int>, old: Int, new: Int) {
         if (list.inIndex(old) && list.inIndex(new)) {
-            val sum = list[old] + list[new]
-            list[new] = sum - list[new]
-            list[old] = sum - list[new]
+            list[old] = list[old] + list[new]
+            list[new] = list[old] - list[new]
+            list[old] = list[old] - list[new]
         }
     }
 
     fun swap(array: Array<Int>, old: Int, new: Int) {
         if (array.inIndex(old) && array.inIndex(new)) {
-            val sum = array[old] + array[new]
-            array[new] = sum - array[new]
-            array[old] = sum - array[new]
+            array[old] = array[old] + array[new]
+            array[new] = array[old] - array[new]
+            array[old] = array[old] - array[new]
         }
     }
 }
