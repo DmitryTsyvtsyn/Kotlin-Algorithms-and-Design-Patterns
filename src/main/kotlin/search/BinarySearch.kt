@@ -1,17 +1,20 @@
 package search
 
 /**
- * Алгоритм бинарного поиска
+ * название: алгоритм бинарного поиска
  *
- * худший случай: log(n)
+ * описание: одной из самых важных особенностей этого алгоритма является то, что он
+ * работает только для отсортированных списков и массивов
+ *
+ * время: log(n)
  * объем памяти: 1
  */
 
 class BinarySearch<T : Comparable<T>> : Search<T> {
 
     /**
-     * находит левую границу для текущего элемента
-     *
+     * находит левую границу для вставки элемента в отсортированный массив
+      *
      * @array - отсортированный массив, поиск в котором осуществляется
      * @element - элемент, для которого идет поиск левой границы
      */
@@ -30,7 +33,7 @@ class BinarySearch<T : Comparable<T>> : Search<T> {
     }
 
     /**
-     * находит правую границу для текущего элемента
+     * находит правую границу для вставки элемента в отсортированный массив
      *
      * @array - отсортированный массив, поиск в котором осуществляется
      * @element - элемент, для которого идет поиск правой границы
@@ -39,7 +42,7 @@ class BinarySearch<T : Comparable<T>> : Search<T> {
         var left = -1
         var right = array.size
         while ((right - left) > 1) {
-            val middle = (right - left) / 2
+            val middle = (right + left) / 2
             if (element > array[middle]) {
                 left = middle
             } else {
@@ -50,29 +53,39 @@ class BinarySearch<T : Comparable<T>> : Search<T> {
     }
 
     /**
-     * возвращает true, если элемент присутствует в массиве, в противном случае false
+     * проверяет, если ли элемент в массиве
      *
      * @array - массив, в котором мы ищем элемент
      * @element - искомый элемент
+     *
+     * @return возвращает true, если элемент присутствует в массиве, в противном случае false
      */
     override fun exists(array: Array<T>, element: T): Boolean {
         return search(array, element) != -1
     }
 
     /**
-     * возвращает индекс, если элемент был найден в массиве, иначе -1
+     * осуществляет поиск элемента в массиве
      *
-     * @array - массив, в котором мы ищем элемент
+     * @array - массив
      * @element - искомый элемент
+     *
+     * @return возвращает индекс искомого элемента или -1
      */
     override fun search(array: Array<T>, element: T) : Int {
-        val leftBound = leftBound(array, element)
-        val potentialIndex = leftBound + 1
-        return if (potentialIndex < array.size && array[potentialIndex] == element) {
-            potentialIndex
-        } else {
-            -1
+        var left = 0
+        var right = array.size - 1
+        while (left <= right) {
+            val middle = (left + right) / 2
+            if (array[middle] < element) {
+                left = middle + 1
+            } else if (array[middle] > element) {
+                right = middle
+            } else {
+                return middle
+            }
         }
+        return -1
     }
 
 }
