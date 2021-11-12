@@ -39,7 +39,7 @@ class Swap {
     /**
      * меняет местами два значения массива по указанным индексам
      *
-     * @list - массив
+     * @array - массив
      * @old - индекс первого элемента
      * @new - индекс второго элемента
      */
@@ -50,4 +50,35 @@ class Swap {
             array[old] = array[old] - array[new]
         }
     }
+
+    /**
+     * меняет местами два значения, используя фишки языка Kotlin
+     *
+     * @list - список
+     * @old - индекс первого элемента
+     * @new - индекс второго элемента
+     */
+    fun swapKotlin(list: MutableList<Int>, old: Int, new: Int) {
+        if (list.inIndex(old) && list.inIndex(new)) {
+            list[old] = list[new].apply {
+                list[new] = list[old]
+            }
+        }
+    }
+
+    /**
+     * меняет местами два значения, используя фишки языка Kotlin
+     *
+     * @array - массив
+     * @old - индекс первого элемента
+     * @new - индекс второго элемента
+     */
+    fun swapKotlin(array: Array<Int>, old: Int, new: Int) {
+        if (array.inIndex(old) && array.inIndex(new)) {
+            array[old] = array[new].apply {
+                array[new] = array[old]
+            }
+        }
+    }
+
 }
