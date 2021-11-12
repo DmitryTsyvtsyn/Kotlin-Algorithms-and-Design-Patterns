@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="sorting.BubbleSortTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-11-12T02:40:49" hostname="freeIt" time="0.034">
+  <properties/>
+  <testcase name="test_random_array" classname="sorting.BubbleSortTest" time="0.033"/>
+  <testcase name="test_shuffled_array" classname="sorting.BubbleSortTest" time="0.0"/>
+  <testcase name="test_sorted_array" classname="sorting.BubbleSortTest" time="0.0"/>
+  <testcase name="test_reversed_array" classname="sorting.BubbleSortTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
