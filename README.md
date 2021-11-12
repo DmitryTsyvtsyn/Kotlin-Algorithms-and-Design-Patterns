@@ -62,3 +62,9 @@
     * [Поиск минимума](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/other/Max.kt)
     * [Поиск максимума](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/other/Min.kt)
     * [Квадратный корень из числа](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/other/Sqrt.kt)
+
+## Ваши пожелания и идеи
+
+Если вы заинтересовались моим репозиторием или у вас появилась идея как его улучшить или что-то добавить, то сообщите мне об этом в телеграме:
+
+<a href="https://t.me/little_twilly"><img src="https://avatars.mds.yandex.net/get-zen_doc/2359038/pub_60129a10f26bf62c167552bc_60129bd16e30ac5150b690b2/scale_1200" width=160 /></a>
