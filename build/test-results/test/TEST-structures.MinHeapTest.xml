@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="structures.MinHeapTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-11-13T08:28:52" hostname="freeIt" time="0.005">
+  <properties/>
+  <testcase name="test_remove" classname="structures.MinHeapTest" time="0.005"/>
+  <system-out><![CDATA[element -> 2 PARENT : 10 LEFT CHILD : 3 RIGHT CHILD :10
+element -> 10element -> 3]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
