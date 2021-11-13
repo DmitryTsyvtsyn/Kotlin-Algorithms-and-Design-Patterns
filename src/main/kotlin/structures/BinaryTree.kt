@@ -1,8 +1,5 @@
 package structures
 
-import java.util.*
-
-
 /**
  * структура данных: бинарное дерево
  *
@@ -25,6 +22,18 @@ class BinaryTree {
      * @value - значение элемента
      */
     fun add(value: Int) {
+        fun addRec(current: Node?, value: Int) : Node {
+            if (current == null) {
+                return Node(value)
+            }
+            if (value < current.value()) {
+                current.changeLeft(addRec(current.leftNode(), value))
+            } else if (value > current.value()) {
+                current.changeRight(addRec(current.rightNode(), value))
+            }
+            return current
+        }
+
         root = addRec(root, value)
     }
 
@@ -41,6 +50,41 @@ class BinaryTree {
      * @value - значение элемента, который нужно удалить
      */
     fun remove(value: Int) {
+        fun smallestValue(root: Node) : Int {
+            return if (root.leftNode() == null) root.value() else smallestValue(root.leftNode()!!)
+        }
+
+        fun removeRec(current: Node?, value: Int) : Node? {
+            if (current == null) {
+                return null
+            }
+
+            if (value == current.value()) {
+                if (current.leftNode() == null && current.rightNode() == null) {
+                    return null
+                }
+                if (current.leftNode() == null) {
+                    return current.rightNode()
+                }
+                if (current.rightNode() == null) {
+                    return current.leftNode()
+                }
+
+                val smallestValue = smallestValue(current.rightNode()!!)
+                current.changeValue(smallestValue)
+                current.changeRight(removeRec(current.rightNode(), smallestValue))
+                return current
+            }
+
+            if (value < current.value()) {
+                current.changeLeft(removeRec(current.leftNode(), value))
+            } else {
+                current.changeRight(removeRec(current.rightNode(), value))
+            }
+
+            return current
+        }
+
         root = removeRec(root, value)
     }
 
@@ -51,7 +95,19 @@ class BinaryTree {
      *
      * @return - возвращает true, если элемент существует
      */
-    fun contains(value: Int) = containsRec(root, value)
+    fun contains(value: Int) : Boolean {
+        fun containsRec(current: Node?, value: Int) : Boolean {
+            if (current == null) {
+                return false
+            }
+            if (value == current.value()) {
+                return true
+            }
+            return if (value < current.value()) containsRec(current.leftNode(), value) else containsRec(current.rightNode(), value)
+        }
+
+        return containsRec(root, value)
+    }
 
     /**
      * обход в глубину
@@ -61,6 +117,14 @@ class BinaryTree {
      * @return возвращает элементы дерева
      */
     fun traverseInOrder() : List<Int> {
+        fun traverseInOrderRec(node: Node?, nodes: MutableList<Int>) {
+            if (node != null) {
+                traverseInOrderRec(node.leftNode(), nodes)
+                nodes.add(node.value())
+                traverseInOrderRec(node.rightNode(), nodes)
+            }
+        }
+
         return mutableListOf<Int>().apply {
             traverseInOrderRec(root, this)
         }
@@ -74,6 +138,14 @@ class BinaryTree {
      * @return возвращает элементы дерева
      */
     fun traversePreOrder() : List<Int> {
+        fun traversePreOrderRec(node: Node?, nodes: MutableList<Int>) {
+            if (node != null) {
+                nodes.add(node.value())
+                traversePreOrderRec(node.leftNode(), nodes)
+                traversePreOrderRec(node.rightNode(), nodes)
+            }
+        }
+
         return mutableListOf<Int>().apply {
             traversePreOrderRec(root, this)
         }
@@ -87,6 +159,14 @@ class BinaryTree {
      * @return возвращает элементы дерева
      */
     fun traversePostOrder() : List<Int> {
+        fun traversePostOrderRec(node: Node?, nodes: MutableList<Int>) {
+            if (node != null) {
+                traversePostOrderRec(node.leftNode(), nodes)
+                traversePostOrderRec(node.rightNode(), nodes)
+                nodes.add(node.value())
+            }
+        }
+
         return mutableListOf<Int>().apply {
             traversePostOrderRec(root, this)
         }
@@ -120,95 +200,6 @@ class BinaryTree {
         }
 
         return items
-    }
-
-    /**
-     * большая часть алгоритмов с деревьями реализована в виде дополнительных рекурсивных функций
-     *
-     */
-
-    private fun traverseInOrderRec(node: Node?, nodes: MutableList<Int>) {
-        if (node != null) {
-            traverseInOrderRec(node.leftNode(), nodes)
-            nodes.add(node.value())
-            traverseInOrderRec(node.rightNode(), nodes)
-        }
-    }
-
-    private fun traversePreOrderRec(node: Node?, nodes: MutableList<Int>) {
-        if (node != null) {
-            nodes.add(node.value())
-            traversePreOrderRec(node.leftNode(), nodes)
-            traversePreOrderRec(node.rightNode(), nodes)
-        }
-    }
-
-    private fun traversePostOrderRec(node: Node?, nodes: MutableList<Int>) {
-        if (node != null) {
-            traversePostOrderRec(node.leftNode(), nodes)
-            traversePostOrderRec(node.rightNode(), nodes)
-            nodes.add(node.value())
-        }
-    }
-
-    private fun smallestValue(root: Node) : Int {
-        return if (root.leftNode() == null) root.value() else smallestValue(root.leftNode()!!)
-    }
-
-    private fun removeRec(current: Node?, value: Int) : Node? {
-        if (current == null) {
-            return null
-        }
-
-        if (value == current.value()) {
-            if (current.leftNode() == null && current.rightNode() == null) {
-                return null
-            }
-            if (current.leftNode() == null) {
-                return current.rightNode()
-            }
-            if (current.rightNode() == null) {
-                return current.leftNode()
-            }
-
-            val smallestValue = smallestValue(current.rightNode()!!)
-            current.changeValue(smallestValue)
-            current.changeRight(removeRec(current.rightNode(), smallestValue))
-            return current
-        }
-
-        if (value < current.value()) {
-            current.changeLeft(removeRec(current.leftNode(), value))
-        } else {
-            current.changeRight(removeRec(current.rightNode(), value))
-        }
-
-        return current
-    }
-
-    private fun containsRec(current: Node?, value: Int) : Boolean {
-        if (current == null) {
-            return false
-        }
-        if (value == current.value()) {
-            return true
-        }
-        return if (value < current.value()) containsRec(current.leftNode(), value) else containsRec(current.rightNode(), value)
-    }
-
-    private fun addRec(current: Node?, value: Int) : Node {
-        if (current == null) {
-            return Node(value)
-        }
-
-        if (value < current.value()) {
-            current.changeLeft(addRec(current.leftNode(), value))
-        } else if (value > current.value()) {
-            current.changeRight(addRec(current.rightNode(), value))
-        } else {
-            return current
-        }
-        return current
     }
 
 }
