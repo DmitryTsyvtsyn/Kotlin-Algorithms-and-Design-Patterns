@@ -1,3 +1,5 @@
+![Алгоритмы на Kotlin](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/assets/algo_logo.png)
+
 # Kotlin Algorithms and Design Patterns
 
 В этом репозитории приведены наиболее распространенные алгоритмы, структуры данных и паттерны проектирования, написанные на языке программирования Kotlin.
