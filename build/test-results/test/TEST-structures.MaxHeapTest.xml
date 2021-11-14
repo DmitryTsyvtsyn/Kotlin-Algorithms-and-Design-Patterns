@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="structures.MaxHeapTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-11-14T02:19:48" hostname="freeIt" time="0.005">
-  <properties/>
-  <testcase name="test_pop_max" classname="structures.MaxHeapTest" time="0.005"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

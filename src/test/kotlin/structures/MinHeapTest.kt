@@ -8,55 +8,62 @@ internal class MinHeapTest {
 
     @Test
     fun test_add() {
-        val heap = MinHeap(1)
+        val heap = MaxHeap(2)
 
         assertEquals(true, heap.isEmpty())
 
-        heap.add(10)
+        heap.add(2)
+        heap.add(6)
 
         assertEquals(false, heap.isEmpty())
+
     }
 
     @Test
-    fun test_min() {
-        val heap = MinHeap(5)
+    fun test_peek_min() {
+        val heap = MinHeap(6)
 
-        heap.add(10)
-        heap.add(4)
-        heap.add(12)
-        heap.add(1)
-        heap.add(5)
-
-        assertEquals(1, heap.min())
-    }
-
-    @Test
-    fun test_remove() {
-        val heap = MinHeap(3)
-
-        heap.add(3)
+        heap.add(17)
         heap.add(2)
-        heap.add(10)
+        heap.add(100)
 
-        print("element -> ${heap.remove()}")
+        assertEquals(2, heap.peekMin())
 
-        heap.info()
-        print("element -> ${heap.remove()}")
-        print("element -> ${heap.remove()}")
-//        assertEquals(2, heap.min())
-//
-//        heap.remove()
-//
-//        heap.info()
-//
-//        assertEquals(3, heap.min())
-//
-//        heap.remove()
-//
-//        assertEquals(10, heap.min())
-//
-//        heap.remove()
-//
-//        assertEquals(true, heap.isEmpty())
+        heap.add(1)
+        heap.add(200)
+
+        assertEquals(1, heap.peekMin())
+
+        heap.add(0)
+
+        assertEquals(0, heap.peekMin())
+
     }
+
+    @Test
+    fun test_pop_min() {
+        val heap = MinHeap(8).apply {
+            add(10)
+            add(40)
+            add(1)
+            add(1000)
+            add(555)
+            add(5)
+            add(7)
+            add(2)
+        }
+
+        assertEquals(1, heap.popMin())
+        assertEquals(2, heap.popMin())
+        assertEquals(5, heap.popMin())
+        assertEquals(7, heap.popMin())
+        assertEquals(10, heap.popMin())
+        assertEquals(40, heap.popMin())
+        assertEquals(555, heap.popMin())
+        assertEquals(1000, heap.popMin())
+
+        assertEquals(true, heap.isEmpty())
+
+    }
+
 }
