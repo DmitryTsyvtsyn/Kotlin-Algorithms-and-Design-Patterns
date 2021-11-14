@@ -35,6 +35,8 @@
     * [Очередь](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/structures/Queue.kt)
     * [Динамический массив](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/structures/DynamicArray.kt)
     * [Связанный список](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/structures/LinkedList.kt)
+    * [Min-куча](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/structures/MinHeap.kt)
+    * [Max-куча](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/structures/MaxHeap.kt)
 
 3. пакет <code>sorting</code> - алгоритмы сортировки
     * [Пузырьковая сортировка](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/sorting/BubbleSort.kt)
