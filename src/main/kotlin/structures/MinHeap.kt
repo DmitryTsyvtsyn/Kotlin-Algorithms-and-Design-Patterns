@@ -16,63 +16,71 @@ package structures
  */
 
 class MinHeap(private val maxSize: Int) {
-    private val heap = Array(maxSize + 1) { 0 }.apply {
-        this[0] = Int.MIN_VALUE
-    }
 
-    private val root = 1
+    private val heap = Array(maxSize) { 0 }
+
     private var size = 0
+    private val front = 0
 
-    private fun parent(pos: Int) = pos / 2
-    private fun leftChild(pos: Int) = 2 * pos
-    private fun rightChild(pos: Int) = 2 * pos + 1
+    fun add(item: Int) {
+        heap[size++] = item
 
-    private fun swap(old: Int, new: Int) {
-        heap[old] = heap[new].apply { heap[new] = heap[old] }
+        var current = size - 1
+        var parent = parent(current)
+
+        while (parent != current && heap[current] < heap[parent]) {
+            swap(current, parent)
+            current = parent
+            parent = parent(current)
+        }
     }
 
-    fun isEmpty() = size == 0
+    fun minHeapify(pos: Int) {
+        val left = left(pos)
+        val right = right(pos)
 
-    fun add(element: Int) {
-        fun heapifyUp(pos: Int) {
-            var current = pos
-            val temp = heap[pos]
-            while (current > 0 && temp < heap[parent(current)]) {
-                heap[current] = heap[parent(current)]
-                current = parent(current)
-            }
-            heap[current] = temp
+        var smallest = if (left <= size && heap[left] < heap[pos]) {
+            left
+        } else {
+            pos
         }
 
-        heap[++size] = element
-        heapifyUp(size)
+        if (right <= size && heap[right] < heap[smallest]) {
+            smallest = right
+        }
+
+        if (smallest != pos) {
+            swap(pos, smallest)
+            minHeapify(smallest)
+        }
     }
 
-    fun peekMin() = heap[root]
-
-    fun popMin(): Int {
-        fun downHeapify(pos: Int) {
-            if (pos >= size / 2 && pos <= size) return
-            if (pos == maxSize - 1) return
-
-            if (heap[pos] > heap[leftChild(pos)] ||
-                heap[pos] > heap[rightChild(pos)]
-            ) {
-                if (heap[leftChild(pos)] < heap[rightChild(pos)]) {
-                    swap(pos, leftChild(pos))
-                    downHeapify(leftChild(pos))
-                } else {
-                    swap(pos, rightChild(pos))
-                    downHeapify(rightChild(pos))
-                }
-            }
+    fun popMin() : Int {
+        if (size == 1) {
+            return heap[--size]
         }
 
-        val min = heap[root]
-        heap[root] = heap[size--]
-        downHeapify(root)
+        val min = heap[front]
+        heap[front] = heap[size - 1]
+
+        size--
+
+        minHeapify(front)
+
         return min
     }
 
+    fun peekMin() = heap[front]
+
+    fun isEmpty() = size == 0
+
+    private fun left(pos: Int) = 2 * pos + 1
+    private fun right(pos: Int) = 2 * pos + 2
+    private fun parent(pos: Int) = if (pos % 2 == 1) pos / 2 else (pos - 1) / 2
+    private fun swap(old: Int, new: Int) {
+        heap[new] = heap[old].apply {
+            heap[old] = heap[new]
+        }
+    }
 
 }
