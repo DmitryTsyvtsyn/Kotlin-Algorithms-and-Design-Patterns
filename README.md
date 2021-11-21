@@ -35,6 +35,7 @@
     * [Бинарное дерево](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/structures/BinaryTree.kt)
     * [Стэк](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/structures/Stack.kt)
     * [Очередь](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/structures/Queue.kt)
+    * [Граф](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/structures/Graph.kt)
     * [Динамический массив](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/structures/DynamicArray.kt)
     * [Связанный список](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/structures/LinkedList.kt)
     * [Min-куча](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/structures/MinHeap.kt)
