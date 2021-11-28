@@ -37,6 +37,4 @@ internal class GraphTest {
         assertEquals(listOf(Vertex(10), Vertex(20), Vertex(30), Vertex(40)), graph.breadthFirstTraversal())
     }
 
-
-
 }
