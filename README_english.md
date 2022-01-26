@@ -52,7 +52,7 @@ Content:
 
 4. package <code>search</code> - search algorithms
     * [Binary search](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/en/search/BinarySearch.kt)
-    * [Binary search (recursive)](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/search/BinarySearchRecursive.kt)
+    * [Binary search (recursive)](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/ru/search/BinarySearchRecursive.kt)
     * [Linear search](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/en/search/LinearSearch.kt)
 
 5. package <code>other</code> - other algorithms
