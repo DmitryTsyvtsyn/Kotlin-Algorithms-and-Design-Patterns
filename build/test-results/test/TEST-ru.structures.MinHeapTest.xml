@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.structures.MinHeapTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-01-26T08:43:47" hostname="freeIt" time="0.001">
+  <properties/>
+  <testcase name="test_pop_min" classname="ru.structures.MinHeapTest" time="0.001"/>
+  <testcase name="test_peek_min" classname="ru.structures.MinHeapTest" time="0.0"/>
+  <testcase name="test_add" classname="ru.structures.MinHeapTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
