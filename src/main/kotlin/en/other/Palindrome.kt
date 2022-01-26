@@ -1,23 +1,23 @@
 package en.other
 
 /**
- * Алгоритм проверки строки на палиндром
+ * Algorithm for checking a string for a palindrome
  *
 */
 
 class Palindrome(private val text: String) {
 
     /**
-     * проверяет строку на палиндром
+     * checks a string for a palindrome
      *
-     * @return возвращает true, если строка является палиндромом
+     * @return returns true if the string is a palindrome
      */
     fun isYes() = text == text.reversed()
 
     /**
-     * проверяет строку на то, что она не является палиндромом
+     * checks if a string is not a palindrome
      *
-     * @return возвращает true, если строка не является палиндромом
+     * @return returns true if the string is not a palindrome
      */
     fun isNot() = text != text.reversed()
 

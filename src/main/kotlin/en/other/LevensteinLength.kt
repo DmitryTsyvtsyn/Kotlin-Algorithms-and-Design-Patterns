@@ -3,18 +3,19 @@ package en.other
 import java.lang.Integer.min
 
 /**
- * Алгоритм определения расстояния Левенштейна
+ * Algorithm for determining the Levenshtein distance
+ *
  */
 
 class LevenshteinLength {
 
     /**
-     * определяет расстояние Левенштейна для двух строк и возвращает его
+     * determines the Levenshtein distance for two strings and returns it
      *
-     * @str1 - первая строка
-     * @str2 - вторая строка
+     * @str1 - first string
+     * @str2 - second string
      *
-     * @return возвращет расстояние Левенштейна для двух строк
+     * @return returns the Levenshtein distance for two strings
      */
     fun compute(str1: String, str2: String) : Int {
         val matrix = Array(str1.length + 1) {

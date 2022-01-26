@@ -1,17 +1,18 @@
 package en.other
 
 /**
- * Алгоритм поиска квадратного корня из числа
+ * Algorithm for finding the square root of a number
  *
- * википедия: https://shorturl.at/pvAQ7
+ * Wikipedia: https://shorturl.at/pvAQ7
  */
 
 class Sqrt {
 
     /**
-     * возвращает корень из числа
+     * calculates the root of a number
      *
-     * @number - число, корень которого нужно найти
+     * @number - number
+     * @return returns the root of a number
      */
     fun compute(number: Double) : Double {
         var value = number / 2

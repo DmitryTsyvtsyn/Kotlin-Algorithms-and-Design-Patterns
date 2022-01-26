@@ -1,18 +1,18 @@
 package en.other
 
 /**
- * решето Эратосфена позволяет эффективно вычислить ряд простых чисел
+ * The sieve of Eratosthenes allows you to efficiently calculate a series of prime numbers
  *
- * сложность алгоритма: nlog(logn)) операций
+ * algorithm complexity: nlog(logn) operations
  */
 
 class SieveOfEratosthenes {
 
     /**
-     * вычисляет ряд простых чисел для максимального значения
+     * computes a series of primes for the maximum value
      *
-     * @maxNumber - максимальное значение
-     * @return - возвращает список простых чисел
+     * @maxNumber - maximum value
+     * @return - returns a list of prime numbers
      */
     fun compute(maxNumber: Int) : List<Int> {
         val numbers = Array(maxNumber + 1) { index -> index >= 2 }

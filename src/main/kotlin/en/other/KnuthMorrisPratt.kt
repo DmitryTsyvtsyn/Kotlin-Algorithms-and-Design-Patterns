@@ -1,15 +1,16 @@
 package en.other
 
 /**
- * Алгоритм Кнута Морриса Пратта для поиска подстроки в строке
+ * Knut Morris Pratt's Algorithm for finding a substring in a string
+ *
  */
 
 class KnuthMorrisPratt {
 
     /**
-     * возвращает массив префикс функций для строки
+     * returns an array of prefix functions for a string
      *
-     * @str - строка
+     * @str - string
      */
     private fun prefixFunction(str: String) : Array<Int> {
         val pi = Array(str.length) { 0 }
@@ -27,10 +28,10 @@ class KnuthMorrisPratt {
     }
 
     /**
-     * возвращает true, если подстрока входит в строку
+     * returns true if the substring is in the string
      *
-     * @sub - подстрока
-     * @str - строка
+     * @sub - substring
+     * @str - string
      */
     fun contains(sub: String, str: String) : Boolean {
         val summary = "$sub#$str"

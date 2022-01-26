@@ -1,18 +1,19 @@
 package en.other
 
 /**
- * Алгоритм нахождение факториала положительного числа n
+ * Algorithm for finding the factorial of a positive number n
+ *
  */
 
 class Factorial {
 
     /**
-     * возвращает факториал числа итеративным методом
+     * returns the factorial of a number by an iterative method
      *
-     * худшее время: O(n)
-     * количество памяти: O(1)
+     * worst time: O(n)
+     * amount of memory: O(1)
      *
-     * @number - положительное число
+     * @number - positive number
      */
     fun compute(number: Int) : Int {
         var result = 1
@@ -23,12 +24,12 @@ class Factorial {
     }
 
     /**
-     * возвращает факториал числа рекурсивным методом
+     * returns the factorial of a number recursively
      *
-     * худшее время: O(n)
-     * количество памяти: O(n) - стэк для рекурсии
+     * worst time: O(n)
+     * amount of memory: O(n) - stack for recursion
      *
-     * @number - положительное число
+     * @number - positive number
      */
     fun computeRecursive(number: Int) : Int {
         return if (number <= 1) {

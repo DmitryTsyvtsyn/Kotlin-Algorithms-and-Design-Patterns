@@ -3,16 +3,16 @@ package en.other
 import java.lang.IllegalArgumentException
 
 /**
- * Алгоритм нахождения минимального значения из списка
+ * Algorithm for finding the minimum value from a list
  *
  */
 
 class Min<T : Comparable<T>> {
 
     /**
-     * возвращает минимальный элемент из списка
+     * returns the minimum element from the list
      *
-     * @items - список элементов
+     * @items - list of elements
      */
     fun compute(items: List<T>) : T {
         if (items.isEmpty()) {

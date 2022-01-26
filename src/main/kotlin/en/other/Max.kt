@@ -3,15 +3,15 @@ package en.other
 import java.lang.IllegalArgumentException
 
 /**
- * Алгоритм нахождения максимального значения из списка
+ * Algorithm for finding the maximum value from a list
  *
  */
 
 class Max<T : Comparable<T>> {
 
     /**
-     * возвращает максимальный элемент из списка
-     * @items - список элементов
+     * returns the maximum element from the list
+     * @items - list of elements
      */
     fun compute(items: List<T>) : T {
         if (items.isEmpty()) {

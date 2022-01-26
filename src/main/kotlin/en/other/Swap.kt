@@ -1,32 +1,32 @@
 package en.other
 
 /**
- * алгоритма обмена двух переменных без третьей дополнительной
+ * Algorithm for exchanging two variables without a third additional
  *
  */
 
 class Swap {
 
     /**
-     * Kotlin расширение для проверки индекса списка на корректность
+     * Kotlin Extension for checking list index for correctness
      *
-     * @return возвращает true, если элемент доступен по индексу
+     * @return returns true if the element is accessible by index
      */
     private fun  List<Int>.inIndex(index: Int) = index in 0 until size
 
     /**
-     * Kotlin расширение для проверки индекса массива на корректность
+     * Kotlin Extension to check array index for correctness
      *
-     * @return возвращает true, если элемент доступен по индексу
+     * @return returns true if the element is accessible by index
      */
     private fun Array<Int>.inIndex(index: Int) = index in 0 until size
 
     /**
-     * меняет местами два значения списка по указанным индексам
+     * swaps two list values at the specified indexes
      *
-     * @list - список
-     * @old - индекс первого элемента
-     * @new - индекс второго элемента
+     * @list - list
+     * @old - index of first element
+     * @new - index of the second element
      */
     fun swap(list: MutableList<Int>, old: Int, new: Int) {
         if (list.inIndex(old) && list.inIndex(new)) {
@@ -37,11 +37,11 @@ class Swap {
     }
 
     /**
-     * меняет местами два значения массива по указанным индексам
+     * swaps two array values at the specified indexes
      *
-     * @array - массив
-     * @old - индекс первого элемента
-     * @new - индекс второго элемента
+     * @array - array
+     * @old - index of first element
+     * @new - index of the second element
      */
     fun swap(array: Array<Int>, old: Int, new: Int) {
         if (array.inIndex(old) && array.inIndex(new)) {
@@ -52,11 +52,11 @@ class Swap {
     }
 
     /**
-     * меняет местами два значения, используя фишки языка Kotlin
+     * swaps two values using Kotlin language features
      *
-     * @list - список
-     * @old - индекс первого элемента
-     * @new - индекс второго элемента
+     * @list - list
+     * @old - index of first element
+     * @new - index of the second element
      */
     fun swapKotlin(list: MutableList<Int>, old: Int, new: Int) {
         if (list.inIndex(old) && list.inIndex(new)) {
@@ -67,11 +67,11 @@ class Swap {
     }
 
     /**
-     * меняет местами два значения, используя фишки языка Kotlin
+     * swaps two values using Kotlin language features
      *
-     * @array - массив
-     * @old - индекс первого элемента
-     * @new - индекс второго элемента
+     * @array - array
+     * @old - index of first element
+     * @new - index of the second element
      */
     fun swapKotlin(array: Array<Int>, old: Int, new: Int) {
         if (array.inIndex(old) && array.inIndex(new)) {

@@ -1,17 +1,18 @@
 package en.other
 
 /**
- * алгоритм Эвклида для поиска наибольшего общего делителя
+ * Euclid's algorithm for finding the greatest common divisor
+ *
  */
 
 class Euclid {
 
     /**
-     * находит наибольший общий делитель для двух чисел
+     * finds the greatest common divisor of two numbers
      *
-     * @num1 - первое число
-     * @num2 - второе число
-     * @return возвращает наибольший обший делитель
+     * @num1 - first number
+     * @num2 - second number
+     * @return returns the greatest common divisor
      */
     fun compute(num1: Int, num2: Int) : Int {
         var copyNum1 = num1

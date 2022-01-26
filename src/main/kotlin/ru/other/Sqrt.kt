@@ -3,7 +3,7 @@ package ru.other
 /**
  * Алгоритм поиска квадратного корня из числа
  *
- * википедия: https://shorturl.at/pvAQ7
+ * Википедия: https://shorturl.at/pvAQ7
  */
 
 class Sqrt {

@@ -1,22 +1,22 @@
 package en.other
 
 /**
- * простейшая игра FizzBuzz
+ * The simplest FizzBuzz game
  *
- * описание: игрок последовательно говорит числа при условии:
- *  - если число делится на 3, он говорит Fizz
- *  - если число делится на 5, он говорит Buzz
- *  - если число делится и на 3 и на 5, он говорит FizzBuzz
- *  - иначе, игрок называет само число
+ * description: the player says numbers in sequence, provided:
+ *  - if the number is divisible by 3 it says fizz
+ *  - if the number is divisible by 5 it says buzz
+ *  - if the number is divisible by both 3 and 5, it says FizzBuzz
+ *  - otherwise, the player calls the number itself
  */
 
 class FizzBuzz {
 
     /**
-     * определяет, что нужно сказать для числа в игре FizzBuzz
+     * determines what to say for a number in the FizzBuzz game
      *
-     * @number - число
-     * @return возвращает Fizz, Buzz, FizzBuzz или само число
+     * @number - number
+     * @return returns Fizz, Buzz, FizzBuzz or number
      */
     fun compute(number: Int) : String {
         return when {

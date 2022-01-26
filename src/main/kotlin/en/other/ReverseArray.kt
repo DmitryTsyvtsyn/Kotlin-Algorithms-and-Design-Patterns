@@ -1,18 +1,18 @@
 package en.other
 
 /**
- * алгоритм переворота массива
+ * Reverse Array
  *
- * сложность алгоритма: n/2 операций
+ * algorithm complexity: n/2 operations
  */
 
 class ReverseArray<T> {
 
     /**
-     * создает и возвращает обратный массив для входного
+     * creates and returns a reverse array
      *
-     * @array - входной массив
-     * @return возвращает обратный массив
+     * @array - array
+     * @return returns the reverse array
      */
     fun compute(array: Array<T>) : Array<T> {
         val newArray = array.copyOf()
