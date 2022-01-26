@@ -54,7 +54,7 @@
 
 4. пакет <code>ru.search</code> - алгоритмы поиска
     * [Бинарный поиск](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/ru/search/BinarySearch.kt)
-    * [Бинарный поиск (рекурсивный)](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/ru.search/BinarySearchRecursive.kt)
+    * [Бинарный поиск (рекурсивный)](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/ru/search/BinarySearchRecursive.kt)
     * [Линейный поиск](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/ru/search/LinearSearch.kt)
 
 5. пакет <code>ru.other</code> - другие алгоритмы
