@@ -1,42 +1,42 @@
-package ru.structures
+package en.structures
 
 /**
- * структура данных: двусвязанный список
+ * data structure: doubly linked list
  *
- * описание: в двусвязанном списке каждый элемент хранит ссылку на предыдущий и следующий элементы
+ * description: in a doubly linked list, each element stores a link to the previous and next elements
  *
- * время вставки элемента в начало и конец: O(1)
- * время вставки в середину по индексу: O(n)
- * удаление: O(n)
+ * time to insert an element at the beginning and end of the list: O(1)
+ * insertion time in the middle by index: O(n)
+ * delete: O(n)
  */
 
 class DoubleLinkedList<T>(
     /**
-     * хранит ссылку на первый элемент списка
+     * stores a reference to the first element of the list
      *
-     * если список пустой, то ссылка null
+     * if the list is empty, then the reference is null
      */
     private var first: Node<T>? = null,
     /**
-     * хранит ссылку на последний элемент списка
+     * stores a reference to the last element of the list
      *
-     * если список пустой, то ссылка null
+     * if the list is empty, then the reference is null
      */
     private var last: Node<T>? = null
 ) {
 
     /**
-     *  хранит количество элементов в списке
+     *  stores the number of elements in the list
      *
      */
     private var count: Int = 0
 
     /**
-     * узел двусвязанного списка
+     * doubly linked list node
      *
-     * @value - значение узла
-     * @prev - ссылка на предыдущий элемент (при условии, что элемент не первый)
-     * @next - ссылка на следующий элемент (при условии, что элемент не последний)
+     * @value - node value
+     * @prev - link to the previous element (assuming the element is not the first one)
+     * @next - link to the next element (assuming the element is not the last one)
      */
     class Node<T>(
         private val value: T,
@@ -63,14 +63,14 @@ class DoubleLinkedList<T>(
 
     /**
      *
-     * @return возвращает количество элементов в списке
+     * @return returns the number of elements in the list
      */
     fun size() = count
 
     /**
-     * простая функция, которая преобразует связанный список в обычной Kotlin список для наглядного представления
+     * a simple function that converts a list into a normal Kotlin list for visual representation
      *
-     * @return возвращает Kotlin список элементов
+     * @return returns Kotlin a list of elements
      */
     fun toList() : List<T> {
         if (first == null) return listOf()
@@ -85,11 +85,11 @@ class DoubleLinkedList<T>(
     }
 
     /**
-     * проверяет, есть ли элемент в списке
+     * checks if an element is in the list
      *
-     * @value - значение элемента
+     * @value - element value
      *
-     * @return возвращает true, если значение существует в списке
+     * @return returns true if the value exists in the list
      */
     fun contains(value: T) : Boolean {
         if (first == null) return false
@@ -105,18 +105,18 @@ class DoubleLinkedList<T>(
     }
 
     /**
-     * проверка на пустоту списка
+     * checking if the list is empty
      *
-     * @return возвращает true, если список пустой
+     * @return returns true if the list is empty
      */
     fun isEmpty() = first == null
 
     /**
-     * удаляет элемент из списка
+     * removes an element from the list
      *
-     * @value - значение элемента
+     * @value - element value
      *
-     * @return возвращает true, если элемент был успешно удален
+     * @return returns true if the element was successfully removed
      */
     fun remove(value: T) : Boolean {
         if (first == null) return false
@@ -149,12 +149,12 @@ class DoubleLinkedList<T>(
     }
 
     /**
-     * добавляет элемент по индексу
+     * add element by index
      *
-     * @index - индекс, куда нужно добавить новый элемент
-     * @value - значение нового элемента
+     * @index - the index where the new element should be added
+     * @value - the value of the new element
      *
-     * @return возвращает true, если элемент был успешно добавлен по указанному индексу
+     * @return returns true if the element was successfully added at the specified index
      */
     fun add(index: Int, value: T) : Boolean {
 
@@ -183,15 +183,15 @@ class DoubleLinkedList<T>(
     }
 
     /**
-     * аналогичный метод addLast
+     * similar addLast method
      *
      */
     fun add(value: T) = addLast(value)
 
     /**
-     * добавляет элемент в начало списка
+     * adds an element to the beginning of the list
      *
-     * @value - значение элемента
+     * @value - element value
      */
     fun addFirst(value: T) {
         val firstNode = first
@@ -210,9 +210,9 @@ class DoubleLinkedList<T>(
     }
 
     /**
-     * добавляет элемент в конец списка
+     * adds an element to the end of the list
      *
-     * @value - значение элемента
+     * @value - element value
      */
     fun addLast(value: T) {
         val lastNode = last

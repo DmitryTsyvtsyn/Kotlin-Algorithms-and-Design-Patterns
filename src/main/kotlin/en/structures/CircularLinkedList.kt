@@ -1,19 +1,16 @@
 package en.structures
 
 /**
- * data structure: linked list
+ * data structure: singly linked list with circular reference (last refers to first)
  *
- * description: in a linked list, elements refer to each other.
- * two options are possible:
- * - link only to the next element (in this case, we keep only one root link to the first element in order to access the rest)
- * - link in both directions (contains two root links: to the first and last elements)
+ * description: each element stores a link to the next element, the last one refers to the first
  *
- * insertion time of the element at the beginning and end: O(1)
+ * time to insert an element at the beginning and end of the list: O(1)
  * insertion time in the middle by index: O(n)
- * remove: O(n)
+ * delete: O(n)
  */
 
-class LinkedList<T>(
+class CircularLinkedList<T>(
     /**
      * stores a reference to the first element of the list
      *
@@ -25,19 +22,23 @@ class LinkedList<T>(
      *
      * if the list is empty, then the reference is null
      */
-    private var last: Node<T>? = null
+    private var last: Node<T>? = null,
 ) {
 
     /**
-     * linked list node
+     *  stores the number of elements in the list
+     *
+     */
+    private var count: Int = 0
+
+    /**
+     * singly linked list node
      *
      * @value - node value
-     * @prev - reference to the previous element (assuming the element is not the first one)
      * @next - link to the next element (assuming the element is not the last one)
      */
     class Node<T>(
         private val value: T,
-        private var prev: Node<T>? = null,
         private var next: Node<T>? = null
     ) {
 
@@ -45,21 +46,24 @@ class LinkedList<T>(
             this.next = next
         }
 
-        fun changePrev(prev: Node<T>? = null) {
-            this.prev = prev
-        }
-
         fun next() = next
-        fun prev() = prev
         fun value() = value
-
-        fun isOne() = prev == null && next == null
-        fun isFirst() = prev == null
-        fun isLast() = next == null
     }
 
     /**
-     * a simple function that converts a linked list into a normal Kotlin list for visualization
+     *
+     * @return returns the number of elements in the list
+     */
+    fun size() = count
+
+    /**
+     *
+     * @return returns true if the last element refers to the first
+     */
+    fun isCircular() = last?.next()?.value() == first?.value()
+
+    /**
+     * a simple function that converts a list into a normal Kotlin list for visual representation
      *
      * @return returns Kotlin a list of elements
      */
@@ -68,10 +72,13 @@ class LinkedList<T>(
 
         val list = mutableListOf<T>()
         var node = first
-        while (node != null) {
-            list.add(node.value())
-            node = node.next()
+        for (i in 0 until count) {
+            if (node != null) {
+                list.add(node.value())
+            }
+            node = node?.next()
         }
+
         return list
     }
 
@@ -86,12 +93,13 @@ class LinkedList<T>(
         if (first == null) return false
 
         var node = first
-        while (node != null) {
-            if (node.value() == value) {
+        for (i in 0 until count) {
+            if (node?.value() == value) {
                 return true
             }
-            node = node.next()
+            node = node?.next()
         }
+
         return false
     }
 
@@ -110,31 +118,27 @@ class LinkedList<T>(
      * @return returns true if the element was successfully removed
      */
     fun remove(value: T) : Boolean {
-        if (first == null) return false
+        if (first == null) {
+            return false
+        }
 
+        var prev = first
         var node = first
 
-        while (node != null) {
-            if (node.value() == value) {
-                if (node.isOne()) {
-                    first = null
-                    last = null
-                } else if (node.isFirst()) {
-                    val next = node.next()
-                    next?.changePrev(null)
-                    first = next
-                } else if (node.isLast()) {
-                    val prev = node.prev()
-                    prev?.changeNext(null)
-                    last = prev
+        for (i in 0 until count) {
+            if (node?.value() == value) {
+                if (prev?.value() == node?.value()) {
+                    this.first = null
+                    this.last = null
                 } else {
-                    node.prev()?.changeNext(node.next())
-                    node.next()?.changePrev(node.prev())
+                    prev?.changeNext(node?.next())
                 }
-
+                this.last?.changeNext(this.first)
+                count--
                 return true
             }
-            node = node.next()
+            prev = node
+            node = node?.next()
         }
         return false
     }
@@ -151,22 +155,17 @@ class LinkedList<T>(
 
         if (first == null) return false
 
-        var i = 0
         var node = first
-        while (node != null) {
+
+        for (i in 0 until count - 1) {
             if (i == index) {
                 val newNode = Node(value)
-
-                newNode.changePrev(node.prev())
-                newNode.changeNext(node)
-
-                node.prev()?.changeNext(newNode)
-                node.changePrev(newNode)
-
+                node?.changeNext(newNode)
+                this.last?.changeNext(this.first)
+                count++
                 return true
             }
-            i++
-            node = node.next()
+            node = node?.next()
         }
 
         return false
@@ -184,18 +183,16 @@ class LinkedList<T>(
      * @value - element value
      */
     fun addFirst(value: T) {
-        val firstNode = first
-        first = if (firstNode == null) {
-            Node(value)
+        val node = Node(value)
+        if (first == null) {
+            this.first = node
+            this.last = node
         } else {
-            val newNode = Node(value)
-            newNode.changeNext(firstNode)
-            firstNode.changePrev(newNode)
-            newNode
+            node.changeNext(first)
+            this.first = node
         }
-        if (last == null) {
-            last = first
-        }
+        this.last?.changeNext(this.first)
+        count++
     }
 
     /**
@@ -204,18 +201,16 @@ class LinkedList<T>(
      * @value - element value
      */
     fun addLast(value: T) {
-        val lastNode = last
-        last = if (lastNode == null) {
-            Node(value)
-        } else {
-            val newNode = Node(value)
-            lastNode.changeNext(newNode)
-            newNode.changePrev(lastNode)
-            newNode
-        }
+        val newNode = Node(value)
         if (first == null) {
-            first = last
+            this.first = newNode
+            this.last = newNode
+        } else {
+            this.last?.changeNext(newNode)
+            this.last = newNode
         }
+        this.last?.changeNext(this.first)
+        count++
     }
 
 }
