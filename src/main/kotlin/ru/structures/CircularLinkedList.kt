@@ -1,16 +1,16 @@
 package ru.structures
 
 /**
- * структура данных: односвязанный список
+ * структура данных: односвязанный список с циклической ссылкой (последний ссылается на первый)
  *
- * описание: в односвязанном списке каждый элемент хранит ссылку только на следующий элемент
+ * описание: каждый элемент хранит ссылку на следующий элемент, последний ссылается на первый
  *
  * время вставки элемента в начало и в конец списка: O(1)
  * время вставки в середину по индексу: O(n)
  * удаление: O(n)
  */
 
-class SingleLinkedList<T>(
+class CircularLinkedList<T>(
     /**
      * хранит ссылку на первый элемент списка
      *
@@ -57,6 +57,12 @@ class SingleLinkedList<T>(
     fun size() = count
 
     /**
+     *
+     * @return возвращает true, если последний элемент ссылается на первый
+     */
+    fun isCircular() = last?.next()?.value() == first?.value()
+
+    /**
      * простая функция, которая преобразует список в обычной Kotlin список для наглядного представления
      *
      * @return возвращает Kotlin список элементов
@@ -66,10 +72,13 @@ class SingleLinkedList<T>(
 
         val list = mutableListOf<T>()
         var node = first
-        while (node != null) {
-            list.add(node.value())
-            node = node.next()
+        for (i in 0 until count) {
+            if (node != null) {
+                list.add(node.value())
+            }
+            node = node?.next()
         }
+
         return list
     }
 
@@ -84,12 +93,13 @@ class SingleLinkedList<T>(
         if (first == null) return false
 
         var node = first
-        while (node != null) {
-            if (node.value() == value) {
+        for (i in 0 until count) {
+            if (node?.value() == value) {
                 return true
             }
-            node = node.next()
+            node = node?.next()
         }
+
         return false
     }
 
@@ -115,19 +125,20 @@ class SingleLinkedList<T>(
         var prev = first
         var node = first
 
-        while (node != null) {
-            if (node.value() == value) {
-                if (prev?.value() == node.value()) {
+        for (i in 0 until count) {
+            if (node?.value() == value) {
+                if (prev?.value() == node?.value()) {
                     this.first = null
                     this.last = null
                 } else {
-                    prev?.changeNext(node.next())
+                    prev?.changeNext(node?.next())
                 }
+                this.last?.changeNext(this.first)
                 count--
                 return true
             }
             prev = node
-            node = node.next()
+            node = node?.next()
         }
         return false
     }
@@ -144,17 +155,17 @@ class SingleLinkedList<T>(
 
         if (first == null) return false
 
-        var i = 0
         var node = first
-        while (node != null) {
+
+        for (i in 0 until count - 1) {
             if (i == index) {
                 val newNode = Node(value)
-                node.changeNext(newNode)
+                node?.changeNext(newNode)
+                this.last?.changeNext(this.first)
                 count++
                 return true
             }
-            i++
-            node = node.next()
+            node = node?.next()
         }
 
         return false
@@ -180,6 +191,7 @@ class SingleLinkedList<T>(
             node.changeNext(first)
             this.first = node
         }
+        this.last?.changeNext(this.first)
         count++
     }
 
@@ -197,6 +209,7 @@ class SingleLinkedList<T>(
             this.last?.changeNext(newNode)
             this.last = newNode
         }
+        this.last?.changeNext(this.first)
         count++
     }
 
