@@ -21,6 +21,7 @@
 1. пакет <code>ru.design_patterns</code> - паттерны проектирования
     * [Builder](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Builder.kt)
     * [Visitor](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Visitor.kt)
+    * [Command](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Command.kt)
     * [Decorator](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Decorator.kt)
     * [Facade](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Facade.kt)
     * [Factory](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Factory.kt)
