@@ -9,54 +9,94 @@ package sorting
  *
  * amount of memory: n
  */
-class MergeSort : SortAlgo<Int>() {
 
-    /**
-     * sorts the array specified in the parameter
-     *
-     * @array - array
-     */
-    override fun sortAlgo(array: Array<Int>) {
-        if (array.size < 2)
-            return
 
-        val mid = array.size / 2
+fun Array<Int>.mergeSort() {
+    val array = this
 
-        val left = Array(mid) { 0 }
-        val right = Array(array.size - mid) { 0 }
+    if (size < 2)
+        return
 
-        for (i in 0 until mid) {
-            left[i] = array[i]
-        }
+    val mid = size / 2
 
-        for (i in mid until array.size) {
-            right[i - mid] = array[i]
-        }
+    val left = Array(mid) { 0 }
+    val right = Array(size - mid) { 0 }
 
-        sortAlgo(left)
-        sortAlgo(right)
-
-        var i = 0; var j = 0; var k = 0
-
-        val leftSize = left.size
-        val rightSize = right.size
-
-        while (i < leftSize && j < rightSize) {
-            if (left[i]  <= right[j]) {
-                array[k++] = left[i++]
-            } else {
-                array[k++] = right[j++]
-            }
-        }
-
-        while (i < leftSize) {
-            array[k++] = left[i++]
-        }
-
-        while (j < rightSize) {
-            array[k++] = right[j++]
-        }
-
+    for (i in 0 until mid) {
+        left[i] = array[i]
     }
 
+    for (i in mid until size) {
+        right[i - mid] = array[i]
+    }
+
+    left.mergeSort()
+    right.mergeSort()
+
+    var i = 0; var j = 0; var k = 0
+
+    val leftSize = left.size
+    val rightSize = right.size
+
+    while (i < leftSize && j < rightSize) {
+        if (left[i]  <= right[j]) {
+            array[k++] = left[i++]
+        } else {
+            array[k++] = right[j++]
+        }
+    }
+
+    while (i < leftSize) {
+        array[k++] = left[i++]
+    }
+
+    while (j < rightSize) {
+        array[k++] = right[j++]
+    }
+}
+
+
+
+fun MutableList<Int>.mergeSort() {
+    val list = this
+
+    if (size < 2)
+        return
+
+    val mid = size / 2
+
+    val left = Array(mid) { 0 }
+    val right = Array(size - mid) { 0 }
+
+    for (i in 0 until mid) {
+        left[i] = list[i]
+    }
+
+    for (i in mid until size) {
+        right[i - mid] = list[i]
+    }
+
+    left.mergeSort()
+    right.mergeSort()
+
+    var i = 0; var j = 0; var k = 0
+
+    val leftSize = left.size
+    val rightSize = right.size
+
+    while (i < leftSize && j < rightSize) {
+        if (left[i]  <= right[j]) {
+            list[k++] = left[i++]
+        } else {
+            list[k++] = right[j++]
+        }
+    }
+
+    while (i < leftSize) {
+        list[k++] = left[i++]
+    }
+
+    while (j < rightSize) {
+        list[k++] = right[j++]
+    }
 }

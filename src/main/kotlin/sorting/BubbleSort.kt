@@ -24,12 +24,12 @@ fun <T : Comparable<T>> Array<T>.bubbleSort() {
 }
 
 fun <T : Comparable<T>> MutableList<T>.bubbleSort() {
-    val array = this
+    val list = this
     for (i in 0 until size - 1) {
         for (j in 0 until size - 1 - i) {
-            if (array[j] > array[j + 1]) {
-                array[j] = array[j + 1].apply {
-                    array[j + 1] = array[j]
+            if (list[j] > list[j + 1]) {
+                list[j] = list[j + 1].apply {
+                    list[j + 1] = list[j]
                 }
             }
         }

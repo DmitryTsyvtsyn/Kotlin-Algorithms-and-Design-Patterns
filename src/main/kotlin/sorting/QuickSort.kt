@@ -11,45 +11,68 @@ import kotlin.random.Random
  *
  * amount of memory: n
  */
-class QuickSort : SortAlgo<Int>() {
 
-    /**
-     * sorts the array specified in the parameter
-     *
-     * @array - array
-     */
-    override fun sortAlgo(array: Array<Int>) {
-        sort(array, 0)
-    }
 
-    private fun sort(array: Array<Int>, start: Int = 0, end: Int = array.size - 1) {
-        if (array.isEmpty()) return
-        if (start >= end) return
+fun <T : Comparable<T>> Array<T>.quickSort(start: Int = 0, end: Int = size - 1) {
+    val array = this
 
-        val pivotIndex = Random.nextInt(start, end + 1)
-        val pivot = array[pivotIndex]
+    if (array.isEmpty()) return
+    if (start >= end) return
 
-        var i = start
-        var j = end
+    val pivotIndex = Random.nextInt(start, end + 1)
+    val pivot = array[pivotIndex]
 
-        while (i <= j) {
-            while (array[i] < pivot) {
-                i++
-            }
-            while (array[j] > pivot) {
-                j--
-            }
-            if (i <= j) {
-                array[i] = array[j].apply {
-                    array[j] = array[i]
-                }
-                i++
-                j--
-            }
+    var i = start
+    var j = end
+
+    while (i <= j) {
+        while (array[i] < pivot) {
+            i++
         }
-
-        if (i < end) sort(array, i, end)
-        if (0 < j) sort(array, start, j)
+        while (array[j] > pivot) {
+            j--
+        }
+        if (i <= j) {
+            array[i] = array[j].apply {
+                array[j] = array[i]
+            }
+            i++
+            j--
+        }
     }
 
+    if (i < end) quickSort(i, end)
+    if (0 < j) quickSort(start, j)
+}
+
+fun <T : Comparable<T>> MutableList<T>.quickSort(start: Int = 0, end: Int = size - 1) {
+    val list = this
+
+    if (list.isEmpty()) return
+    if (start >= end) return
+
+    val pivotIndex = Random.nextInt(start, end + 1)
+    val pivot = list[pivotIndex]
+
+    var i = start
+    var j = end
+
+    while (i <= j) {
+        while (list[i] < pivot) {
+            i++
+        }
+        while (list[j] > pivot) {
+            j--
+        }
+        if (i <= j) {
+            list[i] = list[j].apply {
+                list[j] = list[i]
+            }
+            i++
+            j--
+        }
+    }
+
+    if (i < end) quickSort(i, end)
+    if (0 < j) quickSort(start, j)
 }

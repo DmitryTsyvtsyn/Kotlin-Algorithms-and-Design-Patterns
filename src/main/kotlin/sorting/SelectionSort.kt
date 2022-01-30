@@ -9,27 +9,37 @@ package sorting
  *
  * amount of memory: 1
  */
-class SelectionSort<T : Comparable<T>> : SortAlgo<T>() {
 
-    /**
-     * sorts the array specified in the parameter
-     *
-     * @array - array
-     */
-    override fun sortAlgo(array: Array<T>) {
-        for (i in 0 until array.size - 1) {
-            var min = i
-            for (j in i + 1 until array.size) {
-                if (array[min] > array[j]) {
-                    min = j
-                }
+fun <T : Comparable<T>> Array<T>.selectionSort() {
+    val array = this
+    for (i in 0 until size - 1) {
+        var min = i
+        for (j in i + 1 until size) {
+            if (array[min] > array[j]) {
+                min = j
             }
-            if (min != i) {
-                array[min] = array[i].apply {
-                    array[i] = array[min]
-                }
+        }
+        if (min != i) {
+            array[min] = array[i].apply {
+                array[i] = array[min]
             }
         }
     }
+}
 
+fun <T : Comparable<T>> MutableList<T>.selectionSort() {
+    val list = this
+    for (i in 0 until size - 1) {
+        var min = i
+        for (j in i + 1 until size) {
+            if (list[min] > list[j]) {
+                min = j
+            }
+        }
+        if (min != i) {
+            list[min] = list[i].apply {
+                list[i] = list[min]
+            }
+        }
+    }
 }
