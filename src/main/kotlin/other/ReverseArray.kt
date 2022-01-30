@@ -11,8 +11,6 @@ class ReverseArray<T> {
     /**
      * creates and returns a reverse array
      *
-     * @array - array
-     * @return returns the reverse array
      */
     fun compute(array: Array<T>) : Array<T> {
         val newArray = array.copyOf()
