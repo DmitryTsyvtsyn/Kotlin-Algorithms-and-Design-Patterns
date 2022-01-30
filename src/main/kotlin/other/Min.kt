@@ -10,9 +10,8 @@ import java.lang.IllegalArgumentException
 class Min<T : Comparable<T>> {
 
     /**
-     * returns the minimum element from the list
      *
-     * @items - list of elements
+     * @return returns the minimum element from the list
      */
     fun compute(items: List<T>) : T {
         if (items.isEmpty()) {
@@ -25,6 +24,22 @@ class Min<T : Comparable<T>> {
             }
         }
         return min
+    }
+
+    /**
+     *
+     * @return returns the minimum element from the list recursively
+     */
+    fun computeRecursive(items: List<T>) : T {
+        if (items.size == 1) {
+            return items.first()
+        }
+        val first = items.first()
+        val others = items.subList(1, items.size)
+
+        val min = computeRecursive(others)
+
+        return if (first < min) first else min
     }
 
 }

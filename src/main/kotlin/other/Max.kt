@@ -26,4 +26,20 @@ class Max<T : Comparable<T>> {
         return max
     }
 
+    /**
+     *
+     * @return returns the maximum element from the list recursively
+     */
+    fun computeRecursive(items: List<T>) : T {
+        if (items.size == 1) {
+            return items.first()
+        }
+        val first = items.first()
+        val others = items.subList(1, items.size)
+
+        val max = computeRecursive(others)
+
+        return if (first > max) first else max
+    }
+
 }
