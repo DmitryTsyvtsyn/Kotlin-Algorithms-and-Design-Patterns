@@ -28,12 +28,14 @@ interface Observable {
  *
  */
 class PonyList : Observable {
+
     private val ponies = mutableListOf<String>()
-    private val observers = mutableListOf<Observer>()
+
+    private val observers = mutableSetOf<Observer>()
 
     fun add(pony: String) {
         ponies.add(pony)
-        // оповещаем наших наблюдателей о том, что данные изменились
+        // notify our observers that the data has changed
         notifyObservers()
     }
 
