@@ -19,6 +19,6 @@ class Palindrome(private val text: String) {
      *
      * @return returns true if the string is not a palindrome
      */
-    fun isNot() = text != text.reversed()
+    fun isNot() = !isYes()
 
 }

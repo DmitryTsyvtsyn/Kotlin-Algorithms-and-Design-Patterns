@@ -7,14 +7,20 @@ internal class PalindromeTest {
 
     @Test
     fun test_is_palindrome() {
-        val text = "tenet"
-        assertEquals(Palindrome(text).isYes(), true)
+        val text1 = "tenet"
+        assertEquals(Palindrome(text1).isYes(), true)
+
+        val text2 = "friend"
+        assertEquals(Palindrome(text2).isYes(), false)
     }
 
     @Test
     fun test_is_not_palindrome() {
-        val text = "white"
-        assertEquals(Palindrome(text).isNot(), true)
+        val text1 = "white"
+        assertEquals(Palindrome(text1).isNot(), true)
+
+        val text2 = "tenet"
+        assertEquals(Palindrome(text2).isNot(), false)
     }
 
 }
