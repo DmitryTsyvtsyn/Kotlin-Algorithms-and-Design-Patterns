@@ -1,5 +1,11 @@
 package design_patterns
 
+/**
+ * pattern: Command
+ *
+ * description: it's a behavioral pattern that allows you to wrap requests or simple operations in separate objects.
+ */
+
 interface ArithmeticCommand {
     fun execute(number: Int) : Int
 }
