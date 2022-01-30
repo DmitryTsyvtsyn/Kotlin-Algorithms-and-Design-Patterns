@@ -8,11 +8,11 @@
 
 Весь код разбит по отдельным пакетам:
 
-1. <code>ru.sorting</code> - алгоритмы сортировки
-2. <code>ru.search</code> - алгоритмы поиска
-3. <code>ru.structures</code> - структуры данных (списки, массивы, стэк, очередь, бинарное дерево и др.)
+1. <code>sorting</code> - алгоритмы сортировки
+2. <code>search</code> - алгоритмы поиска
+3. <code>structures</code> - структуры данных (списки, массивы, стэк, очередь, бинарное дерево и др.)
 4. <code>design-patterns</code> - паттерны проектирования
-5. <code>ru.other</code> - другие алгоритмы (расстояние Левенштейна, алгоритм Кнута Морриса Пратта и т.д.)
+5. <code>other</code> - другие алгоритмы (расстояние Левенштейна, алгоритм Кнута Морриса Пратта и т.д.)
 
 Для каждого файла с кодом сделаны тесты, которые находятся в директории <code>test/kotlin</code>
 
@@ -20,7 +20,7 @@
 
 Структура:
 
-1. пакет <code>ru.design_patterns</code> - паттерны проектирования
+1. пакет <code>design_patterns</code> - паттерны проектирования
     * [Builder](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/ru/design_patterns/Builder.kt)
     * [Decorator](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/ru/design_patterns/Decorator.kt)
     * [Facade](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/ru/design_patterns/Facade.kt)
@@ -33,7 +33,7 @@
     * [Dependency Injection](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/ru/design_patterns/Dependency%20%20Injection.kt)
     * [Adapter](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/ru/design_patterns/Adapter.kt)
 
-2. пакет <code>ru.structures</code> - структуры данных
+2. пакет <code>structures</code> - структуры данных
     * [Бинарное дерево](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/ru/structures/BinaryTree.kt)
     * [Стэк](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/ru/structures/Stack.kt)
     * [Очередь](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/ru/structures/Queue.kt)
@@ -43,7 +43,7 @@
     * [Min-куча](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/ru/structures/MinHeap.kt)
     * [Max-куча](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/ru/structures/MaxHeap.kt)
 
-3. пакет <code>ru.sorting</code> - алгоритмы сортировки
+3. пакет <code>sorting</code> - алгоритмы сортировки
     * [Пузырьковая сортировка](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/ru/sorting/BubbleSort.kt)
     * [Пузырьковая сортировка (улучшенная)](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/ru/sorting/BubbleSortImproved.kt)
     * [Сортировка вставками](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/ru/sorting/InsertionSort.kt)
@@ -52,12 +52,12 @@
     * [Сортировка выбором](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/ru/sorting/SelectionSort.kt)
     * [Поразрядная сортировка](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/ru/sorting/RadixSort.kt)
 
-4. пакет <code>ru.search</code> - алгоритмы поиска
+4. пакет <code>search</code> - алгоритмы поиска
     * [Бинарный поиск](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/ru/search/BinarySearch.kt)
     * [Бинарный поиск (рекурсивный)](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/ru/search/BinarySearchRecursive.kt)
     * [Линейный поиск](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/ru/search/LinearSearch.kt)
 
-5. пакет <code>ru.other</code> - другие алгоритмы
+5. пакет <code>other</code> - другие алгоритмы
     * [Факториал числа](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/ru/other/Factorial.kt)
     * [Алгоритм Кнута Морриса Пратта для поиска подстроки](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/ru/other/KnuthMorrisPratt.kt)
     * [Расстояние Левенштейна](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/ru/other/LevensteinLength.kt)
