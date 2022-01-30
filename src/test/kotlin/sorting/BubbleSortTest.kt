@@ -2,38 +2,61 @@ package sorting
 
 import org.junit.Test
 import org.junit.jupiter.api.Assertions
-import kotlin.random.Random
 
 internal class BubbleSortTest {
 
-    private val sort = BubbleSort<Int>()
-
     @Test
     fun test_reversed_array() {
-        val sortedArray = arrayOf(1, 20, 30, 40)
-        val reversedArray = sortedArray.reversedArray()
-        Assertions.assertEquals(sort.sort(reversedArray).toList(), sortedArray.toList())
+        val expected = TestUtils.list(1000)
+
+        val actual = expected.reversed().toTypedArray()
+        actual.bubbleSort()
+
+        Assertions.assertEquals(expected, actual.toList())
     }
 
     @Test
     fun test_random_array() {
-        val array = arrayOf(Random.nextInt(100), Random.nextInt(100), Random.nextInt(100), Random.nextInt(100))
-        val sortedArray = array.sorted()
-        Assertions.assertEquals(sort.sort(array).toList(), sortedArray.toList())
+        val actual = TestUtils.randomArray(500)
+
+        val expected = actual.sorted()
+
+        actual.bubbleSort()
+
+        Assertions.assertEquals(expected, actual.toList())
     }
 
     @Test
     fun test_shuffled_array() {
-        val sortedArray = arrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-        val shuffledArray = sortedArray.copyOf()
-        shuffledArray.shuffle()
-        Assertions.assertEquals(sort.sort(shuffledArray).toList(), sortedArray.toList())
+        val expected = TestUtils.sortedArray(1000)
+
+        val actual = expected.copyOf()
+        actual.shuffle()
+        actual.bubbleSort()
+
+        Assertions.assertEquals(expected.toList(), actual.toList())
     }
 
     @Test
     fun test_sorted_array() {
-        val sortedArray = arrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-        Assertions.assertEquals(sort.sort(sortedArray).toList(), sortedArray.toList())
+        val actual = TestUtils.sortedArray(1000)
+
+        val expected = actual.toList()
+
+        actual.bubbleSort()
+
+        Assertions.assertEquals(expected, actual.toList())
+    }
+
+    @Test
+    fun test_random_list() {
+        val actual = TestUtils.mutableRandomList(5000)
+
+        val expected = actual.sorted()
+
+        actual.bubbleSort()
+
+        Assertions.assertEquals(expected, actual)
     }
 
 

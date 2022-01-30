@@ -9,23 +9,29 @@ package sorting
  *
  * amount of memory: 1
  */
-class BubbleSort<T : Comparable<T>> : SortAlgo<T>() {
 
-    /**
-     * sorts the array specified in the parameter
-     *
-     * @array - array
-     */
-    override fun sortAlgo(array: Array<T>) {
-        for (i in 0 until array.size - 1) {
-            for (j in 0 until array.size - 1 - i) {
-                if (array[j] > array[j + 1]) {
-                    array[j] = array[j + 1].apply {
-                        array[j + 1] = array[j]
-                    }
+fun <T : Comparable<T>> Array<T>.bubbleSort() {
+    val array = this
+    for (i in 0 until size - 1) {
+        for (j in 0 until size - 1 - i) {
+            if (array[j] > array[j + 1]) {
+                array[j] = array[j + 1].apply {
+                    array[j + 1] = array[j]
                 }
             }
         }
     }
+}
 
+fun <T : Comparable<T>> MutableList<T>.bubbleSort() {
+    val array = this
+    for (i in 0 until size - 1) {
+        for (j in 0 until size - 1 - i) {
+            if (array[j] > array[j + 1]) {
+                array[j] = array[j + 1].apply {
+                    array[j + 1] = array[j]
+                }
+            }
+        }
+    }
 }
