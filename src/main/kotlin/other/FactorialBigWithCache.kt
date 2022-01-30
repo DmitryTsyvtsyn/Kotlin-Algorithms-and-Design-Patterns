@@ -21,8 +21,6 @@ class FactorialBigWithCache {
      * amount of memory: O(n)
      * problem: creating a huge number of BigInteger objects
      *
-     * @number - positive number
-     *
      * @return returns the factorial of a number
      */
     fun compute(number: Int) : BigInteger {

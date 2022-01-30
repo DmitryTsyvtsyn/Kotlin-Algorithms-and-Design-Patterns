@@ -1,9 +1,7 @@
 package design_patterns
 
-import design_patterns.helpers.ViewContext
-
 /**
- * name: MonoState
+ * pattern: MonoState
  *
  * using: used where you need to have common data for different objects of the same class
  *
@@ -11,7 +9,7 @@ import design_patterns.helpers.ViewContext
  * that in the Singleton pattern we have only one object, while in Monostate the objects use the same data.
  */
 
-class TextView(ctx: ViewContext) {
+class TextView {
     companion object {
         /**
          * stores the number of TextView elements created
@@ -21,8 +19,8 @@ class TextView(ctx: ViewContext) {
     }
 
     /**
-     * returns the number of TextView elements created
      *
+     * @return returns the number of TextView elements created
      */
     fun textViewCount() = count
 

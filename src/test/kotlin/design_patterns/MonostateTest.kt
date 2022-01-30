@@ -1,6 +1,5 @@
 package design_patterns
 
-import design_patterns.helpers.ViewContext
 import org.junit.Test
 import org.junit.jupiter.api.Assertions.*
 
@@ -12,7 +11,7 @@ internal class MonostateTest {
         val linearLayout = mutableListOf<TextView>()
 
         for (i in 1..10) {
-            linearLayout.add(TextView(ViewContext()))
+            linearLayout.add(TextView())
         }
 
         assertEquals(10, linearLayout.first().textViewCount())

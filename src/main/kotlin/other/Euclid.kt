@@ -10,8 +10,6 @@ class Euclid {
     /**
      * finds the greatest common divisor of two numbers
      *
-     * @num1 - first number
-     * @num2 - second number
      * @return returns the greatest common divisor
      */
     fun compute(num1: Int, num2: Int) : Int {

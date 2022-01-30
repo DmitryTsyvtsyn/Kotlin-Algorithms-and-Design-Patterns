@@ -1,7 +1,7 @@
 package design_patterns
 
 /**
- * name: Strategy
+ * pattern: Strategy
  *
  * using: used when we need to change the behavior of an object
  */

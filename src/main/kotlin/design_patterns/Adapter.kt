@@ -1,7 +1,7 @@
 package design_patterns
 
 /**
- * name: Adapter
+ * pattern: Adapter
  *
  * using: used when we cannot directly use the functionality of an object
  *

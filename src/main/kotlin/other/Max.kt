@@ -10,8 +10,8 @@ import java.lang.IllegalArgumentException
 class Max<T : Comparable<T>> {
 
     /**
-     * returns the maximum element from the list
-     * @items - list of elements
+     *
+     * @return returns the maximum element from the list
      */
     fun compute(items: List<T>) : T {
         if (items.isEmpty()) {

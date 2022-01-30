@@ -1,7 +1,7 @@
 package design_patterns
 
 /**
- * name: Builder
+ * pattern: Builder
  *
  * using: used to create complex objects
  *

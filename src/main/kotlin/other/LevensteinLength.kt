@@ -12,9 +12,6 @@ class LevenshteinLength {
     /**
      * determines the Levenshtein distance for two strings and returns it
      *
-     * @str1 - first string
-     * @str2 - second string
-     *
      * @return returns the Levenshtein distance for two strings
      */
     fun compute(str1: String, str2: String) : Int {

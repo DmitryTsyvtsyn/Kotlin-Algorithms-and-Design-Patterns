@@ -15,7 +15,6 @@ class FizzBuzz {
     /**
      * determines what to say for a number in the FizzBuzz game
      *
-     * @number - number
      * @return returns Fizz, Buzz, FizzBuzz or number
      */
     fun compute(number: Int) : String {

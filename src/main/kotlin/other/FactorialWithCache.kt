@@ -16,8 +16,6 @@ class FactorialWithCache {
      * the best time: O(1)
      * amount of memory: O(n)
      *
-     * @number - positive number
-     *
      * @return returns the factorial of a number
      */
     fun compute(number: Int) : Int {

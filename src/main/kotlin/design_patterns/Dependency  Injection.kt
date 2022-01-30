@@ -1,7 +1,7 @@
 package design_patterns
 
 /**
- * name: Dependency Injection
+ * pattern: Dependency Injection
  *
  * using: used when we have classes that depend on others
  *
@@ -20,6 +20,6 @@ class NewsRepository(private val service: NewsApiService) {
     fun news() = service.fetchNews()
 }
 
-class NewsViewModel(private val repo: NewsRepository) {
+class NewsViewModel(repo: NewsRepository) {
     val news = repo.news()
 }

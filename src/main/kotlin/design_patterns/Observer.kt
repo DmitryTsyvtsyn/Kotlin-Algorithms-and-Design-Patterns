@@ -1,7 +1,7 @@
 package design_patterns
 
 /**
- * name: Observer
+ * pattern: Observer
  *
  * using: used when we need to subscribe to changes of some object
  *
@@ -9,15 +9,13 @@ package design_patterns
  * who previously subscribed to its changes
  */
 
-/**
- * our observer interface
- */
 fun interface Observer {
     fun update(item: List<String>)
 }
 
 /**
  * the interface of the object whose changes we will listen to
+ *
  */
 interface Observable {
     fun observe(observer: Observer)
@@ -27,6 +25,7 @@ interface Observable {
 
 /**
  * contains some data, when it changes we will notify observers
+ *
  */
 class PonyList : Observable {
     private val ponies = mutableListOf<String>()

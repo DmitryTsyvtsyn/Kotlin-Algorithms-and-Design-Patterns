@@ -1,7 +1,9 @@
 package design_patterns
 
+import java.util.*
+
 /**
- * name: Factory
+ * pattern: Factory
  *
  * using: used to create many similar objects without directly calling the constructor
  */

@@ -8,9 +8,8 @@ package other
 class KnuthMorrisPratt {
 
     /**
-     * returns an array of prefix functions for a string
      *
-     * @str - string
+     * @return returns an array of prefix functions for a string
      */
     private fun prefixFunction(str: String) : Array<Int> {
         val pi = Array(str.length) { 0 }
@@ -28,10 +27,8 @@ class KnuthMorrisPratt {
     }
 
     /**
-     * returns true if the substring is in the string
      *
-     * @sub - substring
-     * @str - string
+     * @return returns true if the substring is in the string
      */
     fun contains(sub: String, str: String) : Boolean {
         val summary = "$sub#$str"
@@ -40,10 +37,8 @@ class KnuthMorrisPratt {
     }
 
     /**
-     * возвращает количество вхождений подстроки в строку
      *
-     * @sub - подстрока
-     * @str - строка
+     * @return returns the number of occurrences of a substring in a string
      */
     fun count(sub: String, str: String) : Int {
         val summary = "$sub#$str"

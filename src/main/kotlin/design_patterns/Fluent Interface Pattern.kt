@@ -1,9 +1,7 @@
 package design_patterns
 
-import design_patterns.helpers.ViewContext
-
 /**
- * name: Fluent Interface
+ * pattern: Fluent Interface
  *
  * using: used to implement chaining methods
  *
@@ -11,24 +9,24 @@ import design_patterns.helpers.ViewContext
  * with a new state for further manipulations
  */
 
-class View(ctx: ViewContext) {
+class View {
     private var isFocusable = false
     private var isClickable = false
     private var bgColor: Int = 0x444444
 
-    fun focusable() = isFocusable
-    fun clickable() = isClickable
+    fun hasFocus() = isFocusable
+    fun isClickable() = isClickable
     fun bgColor() = bgColor
 
-    fun makeFocusable() = apply {
+    fun focusable() = apply {
         isFocusable = true
     }
 
-    fun makeClickable() = apply {
+    fun clickable() = apply {
         isClickable = true
     }
 
-    fun changeBackground(color: Int) = apply {
+    fun bg(color: Int) = apply {
         bgColor = color
     }
 

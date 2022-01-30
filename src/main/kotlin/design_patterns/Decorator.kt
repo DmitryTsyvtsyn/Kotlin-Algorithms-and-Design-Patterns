@@ -1,7 +1,7 @@
 package design_patterns
 
 /**
- * name: Decorator
+ * pattern: Decorator
  *
  * using: used to add additional functionality to our object
  *
