@@ -14,8 +14,12 @@ class Factorial {
      * @return returns the factorial of a number by an iterative method
      */
     fun compute(number: Int) : Int {
+        if (number <= 1) {
+            return 1
+        }
+
         var result = 1
-        for (i in 1..number) {
+        for (i in 2..number) {
            result *= i
         }
         return result
@@ -25,6 +29,7 @@ class Factorial {
      * worst time: O(n)
      * amount of memory: O(n) - stack for recursion
      *
+     * @return returns factorial recursively
      */
     fun computeRecursive(number: Int) : Int {
         return if (number <= 1) {
