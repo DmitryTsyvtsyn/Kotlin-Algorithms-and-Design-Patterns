@@ -1,4 +1,4 @@
-![Алгоритмы на Kotlin](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/assets/algo_english.png)
+![Алгоритмы на Kotlin](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/assets/algo_logo.png)
 
 # Kotlin Algorithms and Design Patterns
 
