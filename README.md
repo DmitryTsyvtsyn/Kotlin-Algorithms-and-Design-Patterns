@@ -2,6 +2,8 @@
 
 # Kotlin Algorithms and Design Patterns
 
+<a href="https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/README_ru.md" target="_blank"><img src="https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/assets/russian_version.png" width="300px" /></a>
+
 This repository lists the most common algorithms, data structures, and design patterns written in the Kotlin programming language.
 
 All code is divided into separate packages:
