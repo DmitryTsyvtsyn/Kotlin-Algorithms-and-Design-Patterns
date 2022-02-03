@@ -18,11 +18,13 @@ internal class FactorialTest {
 
     @Test
     fun test_recursive() {
-        assertEquals(1, factorial.compute(0))
-        assertEquals(1, factorial.compute(1))
+        assertEquals(1, factorial.computeRecursive(0))
+        assertEquals(1, factorial.computeRecursive(1))
         assertEquals(6, factorial.computeRecursive(3))
         assertEquals(120, factorial.computeRecursive(5))
         assertEquals(720, factorial.computeRecursive(6))
     }
+
+
 
 }
