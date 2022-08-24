@@ -4,8 +4,8 @@ package sorting
  * insertion sort algorithm
  *
  * worst time: n²
- * the best time: n²
- * average time: n
+ * the best time: n
+ * average time: n²
  *
  * amount of time: 1
  */

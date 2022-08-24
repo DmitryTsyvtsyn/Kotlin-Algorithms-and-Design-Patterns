@@ -1,102 +1,105 @@
 package sorting
 
-/**
- * merge sort algorithm
- *
- * worst time: n * log(n)
- * the best time: n * log(n)
- * average time: n * log(n)
- *
- * amount of memory: n
- */
+fun <T : Comparable<T>> Array<T>.mergeSort() {
+    val temporaryArray = this.copyOf()
 
+    var winSize = 1
+    while (winSize < size) {
 
-fun Array<Int>.mergeSort() {
-    val array = this
+        var left = 0
+        while (left + winSize < size) {
 
-    if (size < 2)
-        return
+            val middle = left + winSize
+            var right = middle + winSize
+            if (right > size) right = size
 
-    val mid = size / 2
+            var i = left
+            var k = left
+            var j = middle
+            while (i < middle && j < right) {
+                if (this[i] <= this[j]) {
+                    temporaryArray[k] = this[i]
+                    i++
+                } else {
+                    temporaryArray[k] = this[j]
+                    j++
+                }
+                k++
+            }
 
-    val left = Array(mid) { 0 }
-    val right = Array(size - mid) { 0 }
+            while (i < middle) {
+                temporaryArray[k] = this[i]
+                i++
+                k++
+            }
 
-    for (i in 0 until mid) {
-        left[i] = array[i]
-    }
+            while (j < right) {
+                temporaryArray[k] = this[j]
+                j++
+                k++
+            }
 
-    for (i in mid until size) {
-        right[i - mid] = array[i]
-    }
+            i = left
+            while (i < right) {
+                this[i] = temporaryArray[i]
+                i++
+            }
 
-    left.mergeSort()
-    right.mergeSort()
-
-    var i = 0; var j = 0; var k = 0
-
-    val leftSize = left.size
-    val rightSize = right.size
-
-    while (i < leftSize && j < rightSize) {
-        if (left[i]  <= right[j]) {
-            array[k++] = left[i++]
-        } else {
-            array[k++] = right[j++]
+            left += winSize * 2
         }
-    }
 
-    while (i < leftSize) {
-        array[k++] = left[i++]
-    }
-
-    while (j < rightSize) {
-        array[k++] = right[j++]
+        winSize *= 2
     }
 }
 
+fun <T : Comparable<T>> MutableList<T>.mergeSort() {
+    val temporaryArray = this.toMutableList()
 
+    var winSize = 1
+    while (winSize < size) {
 
-fun MutableList<Int>.mergeSort() {
-    val list = this
+        var left = 0
+        while (left + winSize < size) {
 
-    if (size < 2)
-        return
+            val middle = left + winSize
+            var right = middle + winSize
+            if (right > size) right = size
 
-    val mid = size / 2
+            var i = left
+            var k = left
+            var j = middle
+            while (i < middle && j < right) {
+                if (this[i] <= this[j]) {
+                    temporaryArray[k] = this[i]
+                    i++
+                } else {
+                    temporaryArray[k] = this[j]
+                    j++
+                }
+                k++
+            }
 
-    val left = Array(mid) { 0 }
-    val right = Array(size - mid) { 0 }
+            while (i < middle) {
+                temporaryArray[k] = this[i]
+                i++
+                k++
+            }
 
-    for (i in 0 until mid) {
-        left[i] = list[i]
-    }
+            while (j < right) {
+                temporaryArray[k] = this[j]
+                j++
+                k++
+            }
 
-    for (i in mid until size) {
-        right[i - mid] = list[i]
-    }
+            i = left
+            while (i < right) {
+                this[i] = temporaryArray[i]
+                i++
+            }
 
-    left.mergeSort()
-    right.mergeSort()
-
-    var i = 0; var j = 0; var k = 0
-
-    val leftSize = left.size
-    val rightSize = right.size
-
-    while (i < leftSize && j < rightSize) {
-        if (left[i]  <= right[j]) {
-            list[k++] = left[i++]
-        } else {
-            list[k++] = right[j++]
+            left += winSize * 2
         }
-    }
 
-    while (i < leftSize) {
-        list[k++] = left[i++]
-    }
-
-    while (j < rightSize) {
-        list[k++] = right[j++]
+        winSize *= 2
     }
 }

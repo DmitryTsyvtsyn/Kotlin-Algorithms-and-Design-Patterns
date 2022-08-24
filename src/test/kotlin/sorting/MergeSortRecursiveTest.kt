@@ -3,14 +3,14 @@ package sorting
 import org.junit.Test
 import org.junit.jupiter.api.Assertions
 
-class MergeSortTest {
+class MergeSortRecursiveTest {
 
     @Test
     fun test_reversed_array() {
         val expected = TestUtils.list(100000)
 
         val actual = expected.reversed().toTypedArray()
-        actual.mergeSort()
+        actual.mergeSortRecursive()
 
         Assertions.assertEquals(expected, actual.toList())
     }
@@ -21,7 +21,7 @@ class MergeSortTest {
 
         val expected = actual.sorted()
 
-        actual.mergeSort()
+        actual.mergeSortRecursive()
 
         Assertions.assertEquals(expected, actual.toList())
     }
@@ -32,7 +32,7 @@ class MergeSortTest {
 
         val actual = expected.copyOf()
         actual.shuffle()
-        actual.mergeSort()
+        actual.mergeSortRecursive()
 
         Assertions.assertEquals(expected.toList(), actual.toList())
     }
@@ -43,7 +43,7 @@ class MergeSortTest {
 
         val expected = actual.toList()
 
-        actual.mergeSort()
+        actual.mergeSortRecursive()
 
         Assertions.assertEquals(expected, actual.toList())
     }
@@ -54,7 +54,7 @@ class MergeSortTest {
 
         val expected = actual.sorted()
 
-        actual.mergeSort()
+        actual.mergeSortRecursive()
 
         Assertions.assertEquals(expected, actual)
     }
