@@ -1,8 +1,8 @@
-![Алгоритмы на Kotlin](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/assets/algo_logo.png)
+![Алгоритмы на Kotlin](/assets/algo_logo.png)
 
 # Kotlin Algorithms and Design Patterns
 
-<a href="https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/README_ru.md" target="_blank"><img src="https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/assets/russian_version.png" width="300px" /></a>
+<a href="/README_ru.md" target="_blank"><img src="/assets/russian_version.png" width="300px" /></a>
 
 This repository lists the most common algorithms, data structures, and design patterns written in the Kotlin programming language.
 
@@ -21,57 +21,57 @@ Also, whenever possible, I add *javadoc* for each class, method, and file
 Content:
 
 1. package <code>design_patterns</code> - design patterns
-    * [Builder](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Builder.kt)
-    * [Visitor](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Visitor.kt)
-    * [Command](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Command.kt)
-    * [Decorator](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Decorator.kt)
-    * [Facade](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Facade.kt)
-    * [Abstract Factory](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Abstract%20Factory.kt)
-    * [Factory Method](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Factory%20Method.kt)
-    * [Fluent Interface](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Fluent%20Interface%20Pattern.kt)
-    * [Monostate](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Monostate.kt)
-    * [Singleton](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Singleton.kt)
-    * [Strategy](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Strategy.kt)
-    * [Observer](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Observer.kt)
-    * [Dependency Injection](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Dependency%20%20Injection.kt)
-    * [Adapter](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Adapter.kt)
+    * [Builder](/src/main/kotlin/design_patterns/Builder.kt)
+    * [Visitor](/src/main/kotlin/design_patterns/Visitor.kt)
+    * [Command](/src/main/kotlin/design_patterns/Command.kt)
+    * [Decorator](/src/main/kotlin/design_patterns/Decorator.kt)
+    * [Facade](/src/main/kotlin/design_patterns/Facade.kt)
+    * [Abstract Factory](/src/main/kotlin/design_patterns/Abstract%20Factory.kt)
+    * [Factory Method](/src/main/kotlin/design_patterns/Factory%20Method.kt)
+    * [Fluent Interface](/src/main/kotlin/design_patterns/Fluent%20Interface%20Pattern.kt)
+    * [Monostate](/src/main/kotlin/design_patterns/Monostate.kt)
+    * [Singleton](/src/main/kotlin/design_patterns/Singleton.kt)
+    * [Strategy](/src/main/kotlin/design_patterns/Strategy.kt)
+    * [Observer](/src/main/kotlin/design_patterns/Observer.kt)
+    * [Dependency Injection](/src/main/kotlin/design_patterns/Dependency%20%20Injection.kt)
+    * [Adapter](/src/main/kotlin/design_patterns/Adapter.kt)
 
 2. package <code>structures</code> - data structure
-    * [Binary tree](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/structures/BinaryTree.kt)
-    * [Stack](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/structures/Stack.kt)
-    * [Queue](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/structures/Queue.kt)
-    * [Graph](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/structures/Graph.kt)
-    * [Dynamic array](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/structures/DynamicArray.kt)
-    * [Linked list](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/structures/LinkedList.kt)
-    * [Min-heap](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/structures/MinHeap.kt)
-    * [Max-heap](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/structures/MaxHeap.kt)
+    * [Binary tree](/src/main/kotlin/structures/BinaryTree.kt)
+    * [Stack](/src/main/kotlin/structures/Stack.kt)
+    * [Queue](/src/main/kotlin/structures/Queue.kt)
+    * [Graph](/src/main/kotlin/structures/Graph.kt)
+    * [Dynamic array](/src/main/kotlin/structures/DynamicArray.kt)
+    * [Linked list](/src/main/kotlin/structures/LinkedList.kt)
+    * [Min-heap](/src/main/kotlin/structures/MinHeap.kt)
+    * [Max-heap](/src/main/kotlin/structures/MaxHeap.kt)
 
 3. package <code>sorting</code> - sorting algorithms
-    * [Bubble sort](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/sorting/BubbleSort.kt)
-    * [Bubble sort (improved)](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/sorting/BubbleSortImproved.kt)
-    * [Insertion sort](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/sorting/InsertionSort.kt)
-    * [Merge sort](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/sorting/MergeSort.kt)
-    * [Quick sort](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/sorting/QuickSort.kt)
-    * [Selection sort](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/sorting/SelectionSort.kt)
-    * [Radix sort](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/sorting/RadixSort.kt)
+    * [Bubble sort](/src/main/kotlin/sorting/BubbleSort.kt)
+    * [Bubble sort (improved)](/src/main/kotlin/sorting/BubbleSortImproved.kt)
+    * [Insertion sort](/src/main/kotlin/sorting/InsertionSort.kt)
+    * [Merge sort](/src/main/kotlin/sorting/MergeSort.kt)
+    * [Quick sort](/src/main/kotlin/sorting/QuickSort.kt)
+    * [Selection sort](/src/main/kotlin/sorting/SelectionSort.kt)
+    * [Radix sort](/src/main/kotlin/sorting/RadixSort.kt)
 
 4. package <code>search</code> - search algorithms
-    * [Binary search](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/search/BinarySearch.kt)
-    * [Binary search (recursive)](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/search/BinarySearchRecursive.kt)
-    * [Linear search](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/search/LinearSearch.kt)
+    * [Binary search](/src/main/kotlin/search/BinarySearch.kt)
+    * [Binary search (recursive)](/src/main/kotlin/search/BinarySearchRecursive.kt)
+    * [Linear search](/src/main/kotlin/search/LinearSearch.kt)
 
 5. package <code>other</code> - other algorithms
-    * [Factorial](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/other/Factorial.kt)
-    * [Knut Morris Pratt's Algorithm for finding a substring](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/other/KnuthMorrisPratt.kt)
-    * [Levenshtein distance](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/other/LevensteinLength.kt)
-    * [Palindrome](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/other/Palindrome.kt)
-    * [Euclid's algorithm](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/other/Euclid.kt)
-    * [FizzBuzz](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/other/FizzBuzz.kt)
-    * [Reverse Array](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/other/ReverseArray.kt)
-    * [Sieve of Eratosthenes](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/other/SieveOfEratosthenes.kt)
-    * [Finding the minimum](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/other/Max.kt)
-    * [Finding the maximum](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/other/Min.kt)
-    * [The square root of a number](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/other/Sqrt.kt)
+    * [Factorial](/src/main/kotlin/other/Factorial.kt)
+    * [Knut Morris Pratt's Algorithm for finding a substring](/src/main/kotlin/other/KnuthMorrisPratt.kt)
+    * [Levenshtein distance](/src/main/kotlin/other/LevensteinLength.kt)
+    * [Palindrome](/src/main/kotlin/other/Palindrome.kt)
+    * [Euclid's algorithm](/src/main/kotlin/other/Euclid.kt)
+    * [FizzBuzz](/src/main/kotlin/other/FizzBuzz.kt)
+    * [Reverse Array](/src/main/kotlin/other/ReverseArray.kt)
+    * [Sieve of Eratosthenes](/src/main/kotlin/other/SieveOfEratosthenes.kt)
+    * [Finding the minimum](/src/main/kotlin/other/Max.kt)
+    * [Finding the maximum](/src/main/kotlin/other/Min.kt)
+    * [The square root of a number](/src/main/kotlin/other/Sqrt.kt)
 
 ## Your wishes and ideas
 
