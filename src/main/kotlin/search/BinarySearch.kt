@@ -22,7 +22,7 @@ class BinarySearch<T : Comparable<T>> : Search<T> {
         var left = -1
         var right = array.size
         while ((right - left) > 1) {
-            val middle = (right + left) / 2
+            val middle = left + (right - left) / 2
             if (element > array[middle]) {
                 left = middle
             } else {

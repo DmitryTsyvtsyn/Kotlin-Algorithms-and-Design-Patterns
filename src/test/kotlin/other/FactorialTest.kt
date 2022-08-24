@@ -25,6 +25,14 @@ internal class FactorialTest {
         assertEquals(720, factorial.computeRecursive(6))
     }
 
+    @Test
+    fun test_recursive_with_kotlin_optimization() {
+        assertEquals(1, factorial.computeRecursiveWithKotlinOptimization(0))
+        assertEquals(1, factorial.computeRecursiveWithKotlinOptimization(1))
+        assertEquals(6, factorial.computeRecursiveWithKotlinOptimization(3))
+        assertEquals(120, factorial.computeRecursiveWithKotlinOptimization(5))
+        assertEquals(720, factorial.computeRecursiveWithKotlinOptimization(6))
+    }
 
 
 }

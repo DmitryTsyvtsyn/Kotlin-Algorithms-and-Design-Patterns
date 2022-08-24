@@ -39,4 +39,11 @@ class Factorial {
         }
     }
 
+    /**
+     * @see <a href="https://kotlinlang.org/docs/functions.html#tail-recursive-functions">tailrec functions</a>
+     *
+     */
+    tailrec fun computeRecursiveWithKotlinOptimization(number: Int) : Int =
+        if (number <= 1) 1 else number * computeRecursiveWithKotlinOptimization(number - 1)
+
 }
