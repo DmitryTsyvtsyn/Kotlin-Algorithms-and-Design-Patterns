@@ -1,4 +1,4 @@
-![Алгоритмы на Kotlin](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/assets/algo_ru.png)
+![Алгоритмы на Kotlin](/assets/algo_ru.png)
 
 # Kotlin Algorithms and Design Patterns
 
@@ -19,60 +19,60 @@
 Структура:
 
 1. пакет <code>ru.design_patterns</code> - паттерны проектирования
-    * [Builder](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Builder.kt)
-    * [Visitor](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Visitor.kt)
-    * [Command](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Command.kt)
-    * [Decorator](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Decorator.kt)
-    * [Facade](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Facade.kt)
-    * [Abstract Factory](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Abstract%20Factory.kt)
-    * [Factory Method](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Factory%20Method.kt)
-    * [Fluent Interface](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Fluent%20Interface%20Pattern.kt)
-    * [Monostate](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Monostate.kt)
-    * [Singleton](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Singleton.kt)
-    * [Strategy](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Strategy.kt)
-    * [Observer](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Observer.kt)
-    * [Dependency Injection](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Dependency%20%20Injection.kt)
-    * [Adapter](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/design_patterns/Adapter.kt)
+    * [Builder](/src/main/kotlin/design_patterns/Builder.kt)
+    * [Visitor](/src/main/kotlin/design_patterns/Visitor.kt)
+    * [Command](/src/main/kotlin/design_patterns/Command.kt)
+    * [Decorator](/src/main/kotlin/design_patterns/Decorator.kt)
+    * [Facade](/src/main/kotlin/design_patterns/Facade.kt)
+    * [Abstract Factory](/src/main/kotlin/design_patterns/Abstract%20Factory.kt)
+    * [Factory Method](/src/main/kotlin/design_patterns/Factory%20Method.kt)
+    * [Fluent Interface](/src/main/kotlin/design_patterns/Fluent%20Interface%20Pattern.kt)
+    * [Monostate](/src/main/kotlin/design_patterns/Monostate.kt)
+    * [Singleton](/src/main/kotlin/design_patterns/Singleton.kt)
+    * [Strategy](/src/main/kotlin/design_patterns/Strategy.kt)
+    * [Observer](/src/main/kotlin/design_patterns/Observer.kt)
+    * [Dependency Injection](/src/main/kotlin/design_patterns/Dependency%20%20Injection.kt)
+    * [Adapter](/src/main/kotlin/design_patterns/Adapter.kt)
 
 2. пакет <code>ru.structures</code> - структуры данных
-    * [Бинарное дерево](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/structures/BinaryTree.kt)
-    * [Стэк](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/structures/Stack.kt)
-    * [Очередь](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/structures/Queue.kt)
-    * [Граф](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/structures/Graph.kt)
-    * [Динамический массив](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/structures/DynamicArray.kt)
-    * [Связанный список](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/structures/LinkedList.kt)
-    * [Min-куча](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/structures/MinHeap.kt)
-    * [Max-куча](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/structures/MaxHeap.kt)
+    * [Бинарное дерево](/src/main/kotlin/structures/BinaryTree.kt)
+    * [Стэк](/src/main/kotlin/structures/Stack.kt)
+    * [Очередь](/src/main/kotlin/structures/Queue.kt)
+    * [Граф](/src/main/kotlin/structures/Graph.kt)
+    * [Динамический массив](/src/main/kotlin/structures/DynamicArray.kt)
+    * [Связанный список](/src/main/kotlin/structures/LinkedList.kt)
+    * [Min-куча](/src/main/kotlin/structures/MinHeap.kt)
+    * [Max-куча](/src/main/kotlin/structures/MaxHeap.kt)
 
 3. пакет <code>ru.sorting</code> - алгоритмы сортировки
-    * [Пузырьковая сортировка](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/sorting/BubbleSort.kt)
-    * [Пузырьковая сортировка (улучшенная)](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/sorting/BubbleSortImproved.kt)
-    * [Сортировка вставками](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/sorting/InsertionSort.kt)
-    * [Сортировака слиянием](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/sorting/MergeSort.kt)
-    * [Быстрая сортировка](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/sorting/QuickSort.kt)
-    * [Сортировка выбором](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/sorting/SelectionSort.kt)
-    * [Поразрядная сортировка](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/sorting/RadixSort.kt)
+    * [Пузырьковая сортировка](/src/main/kotlin/sorting/BubbleSort.kt)
+    * [Пузырьковая сортировка (улучшенная)](/src/main/kotlin/sorting/BubbleSortImproved.kt)
+    * [Сортировка вставками](/src/main/kotlin/sorting/InsertionSort.kt)
+    * [Сортировака слиянием](/src/main/kotlin/sorting/MergeSort.kt)
+    * [Быстрая сортировка](/src/main/kotlin/sorting/QuickSort.kt)
+    * [Сортировка выбором](/src/main/kotlin/sorting/SelectionSort.kt)
+    * [Поразрядная сортировка](/src/main/kotlin/sorting/RadixSort.kt)
 
 4. пакет <code>ru.search</code> - алгоритмы поиска
-    * [Бинарный поиск](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/search/BinarySearch.kt)
-    * [Бинарный поиск (рекурсивный)](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/search/BinarySearchRecursive.kt)
-    * [Линейный поиск](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/search/LinearSearch.kt)
+    * [Бинарный поиск](/src/main/kotlin/search/BinarySearch.kt)
+    * [Бинарный поиск (рекурсивный)](/src/main/kotlin/search/BinarySearchRecursive.kt)
+    * [Линейный поиск](/src/main/kotlin/search/LinearSearch.kt)
 
 5. пакет <code>ru.other</code> - другие алгоритмы
-    * [Факториал числа](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/other/Factorial.kt)
-    * [Алгоритм Кнута Морриса Пратта для поиска подстроки](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/other/KnuthMorrisPratt.kt)
-    * [Расстояние Левенштейна](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/other/LevensteinLength.kt)
-    * [Палиндром](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/other/Palindrome.kt)
-    * [Алгоритм Эвклида](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/other/Euclid.kt)
-    * [FizzBuzz](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/other/FizzBuzz.kt)
-    * [Алгоритм переворота массива](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/other/ReverseArray.kt)
-    * [Решето Эратосфена](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/other/SieveOfEratosthenes.kt)
-    * [Поиск минимума](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/other/Max.kt)
-    * [Поиск максимума](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/other/Min.kt)
-    * [Квадратный корень из числа](https://github.com/KiberneticWorm/Kotlin-Algorithms-and-Design-Patterns/blob/master/src/main/kotlin/other/Sqrt.kt)
+    * [Факториал числа](/src/main/kotlin/other/Factorial.kt)
+    * [Алгоритм Кнута Морриса Пратта для поиска подстроки](/src/main/kotlin/other/KnuthMorrisPratt.kt)
+    * [Расстояние Левенштейна](/src/main/kotlin/other/LevensteinLength.kt)
+    * [Палиндром](/src/main/kotlin/other/Palindrome.kt)
+    * [Алгоритм Эвклида](/src/main/kotlin/other/Euclid.kt)
+    * [FizzBuzz](/src/main/kotlin/other/FizzBuzz.kt)
+    * [Алгоритм переворота массива](/src/main/kotlin/other/ReverseArray.kt)
+    * [Решето Эратосфена](/src/main/kotlin/other/SieveOfEratosthenes.kt)
+    * [Поиск минимума](/src/main/kotlin/other/Max.kt)
+    * [Поиск максимума](/src/main/kotlin/other/Min.kt)
+    * [Квадратный корень из числа](/src/main/kotlin/other/Sqrt.kt)
 
 ## Ваши пожелания и идеи
 
 Если вы заинтересовались моим репозиторием или у вас появились идеи как его улучшить или что-то добавить, то сообщите мне об этом в телеграме:
 
-<a href="https://t.me/good_twilly"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/1024px-Telegram_logo.svg.png" width=160 /></a>
+<a href="https://t.me/evitwilly"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/1024px-Telegram_logo.svg.png" width=160 /></a>
