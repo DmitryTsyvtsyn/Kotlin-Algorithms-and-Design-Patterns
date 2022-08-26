@@ -6,6 +6,7 @@ package design_patterns
  * using: used to simplify access to an object with a complex implementation
  *
  * description: a complex object contains several dependencies within itself, which it combines with each other
+ *
  */
 
 

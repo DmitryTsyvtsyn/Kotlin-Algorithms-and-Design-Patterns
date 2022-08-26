@@ -6,6 +6,7 @@ package design_patterns
  * using: used when we have classes that depend on others
  *
  * description: all dependencies (classes that ours depends on) are passed through the constructor
+ *
  */
 
 class NewsApiService {

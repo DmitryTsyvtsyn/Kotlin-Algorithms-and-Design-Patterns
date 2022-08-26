@@ -7,6 +7,7 @@ package design_patterns
  *
  * description: the object communicates its changes to observers
  * who previously subscribed to its changes
+ *
  */
 
 fun interface Observer {

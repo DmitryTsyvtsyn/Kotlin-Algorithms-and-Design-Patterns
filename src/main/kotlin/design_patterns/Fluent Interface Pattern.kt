@@ -7,6 +7,7 @@ package design_patterns
  *
  * description: the object has special methods that change it and return it
  * with a new state for further manipulations
+ *
  */
 
 class View {

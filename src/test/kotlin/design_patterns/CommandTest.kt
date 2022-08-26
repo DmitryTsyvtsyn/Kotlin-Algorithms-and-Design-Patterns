@@ -3,7 +3,7 @@ package design_patterns
 import org.junit.Test
 import org.junit.jupiter.api.Assertions
 
-internal class Command {
+internal class CommandTest {
 
     @Test
     fun test_1() {
@@ -55,6 +55,22 @@ internal class Command {
         }
 
         Assertions.assertEquals(2000, actual)
+    }
+
+    @Test
+    fun test_kotlin_variant() {
+        val commands: List<(Int) -> Int> = listOf(
+            { actual: Int -> actual + 49 },
+            { actual: Int -> actual - 20 },
+            { actual: Int -> actual * 6 }
+        )
+
+        var actual = 1
+        commands.forEach { command ->
+            actual = command.invoke(actual)
+        }
+
+        Assertions.assertEquals(180, actual)
     }
 
 }

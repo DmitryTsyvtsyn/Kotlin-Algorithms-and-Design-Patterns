@@ -7,6 +7,7 @@ package design_patterns
  *
  * description: classes implement a common interface and to extend the functionality of the previous object,
  * the old object is passed through the constructor
+ *
  */
 
 interface MyPrinter {

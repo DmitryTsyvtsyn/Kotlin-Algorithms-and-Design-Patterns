@@ -10,7 +10,8 @@ package design_patterns
 
 
 /**
- * first variant
+ *
+ * The first variant
  *
  */
 
@@ -62,7 +63,8 @@ class Pony1 {
 
 /**
  *
- * the second variant
+ * The second variant
+ *
  */
 
 class Pony2 {
@@ -106,6 +108,7 @@ class Pony2 {
 /**
  *
  * Kotlin variant with default arguments
+ *
  */
 
 class Pony3(

@@ -5,6 +5,7 @@ package design_patterns
  *
  * description: it's a behavioral pattern that allows you to add a new operation
  * to an entire class hierarchy without changing the code of these classes.
+ *
  */
 
 interface PonyVisitor {

@@ -7,6 +7,7 @@ package design_patterns
  * the entire execution of our program
  *
  * description: class allows you to create only a single object
+ *
  */
 
 object LocalData {
