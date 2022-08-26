@@ -6,9 +6,11 @@ import java.util.LinkedList
  * data structure: graph
  *
  * description: a graph is made up of vertices connected by edges
+ *
  */
 
 class Graph<T> {
+
     private val data = mutableMapOf<Vertex<T>, MutableList<Vertex<T>>>()
 
     /**

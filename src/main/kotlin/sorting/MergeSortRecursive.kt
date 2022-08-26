@@ -1,13 +1,14 @@
 package sorting
 
 /**
- * merge sort algorithm
+ * merge sort algorithm implemented with recursion
  *
- * worst time: n * log(n)
  * the best time: n * log(n)
  * average time: n * log(n)
+ * worst time: n * log(n)
  *
  * amount of memory: n
+ *
  */
 
 fun Array<Int>.mergeSortRecursive() {

@@ -3,10 +3,13 @@ package structures
 import java.lang.IllegalStateException
 
 /**
- * структура данных: динамический массив
+ * data structure: dynamic array
  *
- * описание: обертка над обычным массивом, в которой осуществляется проверка индексов
- * и при переполнении массива, его размер увеличивается динамически
+ * description: wrapper over a regular array, in which indexes are checked and
+ * when the array overflows, its size increases dynamically
+ *
+ * @constructor
+ * @param capacity initial array size
  */
 
 class DynamicArray(private var capacity: Int = 10) {
@@ -14,11 +17,11 @@ class DynamicArray(private var capacity: Int = 10) {
     private var index = 0
 
     /**
-     * добавляет новый элемент в массив
+     * add a new element in array
      *
-     * если массив не может вместить новый элемент, то его размер динамически увеличивается
+     * if the array cannot accommodate the new element, then its size is dynamically increased
      *
-     * @value - элемент
+     * @param value - element
      */
     fun add(value: Int) {
         if (index < data.size - 1) {
@@ -30,9 +33,9 @@ class DynamicArray(private var capacity: Int = 10) {
     }
 
     /**
-     * удаляет элемент из массива и сдвигает на его место последующие
+     * removes an element from the array and shifts subsequent elements in its place
      *
-     * @value - элемент
+     * @param value - element
      */
     fun remove(value: Int) : Boolean {
         val foundedIndex = data.indexOf(value)
@@ -46,21 +49,21 @@ class DynamicArray(private var capacity: Int = 10) {
     }
 
     /**
-     * проверяет на существование элемента в массиве
+     * checks for the existence of an element in an array
      *
-     * @value - элемент
+     * @param value - element
      *
-     * @return возвращает true, если элемент присутствует в массиве
+     * @return returns true if the element is present in the array
      */
     fun contains(value: Int) = data.contains(value)
 
     /**
-     * устанавливает новое значения элемента для указанного индекса
+     * sets the new element value at the specified index
      *
-     * @index - индекс элемента
-     * @value - новое значение элемента
+     * @param index - element index
+     * @param value - the new value of the element
      *
-     * @return возвращает true, если элемент был успешно изменен
+     * @return returns true if the element was successfully modified
      */
     fun set(index: Int, value: Int) : Boolean {
         if (isBound(index)) {
@@ -72,11 +75,11 @@ class DynamicArray(private var capacity: Int = 10) {
 
 
     /**
-     * возвращает значение элемента по индексу или генерирует исключение, если некорректный индекс
+     * returns the value of the element by index, or throws an exception if the index is invalid
      *
-     * @index - индекс элемента
+     * @param index - element index
      *
-     * @return возвращает значение элемента по индексу
+     * @return returns the value of an element by index
      */
     fun get(index: Int) : Int {
         if (isBound(index)) {
@@ -87,23 +90,23 @@ class DynamicArray(private var capacity: Int = 10) {
     }
 
     /**
-     * возвращает размер массива
+     * returns the size of the array
      *
-     * @return возвращает размер массива
      */
     fun capacity() = capacity
 
     /**
-     * проверка на корретный индекс
+     * check for correct index
      *
-     * @return возвращает true, если индекс входит в диапазон доступных индексов
+     * @return returns true if the index is within the range of available indexes
      */
     private fun isBound(i: Int) = i in 0 until index
 
     override fun toString() = data.joinToString(", ")
 
     /**
-     * увеличивает размер массива, когда его нехватает
+     * increases the size of an array when there is not enough to add new elements
+     *
      */
     private fun increaseSize() {
         capacity *= 2

@@ -1,5 +1,16 @@
 package sorting
 
+/**
+ * merge sort algorithm implemented without recursion
+ *
+ * the best time: n * log(n)
+ * average time: n * log(n)
+ * worst time: n * log(n)
+ *
+ * amount of memory: n
+ *
+ */
+
 fun <T : Comparable<T>> Array<T>.mergeSort() {
     val temporaryArray = this.copyOf()
 
