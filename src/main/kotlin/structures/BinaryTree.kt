@@ -19,6 +19,7 @@ package structures
  *       \
  *        4
  * the same complexity is true for adding and removing nodes
+ *
  */
 
 class BinaryTree {
@@ -31,7 +32,7 @@ class BinaryTree {
     /**
      * adding a new element to the tree
      *
-     * @value - element value
+     * @param value - element value
      */
     fun add(value: Int) {
         fun addRec(current: Node?, value: Int) : Node {
@@ -59,7 +60,7 @@ class BinaryTree {
     /**
      * removing an element from the tree
      *
-     * @value - the value of the element to be removed
+     * @param value - the value of the element to be removed
      */
     fun remove(value: Int) {
         fun smallestValue(root: Node) : Int {
@@ -103,7 +104,7 @@ class BinaryTree {
     /**
      * checking for the existence of an element in the tree
      *
-     * @value - element value
+     * @param value - element value
      *
      * @return - returns true if the element exists
      */
@@ -115,7 +116,11 @@ class BinaryTree {
             if (value == current.value()) {
                 return true
             }
-            return if (value < current.value()) containsRec(current.leftNode(), value) else containsRec(current.rightNode(), value)
+            return if (value < current.value()) {
+                containsRec(current.leftNode(), value)
+            } else {
+                containsRec(current.rightNode(), value)
+            }
         }
 
         return containsRec(root, value)
@@ -203,12 +208,9 @@ class BinaryTree {
         while (queue.isNotEmpty()) {
             val node = queue.remove()
             items.add(node.value())
-            if (node.leftNode() != null) {
-                queue.add(node.leftNode()!!)
-            }
-            if (node.rightNode() != null) {
-                queue.add(node.rightNode()!!)
-            }
+
+            node.leftNode()?.let(queue::add)
+            node.rightNode()?.let(queue::add)
         }
 
         return items
@@ -219,9 +221,11 @@ class BinaryTree {
 /**
  * represents a tree node
  *
- * @value - node value
- * @left - left child node
- * @right - right child node
+ * @constructor
+ * @property value - node value
+ * @property left - left child node
+ * @property right - right child node
+ *
  */
 class Node(
     private var value: Int,

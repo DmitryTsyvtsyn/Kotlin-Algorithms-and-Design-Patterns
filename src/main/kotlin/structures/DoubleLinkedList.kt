@@ -34,9 +34,11 @@ class DoubleLinkedList<T>(
     /**
      * doubly linked list node
      *
-     * @value - node value
-     * @prev - link to the previous element (assuming the element is not the first one)
-     * @next - link to the next element (assuming the element is not the last one)
+     * @constructor
+     * @property value - node value
+     * @property prev - link to the previous element (assuming the element is not the first one)
+     * @property next - link to the next element (assuming the element is not the last one)
+     *
      */
     class Node<T>(
         private val value: T,
@@ -87,7 +89,7 @@ class DoubleLinkedList<T>(
     /**
      * checks if an element is in the list
      *
-     * @value - element value
+     * @param value - element value
      *
      * @return returns true if the value exists in the list
      */
@@ -114,7 +116,7 @@ class DoubleLinkedList<T>(
     /**
      * removes an element from the list
      *
-     * @value - element value
+     * @param value - element value
      *
      * @return returns true if the element was successfully removed
      */
@@ -151,8 +153,8 @@ class DoubleLinkedList<T>(
     /**
      * add element by index
      *
-     * @index - the index where the new element should be added
-     * @value - the value of the new element
+     * @param index - the index where the new element should be added
+     * @param value - the value of the new element
      *
      * @return returns true if the element was successfully added at the specified index
      */
@@ -191,7 +193,7 @@ class DoubleLinkedList<T>(
     /**
      * adds an element to the beginning of the list
      *
-     * @value - element value
+     * @param value - element value
      */
     fun addFirst(value: T) {
         val firstNode = first
@@ -212,7 +214,7 @@ class DoubleLinkedList<T>(
     /**
      * adds an element to the end of the list
      *
-     * @value - element value
+     * @param value - element value
      */
     fun addLast(value: T) {
         val lastNode = last

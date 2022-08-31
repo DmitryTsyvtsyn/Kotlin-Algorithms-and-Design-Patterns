@@ -3,11 +3,11 @@ package structures
 import org.junit.Test
 import org.junit.jupiter.api.Assertions.*
 
-internal class DynamicArrayTest {
+internal class MyArrayListTest {
 
     @Test
     fun test_add() {
-        val array = DynamicArray().apply {
+        val array = MyArrayList().apply {
             for (i in 0 until 10) { add(i) }
         }
         assertEquals(5, array.get(5))
@@ -15,7 +15,7 @@ internal class DynamicArrayTest {
 
     @Test
     fun test_set() {
-        val array = DynamicArray().apply {
+        val array = MyArrayList().apply {
             add(1)
             add(2)
             add(3)
@@ -27,7 +27,7 @@ internal class DynamicArrayTest {
 
     @Test
     fun test_contains() {
-        val array = DynamicArray().apply {
+        val array = MyArrayList().apply {
             add(1)
             add(2)
             add(100)
@@ -38,7 +38,7 @@ internal class DynamicArrayTest {
 
     @Test
     fun test_remove() {
-        val array = DynamicArray().apply {
+        val array = MyArrayList().apply {
             add(0)
             add(1)
             add(2)
@@ -54,7 +54,7 @@ internal class DynamicArrayTest {
 
     @Test
     fun test_increasing() {
-        val array = DynamicArray().apply {
+        val array = MyArrayList().apply {
             for (i in 0 until 10) { add(i) }
         }
         assertEquals(false, array.contains(10))

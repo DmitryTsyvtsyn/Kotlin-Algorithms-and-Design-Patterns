@@ -7,13 +7,15 @@ import kotlin.collections.ArrayList
  * data structure: stack
  *
  * description: the stack uses the LIFO principle (last in, first out), all operations are performed in O(1) time
+ *
  */
 
 interface Stack<T> {
+
     /**
      * adds an element to the top of the stack
      *
-     * @item - element
+     * @param item - element
      */
     fun push(item: T)
 
@@ -42,9 +44,9 @@ interface Stack<T> {
     fun clear()
 
     /**
-     * implementation using dynamic ArrayList
+     * implementation using ArrayList
      *
-     * @T - stack element type
+     * @param T - stack element type
      */
     class ArrayListStack<T> : Stack<T> {
         private val data = ArrayList<T>()
@@ -77,7 +79,7 @@ interface Stack<T> {
     /**
      * linked list implementation
      *
-     * @T - тип элементов стэка
+     * @param T - тип элементов стэка
      */
     class LinkedListStack<T> : Stack<T> {
         private val data = java.util.LinkedList<T>()

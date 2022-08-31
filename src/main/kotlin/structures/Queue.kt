@@ -7,6 +7,7 @@ import kotlin.collections.ArrayList
  *
  * description: the queue is organized on a FIFO basis (first in, first out), all operations are performed in O(1),
  * except for the operation of deleting from the middle of the queue, which in the worst case takes O(n) time
+ *
  */
 
 interface Queue<T> {
@@ -14,7 +15,7 @@ interface Queue<T> {
     /**
      * adding to the front of the queue
      *
-     * @item - added element
+     * @param item - added element
      */
     fun offer(item: T)
 
@@ -47,8 +48,8 @@ interface Queue<T> {
     fun poll() : T?
 
     /**
-     * returns true if the queue is empty
      *
+     * @return returns true if the queue is empty
      */
     fun isEmpty() : Boolean
 
@@ -61,7 +62,7 @@ interface Queue<T> {
     /**
      * removes an element from the middle of the queue
      *
-     * returns true if the element was successfully removed
+     * @return returns true if the element was successfully removed
      */
     fun remove(item: T) : Boolean
 

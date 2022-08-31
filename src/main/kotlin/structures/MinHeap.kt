@@ -16,7 +16,7 @@ package structures
  *
  */
 
-class MinHeap(private val maxSize: Int) {
+class MinHeap(maxSize: Int) {
 
     private val heap = Array(maxSize) { 0 }
 

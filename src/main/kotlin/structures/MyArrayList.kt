@@ -3,16 +3,21 @@ package structures
 import java.lang.IllegalStateException
 
 /**
- * data structure: dynamic array
+ * data structure: simple java.util.ArrayList implementation
  *
  * description: wrapper over a regular array, in which indexes are checked and
  * when the array overflows, its size increases dynamically
  *
  * @constructor
- * @param capacity initial array size
+ * @property capacity initial array size
+ *
+ * P.S. Kotlin lists use under the hood java.util.ArrayList
+ * for example:
+ *     val numbers = listOf(1, 2, 3) // java.util.ArrayList
+ *     val symbols = mutableListOf('a', 'b', 'c') // also java.util.ArrayList
  */
 
-class DynamicArray(private var capacity: Int = 10) {
+class MyArrayList(private var capacity: Int = 10) {
     private var data = Array(capacity) { 0 }
     private var index = 0
 
@@ -90,8 +95,8 @@ class DynamicArray(private var capacity: Int = 10) {
     }
 
     /**
-     * returns the size of the array
      *
+     * @return returns the size of the array
      */
     fun capacity() = capacity
 

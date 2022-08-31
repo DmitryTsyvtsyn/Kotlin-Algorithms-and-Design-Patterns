@@ -16,14 +16,14 @@ class Graph<T> {
     /**
      * adds a new vertex
      *
-     * @value - the value of the new vertex
+     * @param value - the value of the new vertex
      */
     fun addVertex(value: T) = data.putIfAbsent(Vertex(value), mutableListOf())
 
     /**
      * removes a vertex from a graph
      *
-     * @value - vertex value
+     * @param value - vertex value
      */
     fun removeVertex(value: T) {
         val removingVertex = Vertex(value)
@@ -36,8 +36,8 @@ class Graph<T> {
     /**
      * adds an edge between two vertices
      *
-     * @value1 - first vertex value
-     * @value2 - second vertex value
+     * @param value1 - first vertex value
+     * @param value2 - second vertex value
      */
     fun addEdge(value1: T, value2: T) {
         val vertex1 = Vertex(value1)
@@ -49,8 +49,8 @@ class Graph<T> {
     /**
      * removes an edge between two vertices
      *
-     * @value1 - first vertex value
-     * @value2 - second vertex value
+     * @param value1 - first vertex value
+     * @param value2 - second vertex value
      */
     fun removeEdge(value1: T, value2: T) {
         val vertex1 = Vertex(value1)
@@ -62,7 +62,7 @@ class Graph<T> {
     /**
      * returns the associated vertices with the given vertex
      *
-     * @value - vertex value
+     * @param value - vertex value
      */
     fun connectedVertexes(value: T) = data[Vertex(value)] ?: listOf()
 
@@ -93,8 +93,9 @@ class Graph<T> {
     fun breadthFirstTraversal() : List<Vertex<T>> {
         val visited = LinkedHashSet<Vertex<T>>()
         val queue = LinkedList<Vertex<T>>()
-        queue.add(data.keys.first())
-        visited.add(data.keys.first())
+        val firstVertex = data.keys.firstOrNull() ?: return listOf()
+        queue.add(firstVertex)
+        visited.add(firstVertex)
         while (queue.isNotEmpty()) {
             val vertex = queue.poll()
             data[vertex]?.forEach { v ->

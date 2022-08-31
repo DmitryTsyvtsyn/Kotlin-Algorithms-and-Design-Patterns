@@ -8,6 +8,7 @@ package structures
  * time to insert an element at the beginning and end of the list: O(1)
  * insertion time in the middle by index: O(n)
  * delete: O(n)
+ *
  */
 
 class SingleLinkedList<T>(
@@ -34,8 +35,10 @@ class SingleLinkedList<T>(
     /**
      * singly linked list node
      *
-     * @value - node value
-     * @next - link to the next element (assuming the element is not the last one)
+     * @constructor
+     * @property value - node value
+     * @property next - link to the next element (assuming the element is not the last one)
+     *
      */
     class Node<T>(
         private val value: T,
@@ -76,7 +79,7 @@ class SingleLinkedList<T>(
     /**
      * checks if an element is in the list
      *
-     * @value - element value
+     * @param value - element value
      *
      * @return returns true if the value exists in the list
      */
@@ -103,7 +106,7 @@ class SingleLinkedList<T>(
     /**
      * removes an element from the list
      *
-     * @value - element value
+     * @param value - element value
      *
      * @return returns true if the element was successfully removed
      */
@@ -135,8 +138,8 @@ class SingleLinkedList<T>(
     /**
      * add element by index
      *
-     * @index - the index where the new element should be added
-     * @value - the value of the new element
+     * @param index - the index where the new element should be added
+     * @param value - the value of the new element
      *
      * @return returns true if the element was successfully added at the specified index
      */
@@ -169,7 +172,7 @@ class SingleLinkedList<T>(
     /**
      * adds an element to the beginning of the list
      *
-     * @value - element value
+     * @param value - element value
      */
     fun addFirst(value: T) {
         val node = Node(value)
@@ -186,7 +189,7 @@ class SingleLinkedList<T>(
     /**
      * adds an element to the end of the list
      *
-     * @value - element value
+     * @param value - element value
      */
     fun addLast(value: T) {
         val newNode = Node(value)
