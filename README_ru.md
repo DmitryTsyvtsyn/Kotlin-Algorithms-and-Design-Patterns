@@ -72,6 +72,7 @@
     * [Поиск минимума](/src/main/kotlin/other/Max.kt)
     * [Поиск максимума](/src/main/kotlin/other/Min.kt)
     * [Квадратный корень из числа](/src/main/kotlin/other/Sqrt.kt)
+    * [Конечный автомат](/src/main/kotlin/other/BinaryDigitsCounter.kt)
 
 ## Ваши пожелания и идеи
 
