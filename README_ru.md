@@ -39,7 +39,7 @@
     * [Стэк](/src/main/kotlin/structures/Stack.kt)
     * [Очередь](/src/main/kotlin/structures/Queue.kt)
     * [Граф](/src/main/kotlin/structures/Graph.kt)
-    * [Динамический массив](/src/main/kotlin/structures/DynamicArray.kt)
+    * [Динамический массив](/src/main/kotlin/structures/MyArrayList.kt)
     * [Связанный список](/src/main/kotlin/structures/LinkedList.kt)
     * [Min-куча](/src/main/kotlin/structures/MinHeap.kt)
     * [Max-куча](/src/main/kotlin/structures/MaxHeap.kt)

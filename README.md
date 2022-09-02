@@ -41,7 +41,7 @@ Content:
     * [Stack](/src/main/kotlin/structures/Stack.kt)
     * [Queue](/src/main/kotlin/structures/Queue.kt)
     * [Graph](/src/main/kotlin/structures/Graph.kt)
-    * [Dynamic array](/src/main/kotlin/structures/DynamicArray.kt)
+    * [ArrayList](/src/main/kotlin/structures/MyArrayList.kt)
     * [Linked list](/src/main/kotlin/structures/LinkedList.kt)
     * [Min-heap](/src/main/kotlin/structures/MinHeap.kt)
     * [Max-heap](/src/main/kotlin/structures/MaxHeap.kt)
