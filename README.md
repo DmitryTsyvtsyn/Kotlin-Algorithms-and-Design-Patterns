@@ -74,6 +74,7 @@ Content:
     * [Finding the minimum](/src/main/kotlin/other/Max.kt)
     * [Finding the maximum](/src/main/kotlin/other/Min.kt)
     * [The square root of a number](/src/main/kotlin/other/Sqrt.kt)
+    * [Finite state machine](/src/main/kotlin/other/BinaryDigitsCounter.kt)
 
 ## Your wishes and ideas
 
