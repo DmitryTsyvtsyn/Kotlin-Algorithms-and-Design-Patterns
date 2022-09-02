@@ -28,10 +28,9 @@ class Pony1 {
         this.city = city
     }
 
-    fun name() = name
-    fun family() = family
-    fun cutieMark() = cutieMark
-    fun city() = city
+    override fun toString(): String {
+        return "$name, $family, $cutieMark, $city"
+    }
 
     class Builder {
             private var name: String = ""
@@ -73,10 +72,9 @@ class Pony2 {
     private var cutieMark: String = ""
     private var city: String = ""
 
-    fun name() = name
-    fun family() = family
-    fun cutieMark() = cutieMark
-    fun city() = city
+    override fun toString(): String {
+        return "$name, $family, $cutieMark, $city"
+    }
 
     companion object {
         fun newBuilder() = Pony2().Builder()
@@ -117,8 +115,7 @@ class Pony3(
     private var cutieMark: String = "",
     private var city: String = ""
 ) {
-    fun name() = name
-    fun family() = family
-    fun cutieMark() = cutieMark
-    fun city() = city
+    override fun toString(): String {
+        return "$name, $family, $cutieMark, $city"
+    }
 }

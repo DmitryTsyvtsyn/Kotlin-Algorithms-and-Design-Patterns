@@ -19,10 +19,7 @@ internal class BuilderTest {
             .changeFamily(family)
             .build()
 
-        assertEquals(name, pony.name())
-        assertEquals(cutieMark, pony.cutieMark())
-        assertEquals(city, pony.city())
-        assertEquals(family, pony.family())
+        assertEquals("$name, $family, $cutieMark, $city", pony.toString())
     }
 
     @Test
@@ -39,10 +36,7 @@ internal class BuilderTest {
             .changeFamily(family)
             .build()
 
-        assertEquals(name, pony.name())
-        assertEquals(cutieMark, pony.cutieMark())
-        assertEquals(city, pony.city())
-        assertEquals(family, pony.family())
+        assertEquals("$name, $family, $cutieMark, $city", pony.toString())
     }
 
     @Test
@@ -54,12 +48,7 @@ internal class BuilderTest {
 
         val pony = Pony3(name, family, city = city)
 
-        assertEquals(name, pony.name())
-        assertEquals("", pony.cutieMark())
-        assertEquals(city, pony.city())
-        assertEquals(family, pony.family())
+        assertEquals("$name, $family, , $city", pony.toString())
     }
-
-
 
 }
