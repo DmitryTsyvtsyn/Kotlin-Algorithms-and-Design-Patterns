@@ -12,6 +12,7 @@ class Max<T : Comparable<T>> {
     /**
      *
      * @return returns the maximum element from the list
+     *
      */
     fun compute(items: List<T>) : T {
         if (items.isEmpty()) {
@@ -29,6 +30,7 @@ class Max<T : Comparable<T>> {
     /**
      *
      * @return returns the maximum element from the list recursively
+     *
      */
     fun computeRecursive(items: List<T>) : T {
         if (items.size == 1) {

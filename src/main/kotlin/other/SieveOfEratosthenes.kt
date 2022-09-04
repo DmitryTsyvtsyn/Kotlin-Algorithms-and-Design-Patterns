@@ -1,18 +1,22 @@
 package other
 
 /**
+ *
  * The sieve of Eratosthenes allows you to efficiently calculate a series of prime numbers
  *
  * algorithm complexity: nlog(logn) operations
+ *
  */
 
 class SieveOfEratosthenes {
 
     /**
+     *
      * computes a series of primes for the maximum value
      *
-     * @maxNumber - maximum value
-     * @return - returns a list of prime numbers
+     * @param maxNumber - maximum value
+     * @return returns a list of prime numbers
+     *
      */
     fun compute(maxNumber: Int) : List<Int> {
         val numbers = Array(maxNumber + 1) { index -> index >= 2 }

@@ -1,6 +1,7 @@
 package other
 
 /**
+ *
  * Euclid's algorithm for finding the greatest common divisor
  *
  */
@@ -8,9 +9,11 @@ package other
 class Euclid {
 
     /**
+     *
      * finds the greatest common divisor of two numbers
      *
      * @return returns the greatest common divisor
+     *
      */
     fun compute(num1: Int, num2: Int) : Int {
         var copyNum1 = num1
