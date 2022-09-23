@@ -1,6 +1,7 @@
 package design_patterns
 
 /**
+ *
  * pattern: Visitor
  *
  * description: it's a behavioral pattern that allows you to add a new operation

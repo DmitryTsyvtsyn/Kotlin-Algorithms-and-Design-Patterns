@@ -33,9 +33,10 @@ Content:
     * [Singleton](/src/main/kotlin/design_patterns/Singleton.kt)
     * [Strategy](/src/main/kotlin/design_patterns/Strategy.kt)
     * [Observer](/src/main/kotlin/design_patterns/Observer.kt)
-    * [Dependency Injection](/src/main/kotlin/design_patterns/Dependency%20%20Injection.kt)
+    * [Dependency Injection](/src/main/kotlin/design_patterns/Dependency%20Injection.kt)
     * [Adapter](/src/main/kotlin/design_patterns/Adapter.kt)
     * [Memento](/src/main/kotlin/design_patterns/Memento.kt)
+    * [Chain Of Responsibilities](/src/main/kotlin/design_patterns/Chain%20Of%20Responsibilities.kt)
 
 2. package <code>structures</code> - data structure
     * [Binary tree](/src/main/kotlin/structures/BinaryTree.kt)
