@@ -34,7 +34,7 @@
     * [Dependency Injection](/src/main/kotlin/design_patterns/Dependency%20Injection.kt)
     * [Adapter](/src/main/kotlin/design_patterns/Adapter.kt)
     * [Memento](/src/main/kotlin/design_patterns/Memento.kt)
-    * [Chain Of Responsibilities](/src/main/kotlin/design_patterns/Chain%20Of%20Responsibilities.kt)
+    * [Chain Of Responsibilities](/src/main/kotlin/design_patterns/Сhain Of Responsibilities.kt)
 
 2. пакет <code>ru.structures</code> - структуры данных
     * [Бинарное дерево](/src/main/kotlin/structures/BinaryTree.kt)
