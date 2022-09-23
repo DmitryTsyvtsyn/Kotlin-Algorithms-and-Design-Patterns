@@ -76,6 +76,8 @@ Content:
     * [Finding the maximum](/src/main/kotlin/other/Min.kt)
     * [The square root of a number](/src/main/kotlin/other/Sqrt.kt)
     * [Finite state machine](/src/main/kotlin/other/BinaryDigitsCounter.kt)
+    * [ParenthesisCheck](/src/main/kotlin/other/ParenthesisCheck.kt)
+    * [StringEqualsHash](/src/main/kotlin/other/StringEqualsHash.kt)
 
 ## Your wishes and ideas
 

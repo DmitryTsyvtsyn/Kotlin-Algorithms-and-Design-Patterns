@@ -74,6 +74,8 @@
     * [Поиск максимума](/src/main/kotlin/other/Min.kt)
     * [Квадратный корень из числа](/src/main/kotlin/other/Sqrt.kt)
     * [Конечный автомат](/src/main/kotlin/other/BinaryDigitsCounter.kt)
+    * [Проверка скобок на корректность](/src/main/kotlin/other/ParenthesisCheck.kt)
+    * [Сравнение строк с помощью хэша](/src/main/kotlin/other/StringEqualsHash.kt)
 
 ## Ваши пожелания и идеи
 
