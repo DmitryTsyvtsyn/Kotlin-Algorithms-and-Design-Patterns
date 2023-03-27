@@ -82,4 +82,4 @@
 
 Если вы заинтересовались моим репозиторием или у вас появились идеи как его улучшить или что-то добавить, то сообщите мне об этом в телеграме:
 
-<a href="https://t.me/evitwilly"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/1024px-Telegram_logo.svg.png" width=160 /></a>
+<a href="https://t.me/rwcwuwr"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/1024px-Telegram_logo.svg.png" width=160 /></a>
