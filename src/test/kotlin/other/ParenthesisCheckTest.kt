@@ -40,5 +40,16 @@ internal class ParenthesisCheckTest {
         Assertions.assertEquals(false, parenthesisCheck.check(statement))
     }
 
+    @Test
+    fun test_statement_4() {
+        val statement = "(([[()]]))("
+        Assertions.assertEquals(false, parenthesisCheck.check(statement))
+    }
+
+    @Test
+    fun test_statement_5() {
+        val statement = "[]{"
+        Assertions.assertEquals(false, parenthesisCheck.check(statement))
+    }
 
 }

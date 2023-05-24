@@ -39,7 +39,7 @@ class ParenthesisCheck {
             index++
         }
 
-        return true
+        return stack.isEmpty()
     }
 
     companion object {
