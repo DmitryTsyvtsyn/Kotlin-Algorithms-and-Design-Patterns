@@ -74,9 +74,10 @@ class Graph<T> {
     fun depthFirstTraversal() : List<Vertex<T>> {
         val visited = LinkedHashSet<Vertex<T>>()
         val queue = LinkedList<Vertex<T>>()
-        queue.push(data.keys.first())
+        val firstVertex = data.keys.firstOrNull() ?: return emptyList()
+        queue.push(firstVertex)
         while (queue.isNotEmpty()) {
-            val vertex = queue.pop()
+            val vertex = queue.poll()
             if (!visited.contains(vertex)) {
                 visited.add(vertex)
                 queue.addAll(data[vertex] ?: listOf())
@@ -93,7 +94,7 @@ class Graph<T> {
     fun breadthFirstTraversal() : List<Vertex<T>> {
         val visited = LinkedHashSet<Vertex<T>>()
         val queue = LinkedList<Vertex<T>>()
-        val firstVertex = data.keys.firstOrNull() ?: return listOf()
+        val firstVertex = data.keys.firstOrNull() ?: return emptyList()
         queue.add(firstVertex)
         visited.add(firstVertex)
         while (queue.isNotEmpty()) {
