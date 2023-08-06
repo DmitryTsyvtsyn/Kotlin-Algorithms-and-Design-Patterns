@@ -1,11 +1,17 @@
 package structures
 
 import java.util.LinkedList
+import kotlin.collections.LinkedHashSet
 
 /**
- * data structure: graph
+ * graph vertex model
+ */
+data class Vertex<T>(val value: T)
+
+/**
+ * data structure: undirected graph without weights
  *
- * description: a graph is made up of vertices connected by edges
+ * description: made up of vertices connected by edges
  *
  */
 
@@ -111,4 +117,3 @@ class Graph<T> {
 
 }
 
-data class Vertex<T>(val value: T)
