@@ -72,6 +72,28 @@ class Matrix() {
         return Matrix(elements.map { it * value }, columnCount, rowCount)
     }
 
+    operator fun times(matrix: Matrix): Matrix {
+        val columnCountMatrix1 = columnCount
+        val rowCountMatrix1 = rowCount
+        val columnCountMatrix2 = matrix.columnCount
+        val rowCountMatrix2 = matrix.rowCount
+
+        if (columnCountMatrix1 != rowCountMatrix2) throw IllegalArgumentException("The number of columns of the first matrix doesn't match the number of rows of the second matrix")
+
+        val newElements = mutableListOf<Int>()
+        for (rowIndexMatrix1 in 0 until rowCountMatrix1) {
+            for (columnIndexMatrix2 in 0 until columnCountMatrix2) {
+                var sum = 0
+                for (sameSizeIndex in 0 until columnCountMatrix1) {
+                    sum += elements[rowIndexMatrix1 * columnCountMatrix1 + sameSizeIndex] * matrix.elements[sameSizeIndex * columnCountMatrix2 + columnIndexMatrix2]
+                }
+                newElements.add(sum)
+            }
+        }
+
+        return Matrix(newElements, columnCountMatrix2, rowCountMatrix1)
+    }
+
     operator fun div(value: Int): Matrix {
         return Matrix(elements.map { it / value }, columnCount, rowCount)
     }

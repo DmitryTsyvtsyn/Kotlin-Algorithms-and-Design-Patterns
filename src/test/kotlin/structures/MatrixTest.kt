@@ -180,4 +180,59 @@ class MatrixTest {
         Assertions.assertEquals(expected, actual)
     }
 
+    @Test
+    fun `test multiply between matrices`() {
+        val matrix1 = matrix {
+            row(1, 2)
+            row(8, 9)
+        }
+        val matrix2 = matrix {
+            row(2)
+            row(4)
+            row(8)
+        }
+
+        Assertions.assertThrows(IllegalArgumentException::class.java) { matrix1 * matrix2 }
+
+        val matrix3 = matrix {
+            row(1, 4)
+            row(2, 5)
+            row(3, 6)
+        }
+        val matrix4 = matrix {
+            row(7, 8, 9, 10)
+            row(11, 12, 13, 14)
+        }
+
+        val expected1 = matrix {
+            row(51, 56, 61, 66)
+            row(69, 76, 83, 90)
+            row(87, 96, 105, 114)
+        }
+        val actual1 = matrix3 * matrix4
+
+        Assertions.assertEquals(expected1, actual1)
+
+        val matrix5 = matrix {
+            row(45, 11, 20, -15)
+            row(-12, 9, -18, 0)
+            row(8, 3, -13, 36)
+        }
+        val matrix6 = matrix {
+            row(-1, 8, 55)
+            row(5, -2, 13)
+            row(14, 27, 6)
+            row(19, 3, -10)
+        }
+
+        val expected2 = matrix {
+            row(5, 833, 2888)
+            row(-195, -600, -651)
+            row(509, -185, 41)
+        }
+        val actual2 = matrix5 * matrix6
+
+        Assertions.assertEquals(expected2, actual2)
+    }
+
 }
