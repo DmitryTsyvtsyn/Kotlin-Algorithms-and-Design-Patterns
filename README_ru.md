@@ -42,6 +42,7 @@
     * [Очередь](/src/main/kotlin/structures/Queue.kt)
     * [Неориентированный граф](/src/main/kotlin/structures/Graph.kt)
     * [Ориентированный граф с весами](/src/main/kotlin/structures/GraphWithWeights.kt)
+    * [Матрица](/src/main/kotlin/structures/Matrix.kt)
     * [Динамический массив](/src/main/kotlin/structures/MyArrayList.kt)
     * [Связанный список](/src/main/kotlin/structures/LinkedList.kt)
     * [Min-куча](/src/main/kotlin/structures/MinHeap.kt)

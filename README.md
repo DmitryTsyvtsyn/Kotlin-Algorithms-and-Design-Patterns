@@ -44,6 +44,7 @@ Content:
     * [Queue](/src/main/kotlin/structures/Queue.kt)
     * [Undirected Graph](/src/main/kotlin/structures/Graph.kt)
     * [Directed Graph with weights](/src/main/kotlin/structures/GraphWithWeights.kt)
+    * [Matrix](/src/main/kotlin/structures/Matrix.kt)
     * [ArrayList](/src/main/kotlin/structures/MyArrayList.kt)
     * [Linked list](/src/main/kotlin/structures/LinkedList.kt)
     * [Min-heap](/src/main/kotlin/structures/MinHeap.kt)
