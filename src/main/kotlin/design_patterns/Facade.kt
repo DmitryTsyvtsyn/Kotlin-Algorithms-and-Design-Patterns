@@ -1,6 +1,7 @@
 package design_patterns
 
 /**
+ *
  * pattern: Facade
  *
  * using: used to simplify access to an object with a complex implementation
@@ -12,7 +13,6 @@ package design_patterns
 
 /**
  * imitation of local data storage (database)
- *
  */
 class LocalDataSource {
 
@@ -29,7 +29,6 @@ class LocalDataSource {
 
 /**
  * network request simulation
- *
  */
 class NetworkDataSource {
     fun get() = listOf(

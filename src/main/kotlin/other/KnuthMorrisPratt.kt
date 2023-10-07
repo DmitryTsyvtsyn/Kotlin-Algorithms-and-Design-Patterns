@@ -1,6 +1,7 @@
 package other
 
 /**
+ *
  * Knut Morris Pratt's Algorithm for finding a substring in a string
  *
  */
@@ -8,8 +9,7 @@ package other
 class KnuthMorrisPratt {
 
     /**
-     *
-     * @return returns an array of prefix functions for a string
+     * returns an array of prefix functions for a string
      */
     private fun prefixFunction(str: String) : Array<Int> {
         val pi = Array(str.length) { 0 }
@@ -27,8 +27,7 @@ class KnuthMorrisPratt {
     }
 
     /**
-     *
-     * @return returns true if the substring is in the string
+     * returns true if the substring is in the string
      */
     fun contains(sub: String, str: String) : Boolean {
         val summary = "$sub#$str"
@@ -37,8 +36,7 @@ class KnuthMorrisPratt {
     }
 
     /**
-     *
-     * @return returns the number of occurrences of a substring in a string
+     * returns the number of occurrences of a substring in a string
      */
     fun count(sub: String, str: String) : Int {
         val summary = "$sub#$str"

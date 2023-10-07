@@ -44,9 +44,7 @@ class ParenthesisCheck {
 
     companion object {
         /**
-         *
          * correct C program
-         *
          */
         private const val defaultCode = """
             void main() {

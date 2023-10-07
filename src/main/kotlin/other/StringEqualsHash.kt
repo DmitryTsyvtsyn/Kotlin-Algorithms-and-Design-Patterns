@@ -2,7 +2,7 @@ package other
 
 /**
  *
- * comparing two strings with a hash
+ * Algorithm for comparing two strings with a hash
  *
  */
 

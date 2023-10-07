@@ -1,6 +1,7 @@
 package structures
 
 /**
+ *
  * data structure: binary tree
  *
  * description: consists of nodes, each of which has a maximum of two children,
@@ -30,9 +31,7 @@ class BinaryTree {
     private var root: Node? = null
 
     /**
-     * adding a new element to the tree
-     *
-     * @param value - element value
+     * add a new element [value] to the tree
      */
     fun add(value: Int) {
         fun addRec(current: Node?, value: Int) : Node {
@@ -51,16 +50,12 @@ class BinaryTree {
     }
 
     /**
-     * checks the tree for emptiness
-     *
-     * @return returns true if the tree does not contain any nodes
+     * check the tree for emptiness and returns true if the tree does not contain any nodes
      */
     fun isEmpty() = root == null
 
     /**
-     * removing an element from the tree
-     *
-     * @param value - the value of the element to be removed
+     * remove an element [value] from the tree
      */
     fun remove(value: Int) {
         fun smallestValue(root: Node) : Int {
@@ -102,11 +97,7 @@ class BinaryTree {
     }
 
     /**
-     * checking for the existence of an element in the tree
-     *
-     * @param value - element value
-     *
-     * @return - returns true if the element exists
+     * check for the existence of an element [value] in the tree, returns true if the element exists
      */
     fun contains(value: Int) : Boolean {
         fun containsRec(current: Node?, value: Int) : Boolean {

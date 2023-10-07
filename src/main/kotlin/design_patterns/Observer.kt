@@ -1,6 +1,7 @@
 package design_patterns
 
 /**
+ *
  * pattern: Observer
  *
  * using: used when we need to subscribe to changes of some object
@@ -16,7 +17,6 @@ fun interface Observer {
 
 /**
  * the interface of the object whose changes we will listen to
- *
  */
 interface Observable {
     fun observe(observer: Observer)
@@ -26,7 +26,6 @@ interface Observable {
 
 /**
  * contains some data, when it changes we will notify observers
- *
  */
 class PonyList : Observable {
 

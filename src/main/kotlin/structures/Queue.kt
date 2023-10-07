@@ -3,6 +3,7 @@ package structures
 import kotlin.collections.ArrayList
 
 /**
+ *
  * data structure: queue
  *
  * description: the queue is organized on a FIFO basis (first in, first out), all operations are performed in O(1),
@@ -13,9 +14,7 @@ import kotlin.collections.ArrayList
 interface Queue<T> {
 
     /**
-     * adding to the front of the queue
-     *
-     * @param item - added element
+     * adding element [item] to the front of the queue
      */
     fun offer(item: T)
 
@@ -48,27 +47,22 @@ interface Queue<T> {
     fun poll() : T?
 
     /**
-     *
-     * @return returns true if the queue is empty
+     * returns true if the queue is empty
      */
     fun isEmpty() : Boolean
 
     /**
      * clears the queue
-     *
      */
     fun clear()
 
     /**
-     * removes an element from the middle of the queue
-     *
-     * @return returns true if the element was successfully removed
+     * removes an element from the middle of the queue and returns true if the element was successfully removed
      */
     fun remove(item: T) : Boolean
 
     /**
      * implementation using dynamic ArrayList
-     *
      */
     class ArrayListQueue<T> : Queue<T> {
         private val data = ArrayList<T>()
@@ -100,7 +94,6 @@ interface Queue<T> {
 
     /**
      * implementation using linked list LinkedList
-     *
      */
     class LinkedListQueue<T> : Queue<T> {
         private val data = java.util.LinkedList<T>()

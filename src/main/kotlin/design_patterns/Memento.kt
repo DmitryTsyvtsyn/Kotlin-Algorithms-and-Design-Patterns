@@ -13,9 +13,7 @@ package design_patterns
 class Bundle(val str: String)
 
 /**
- *
  * Android system emulating
- *
  */
 class AndroidSystem {
     private var bundle: Bundle = Bundle("")
@@ -28,9 +26,7 @@ class AndroidSystem {
 }
 
 /**
- *
  * TextView is an Android component that draws text on the screen
- *
  */
 class TextView1 {
     private var text: String = ""

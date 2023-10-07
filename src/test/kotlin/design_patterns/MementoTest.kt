@@ -3,27 +3,27 @@ package design_patterns
 import org.junit.Test
 import org.junit.jupiter.api.Assertions
 
-class Memento {
+class MementoTest {
 
     @Test
     fun test() {
         // start Android system
-        val android = AndroidSystem()
+        val androidOS = AndroidSystem()
 
         val greetingText = TextView1()
         greetingText.setText(greeting)
         greetingText.draw()
 
-        // rotating Android device (recreating Application components)
+        // rotating Android device (recreating application components)
         // saving state
-        android.saveBundle(greetingText.onSaveInstanceState())
+        androidOS.saveBundle(greetingText.onSaveInstanceState())
 
         // the state of the text was lost, but we saved it
         greetingText.setText("")
 
         // Android device has already rotated
         // restoring state
-        greetingText.onRestoreInstanceState(android.restoreBundle())
+        greetingText.onRestoreInstanceState(androidOS.restoreBundle())
 
         Assertions.assertEquals(greeting, greetingText.text())
     }

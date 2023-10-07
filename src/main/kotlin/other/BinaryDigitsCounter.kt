@@ -1,21 +1,21 @@
 package other
 
 /**
+ *
  * This algorithm counts the number of ones and zeros in a binary string
  * and implemented on a finite state machine
  *
  */
+
 class BinaryDigitsCounter {
 
     /**
      * Stores the result of the algorithm
-     *
      */
     data class Result(private val ones: Int = 0, private val zeros: Int = 0)
 
     /**
      * Represents two states
-     *
      */
     private enum class State {
         ONE, ZERO

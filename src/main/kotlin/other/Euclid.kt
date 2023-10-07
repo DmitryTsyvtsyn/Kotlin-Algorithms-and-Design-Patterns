@@ -9,11 +9,7 @@ package other
 class Euclid {
 
     /**
-     *
-     * finds the greatest common divisor of two numbers
-     *
-     * @return returns the greatest common divisor
-     *
+     * finds the greatest common divisor of two numbers and returns it
      */
     fun compute(num1: Int, num2: Int) : Int {
         var copyNum1 = num1

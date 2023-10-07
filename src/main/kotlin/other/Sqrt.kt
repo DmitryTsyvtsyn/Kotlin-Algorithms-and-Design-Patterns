@@ -3,16 +3,13 @@ package other
 /**
  * Algorithm for finding the square root of a number
  *
- * Wikipedia: https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%BD%D0%B0%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BA%D0%BE%D1%80%D0%BD%D1%8F_n-%D0%BD%D0%BE%D0%B9_%D1%81%D1%82%D0%B5%D0%BF%D0%B5%D0%BD%D0%B8
+ * Wikipedia: https://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Heron's_method
  */
 
 class Sqrt {
 
     /**
-     * calculates the root of a number
-     *
-     * @number - number
-     * @return returns the root of a number
+     * calculates the root of a number and returns result
      */
     fun compute(number: Double) : Double {
         var value = number / 2

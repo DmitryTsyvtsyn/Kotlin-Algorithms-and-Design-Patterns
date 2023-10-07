@@ -3,6 +3,7 @@ package other
 import java.math.BigInteger
 
 /**
+ *
  * This algorithm is taken from Google Guava library
  *
  */
@@ -33,7 +34,7 @@ class FactorialAdvanced {
         1L * 2 * 3 * 4 * 5 * 6 * 7 * 8 * 9 * 10 * 11 * 12 * 13 * 14 * 15 * 16 * 17 * 18 * 19 * 20
     )
 
-    fun compute(n: Int): BigInteger? {
+    fun compute(n: Int): BigInteger {
         if (n <= 0) {
             return BigInteger.ZERO
         }
@@ -43,14 +44,14 @@ class FactorialAdvanced {
         }
 
         // Pre-allocate space for our list of intermediate BigIntegers.
-        val approxSize = divide(n * log2Celling(n), java.lang.Long.SIZE)
+        val approxSize = divide(n * log2Celling(n), Long.SIZE_BITS)
         val bigNumbers = ArrayList<BigInteger>(approxSize)
 
         // Start from the pre-computed maximum long factorial.
         val startingNumber = factorials.size
         var number = factorials[startingNumber - 1]
         // Strip off 2s from this value.
-        var shift = java.lang.Long.numberOfTrailingZeros(number)
+        var shift = number.countTrailingZeroBits()
         number = number shr shift
 
         // Use floor(log2(num)) + 1 to prevent overflow of multiplication.
@@ -67,13 +68,13 @@ class FactorialAdvanced {
                 bits++
             }
             // Get rid of the 2s in num.
-            val tz = java.lang.Long.numberOfTrailingZeros(num.toLong())
+            val tz = num.toLong().countTrailingZeroBits()
             val normalizedNum = (num shr tz).toLong()
             shift += tz
             // Adjust floor(log2(num)) + 1.
             val normalizedBits = bits - tz
             // If it won't fit in a long, then we store off the intermediate product.
-            if (normalizedBits + numberBits >= java.lang.Long.SIZE) {
+            if (normalizedBits + numberBits >= Long.SIZE_BITS) {
                 bigNumbers.add(BigInteger.valueOf(number))
                 number = 1
                 numberBits = 0
@@ -103,7 +104,7 @@ class FactorialAdvanced {
         if (rem == 0) {
             return div
         }
-        val signedNumber = 1 or (number xor divider shr Integer.SIZE - 1)
+        val signedNumber = 1 or (number xor divider shr Int.SIZE_BITS - 1)
         val increment = signedNumber > 0
         return if (increment) div + signedNumber else div
     }
@@ -123,18 +124,16 @@ class FactorialAdvanced {
     }
 
     /**
-     * Returns the base-2 logarithm of number, rounded according to the celling.
-     *
+     * returns the base-2 logarithm of number, rounded according to the celling.
      */
     private fun log2Celling(number: Int): Int {
-        return Integer.SIZE - Integer.numberOfLeadingZeros(number - 1)
+        return Int.SIZE_BITS - (number - 1).countLeadingZeroBits()
     }
 
     /**
-     * Returns the base-2 logarithm of number rounded according to the floor.
-     *
+     * returns the base-2 logarithm of number rounded according to the floor.
      */
     private fun log2Floor(number: Long): Int {
-        return java.lang.Long.SIZE - 1 - java.lang.Long.numberOfLeadingZeros(number)
+        return Long.SIZE_BITS - 1 - number.countLeadingZeroBits()
     }
 }

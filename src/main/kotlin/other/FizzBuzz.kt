@@ -13,9 +13,7 @@ package other
 class FizzBuzz {
 
     /**
-     * determines what to say for a number in the FizzBuzz game
-     *
-     * @return returns Fizz, Buzz, FizzBuzz or number
+     * determines what to say for a number in the FizzBuzz game and returns Fizz, Buzz, FizzBuzz or number
      */
     fun compute(number: Int) : String {
         return when {

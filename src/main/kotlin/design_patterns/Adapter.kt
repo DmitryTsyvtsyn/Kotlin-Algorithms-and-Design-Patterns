@@ -1,11 +1,13 @@
 package design_patterns
 
 /**
+ *
  * pattern: Adapter
  *
  * using: used when we cannot directly use the functionality of an object
  *
  * description: to use the functionality of an object, a special class is created, which is called an adapter
+ *
  */
 
 interface Adapter<T> {
@@ -14,7 +16,7 @@ interface Adapter<T> {
 }
 
 /**
- * here is a simplified imitation of RecyclerView component from android
+ * here is a simplified imitation of RecyclerView component from Android
  */
 class RecyclerView<T> {
 
@@ -25,9 +27,7 @@ class RecyclerView<T> {
     }
 
     /**
-     * renders elements from the adapter
-     *
-     * @return returns a list of elements to test
+     * renders elements from the adapter and returns a list of elements to test
      */
     fun draw() : List<T> {
         val items = mutableListOf<T>()

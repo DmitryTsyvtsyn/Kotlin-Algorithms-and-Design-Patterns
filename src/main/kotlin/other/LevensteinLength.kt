@@ -11,11 +11,7 @@ import java.lang.Integer.min
 class LevenshteinLength {
 
     /**
-     *
      * determines the Levenshtein distance for two strings and returns it
-     *
-     * @return returns the Levenshtein distance for two strings
-     *
      */
     fun compute(str1: String, str2: String) : Int {
         val matrix = Array(str1.length + 1) {

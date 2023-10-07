@@ -7,38 +7,22 @@ package search
  * amount of memory: log(n) - recursion stack
  */
 
-class BinarySearchRecursive<T : Comparable<T>> : Search<T>  {
+class BinarySearchRecursive<T : Comparable<T>>  {
 
     /**
-     * проверяет присутствие элемента в массиве
-     * возвращает индекс искомого элемента, в противном случае -1
-     *
-     * @array - отсортированный массив
-     * @element - искомый элемент
+     * searches for an element [element] in an array [array] and returns the index of the searched element or -1
      */
-    override fun search(array: Array<T>, element: T): Int {
+    fun search(array: Array<T>, element: T): Int {
         return searchRecursive(array, 0, array.size - 1, element)
     }
 
     /**
-     * проверяет присутствие элемента в массиве
-     * возвращает true или false
-     *
-     * @array - отсортированный массив
-     * @element - искомый элемент
+     * checks if an element [element] is in an array [array] and returns true if the element is present in the array, false otherwise
      */
-    override fun exists(array: Array<T>, element: T): Boolean {
+    fun exists(array: Array<T>, element: T): Boolean {
         return searchRecursive(array, 0, array.size - 1, element) != -1
     }
 
-    /**
-     * возвращает индекс искомого элемента, в противном случае -1
-     *
-     * @array - отсортированный массив
-     * @left - левая граница
-     * @right - правая граница
-     * @element - искомый элемент
-     */
     private tailrec fun searchRecursive(array: Array<T>, left: Int, right: Int, element: T) : Int {
         if (left <= right) {
             val middle = left + (right - left) / 2

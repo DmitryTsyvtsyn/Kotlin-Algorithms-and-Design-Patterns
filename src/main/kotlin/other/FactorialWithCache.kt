@@ -1,9 +1,11 @@
 package other
 
 /**
+ *
  * Algorithm for finding the factorial of a positive number n
  *
  * optimization: caching previous factorial values
+ *
  */
 
 class FactorialWithCache {

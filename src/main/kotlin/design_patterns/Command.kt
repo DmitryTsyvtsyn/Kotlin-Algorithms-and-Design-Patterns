@@ -1,11 +1,13 @@
 package design_patterns
 
 /**
+ *
  * pattern: Command
  *
  * description: it's a behavioral pattern that allows you to wrap requests or simple operations in separate objects.
  *
  * P.S. Kotlin variant of this pattern is shown in tests
+ *
  */
 
 interface ArithmeticCommand {

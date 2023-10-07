@@ -4,6 +4,7 @@ import java.lang.IllegalArgumentException
 import kotlin.collections.ArrayList
 
 /**
+ *
  * data structure: stack
  *
  * description: the stack uses the LIFO principle (last in, first out), all operations are performed in O(1) time
@@ -13,33 +14,27 @@ import kotlin.collections.ArrayList
 interface Stack<T> {
 
     /**
-     * adds an element to the top of the stack
-     *
-     * @param item - element
+     * adds an element [item] to the top of the stack
      */
     fun push(item: T)
 
     /**
      * removes the element at the top of the stack and returns it
-     *
      */
     fun pop() : T
 
     /**
      * returns the element at the top of the stack without removing
-     *
      */
     fun peek() : T
 
     /**
      * returns true if the stack is empty
-     *
      */
     fun isEmpty() : Boolean
 
     /**
      * clears the stack
-     *
      */
     fun clear()
 
@@ -79,7 +74,7 @@ interface Stack<T> {
     /**
      * linked list implementation
      *
-     * @param T - тип элементов стэка
+     * @param T - stack element type
      */
     class LinkedListStack<T> : Stack<T> {
         private val data = java.util.LinkedList<T>()

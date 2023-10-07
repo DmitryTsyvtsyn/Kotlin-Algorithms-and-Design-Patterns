@@ -1,6 +1,7 @@
 package other
 
 /**
+ *
  * Algorithm for finding the factorial of a positive number n
  *
  */
@@ -41,9 +42,8 @@ class Factorial {
 
     /**
      * @see <a href="https://kotlinlang.org/docs/functions.html#tail-recursive-functions">tailrec functions</a>
-     *
      */
-    tailrec fun computeRecursiveWithKotlinOptimization(number: Int) : Int =
-        if (number <= 1) 1 else number * computeRecursiveWithKotlinOptimization(number - 1)
+    tailrec fun computeRecursiveWithKotlinOptimization(number: Int, result: Int = 1) : Int =
+        if (number <= 1) result else computeRecursiveWithKotlinOptimization(number - 1, result * number)
 
 }

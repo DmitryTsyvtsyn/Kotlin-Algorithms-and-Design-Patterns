@@ -3,6 +3,7 @@ package other
 import java.lang.IllegalArgumentException
 
 /**
+ *
  * Algorithm for finding the minimum value from a list
  *
  */
@@ -10,8 +11,7 @@ import java.lang.IllegalArgumentException
 class Min<T : Comparable<T>> {
 
     /**
-     *
-     * @return returns the minimum element from the list
+     * returns the minimum element from the list
      */
     fun compute(items: List<T>) : T {
         if (items.isEmpty()) {
@@ -27,8 +27,7 @@ class Min<T : Comparable<T>> {
     }
 
     /**
-     *
-     * @return returns the minimum element from the list recursively
+     * returns the minimum element from the list recursively
      */
     fun computeRecursive(items: List<T>) : T {
         if (items.size == 1) {

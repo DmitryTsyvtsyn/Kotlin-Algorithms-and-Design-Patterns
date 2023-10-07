@@ -1,11 +1,13 @@
 package design_patterns
 
 /**
+ *
  * pattern: Builder
  *
  * using: used to create complex objects
  *
  * description: to create an object, an auxiliary class Builder is used, which has methods for changing the fields of our main class.
+ *
  */
 
 
@@ -33,28 +35,28 @@ class Pony1 {
     }
 
     class Builder {
-            private var name: String = ""
-            private var family: String = ""
-            private var cutieMark: String = ""
-            private var city: String = ""
+        private var name: String = ""
+        private var family: String = ""
+        private var cutieMark: String = ""
+        private var city: String = ""
 
-            fun changeName(name: String) = apply {
-                this.name = name
-            }
+        fun changeName(name: String) = apply {
+            this.name = name
+        }
 
-            fun changeFamily(family: String) = apply {
-                this.family = family
-            }
+        fun changeFamily(family: String) = apply {
+            this.family = family
+        }
 
-            fun changeCutieMark(cutieMark: String) = apply {
-                this.cutieMark = cutieMark
-            }
+        fun changeCutieMark(cutieMark: String) = apply {
+            this.cutieMark = cutieMark
+        }
 
-            fun changeCity(city: String) = apply {
-                this.city = city
-            }
+        fun changeCity(city: String) = apply {
+            this.city = city
+        }
 
-            fun build() = Pony1(name, family, cutieMark, city)
+        fun build() = Pony1(name, family, cutieMark, city)
 
     }
 

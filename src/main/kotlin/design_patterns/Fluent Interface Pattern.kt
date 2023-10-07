@@ -1,6 +1,7 @@
 package design_patterns
 
 /**
+ *
  * pattern: Fluent Interface
  *
  * using: used to implement chaining methods

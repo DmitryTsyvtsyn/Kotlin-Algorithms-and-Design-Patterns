@@ -1,7 +1,5 @@
 package design_patterns
 
-import java.util.*
-
 /**
  *
  * An abstract factory is a generative design pattern that allows

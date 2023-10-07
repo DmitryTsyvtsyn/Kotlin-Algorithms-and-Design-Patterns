@@ -15,20 +15,16 @@ enum class BlockFactor {
 }
 
 /**
- *
  * I decided to give an analogy from the Minecraft game.
  * In this game there are blocks that can be broken with a stone pickaxe, iron and diamond.
  * For example: diamond may mine by iron and diamond pickaxes unlike cobblestone, which is mined by any
- *
  */
 abstract class Block(private val factor: BlockFactor) {
     fun mayMine(factor: BlockFactor) = this.factor.ordinal <= factor.ordinal
 }
 
 /**
- *
  * blocks from the game
- *
  */
 class StoneBlock: Block(BlockFactor.ONE)
 class DiamondBlock: Block(BlockFactor.TWO)
@@ -42,7 +38,6 @@ abstract class Pickaxe(private val factor: BlockFactor) {
     }
 
     /**
-     *
      * we mine the block, if it doesn't work, we take another pickaxe, if there is one
      *
      * @return return true if a pickaxe can mine
@@ -57,9 +52,7 @@ abstract class Pickaxe(private val factor: BlockFactor) {
 }
 
 /**
- *
  * pickaxes from the game
- *
  */
 class StonePickaxe: Pickaxe(BlockFactor.ONE)
 

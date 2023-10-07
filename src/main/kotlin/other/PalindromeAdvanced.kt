@@ -9,11 +9,7 @@ package other
 class PalindromeAdvanced(private val text: String) {
 
     /**
-     *
-     * checks a string for a palindrome
-     *
-     * @return returns true if the string is a palindrome
-     *
+     * checks a string for a palindrome and returns true if the string is a palindrome
      */
     fun isYes() : Boolean {
         if (text.length <= 1) {
@@ -28,11 +24,7 @@ class PalindromeAdvanced(private val text: String) {
     }
 
     /**
-     *
-     * checks if a string is not a palindrome
-     *
-     * @return returns true if the string is not a palindrome
-     *
+     * checks if a string is not a palindrome and returns true if the string is not a palindrome
      */
     fun isNot() = !isYes()
 

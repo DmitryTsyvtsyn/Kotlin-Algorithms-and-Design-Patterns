@@ -1,6 +1,7 @@
 package design_patterns
 
 /**
+ *
  * pattern: Singleton
  *
  * using: used when we need to have the same object throughout

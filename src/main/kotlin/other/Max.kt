@@ -3,6 +3,7 @@ package other
 import java.lang.IllegalArgumentException
 
 /**
+ *
  * Algorithm for finding the maximum value from a list
  *
  */
@@ -10,9 +11,7 @@ import java.lang.IllegalArgumentException
 class Max<T : Comparable<T>> {
 
     /**
-     *
-     * @return returns the maximum element from the list
-     *
+     * returns the maximum element from the list
      */
     fun compute(items: List<T>) : T {
         if (items.isEmpty()) {
@@ -28,9 +27,7 @@ class Max<T : Comparable<T>> {
     }
 
     /**
-     *
-     * @return returns the maximum element from the list recursively
-     *
+     * returns the maximum element from the list recursively
      */
     fun computeRecursive(items: List<T>) : T {
         if (items.size == 1) {
