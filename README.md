@@ -2,8 +2,6 @@
 
 # Kotlin Algorithms and Design Patterns
 
-<a href="/README_ru.md" target="_blank"><img src="/assets/russian_version.png" width="300px" /></a>
-
 This repository lists the most common algorithms, data structures, and design patterns written in the Kotlin programming language.
 
 All code is divided into separate packages:
