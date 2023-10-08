@@ -3,12 +3,12 @@ package structures
 import java.lang.IllegalStateException
 
 /**
+ *
  * data structure: simple java.util.ArrayList implementation
  *
  * description: wrapper over a regular array, in which indexes are checked and
  * when the array overflows, its size increases dynamically
  *
- * @constructor
  * @property capacity initial array size
  *
  * P.S. Kotlin lists use under the hood java.util.ArrayList
@@ -22,11 +22,7 @@ class MyArrayList(private var capacity: Int = 10) {
     private var index = 0
 
     /**
-     * add a new element in array
-     *
-     * if the array cannot accommodate the new element, then its size is dynamically increased
-     *
-     * @param value - element
+     * adds a new element [value] in array, if the array cannot accommodate the new element, then its size is dynamically increased
      */
     fun add(value: Int) {
         if (index < data.size - 1) {
@@ -38,9 +34,7 @@ class MyArrayList(private var capacity: Int = 10) {
     }
 
     /**
-     * removes an element from the array and shifts subsequent elements in its place
-     *
-     * @param value - element
+     * removes an element [value] from the array and shifts subsequent elements in its place
      */
     fun remove(value: Int) : Boolean {
         val foundedIndex = data.indexOf(value)
@@ -54,21 +48,12 @@ class MyArrayList(private var capacity: Int = 10) {
     }
 
     /**
-     * checks for the existence of an element in an array
-     *
-     * @param value - element
-     *
-     * @return returns true if the element is present in the array
+     * checks for the existence of an element [value] in an array, returns true if the element is present in the array
      */
     fun contains(value: Int) = data.contains(value)
 
     /**
-     * sets the new element value at the specified index
-     *
-     * @param index - element index
-     * @param value - the new value of the element
-     *
-     * @return returns true if the element was successfully modified
+     * sets the new element [value] at the specified index [index], returns true if the element was successfully modified
      */
     fun set(index: Int, value: Int) : Boolean {
         if (isBound(index)) {
@@ -78,13 +63,8 @@ class MyArrayList(private var capacity: Int = 10) {
         return false
     }
 
-
     /**
-     * returns the value of the element by index, or throws an exception if the index is invalid
-     *
-     * @param index - element index
-     *
-     * @return returns the value of an element by index
+     * returns the value of the element by index [index], or throws an exception if the index is invalid
      */
     fun get(index: Int) : Int {
         if (isBound(index)) {
@@ -95,15 +75,12 @@ class MyArrayList(private var capacity: Int = 10) {
     }
 
     /**
-     *
-     * @return returns the size of the array
+     * returns the size of the array
      */
     fun capacity() = capacity
 
     /**
-     * check for correct index
-     *
-     * @return returns true if the index is within the range of available indexes
+     * checks for correct index, returns true if the index is within the range of available indexes
      */
     private fun isBound(i: Int) = i in 0 until index
 
@@ -111,7 +88,6 @@ class MyArrayList(private var capacity: Int = 10) {
 
     /**
      * increases the size of an array when there is not enough to add new elements
-     *
      */
     private fun increaseSize() {
         capacity *= 2

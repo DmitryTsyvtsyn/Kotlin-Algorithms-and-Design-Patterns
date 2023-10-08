@@ -14,33 +14,33 @@ import kotlin.collections.ArrayList
 interface Queue<T> {
 
     /**
-     * adding element [item] to the front of the queue
+     * adds element [item] to the front of the queue
      */
     fun offer(item: T)
 
     /**
-     * returns the element from the front of the queue
+     * returns the element from the front of the queue,
      *
      * if the queue is empty, throws an IllegalStateException
      */
     fun element() : T
 
     /**
-     * returns the element from the front of the queue
+     * returns the element from the front of the queue,
      *
      * if the queue is empty it will return null
      */
     fun peek() : T?
 
     /**
-     * removes and returns an element from the front of the queue
+     * removes and returns an element from the front of the queue,
      *
      * if the queue is empty, throws an IllegalStateException
      */
     fun remove() : T
 
     /**
-     * removes and returns an element from the front of the queue
+     * removes and returns an element from the front of the queue,
      *
      * if the queue is empty it will return null
      */
@@ -122,6 +122,5 @@ interface Queue<T> {
             throw IllegalStateException(msg)
         }
     }
-
 
 }

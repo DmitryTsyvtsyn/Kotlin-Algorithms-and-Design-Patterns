@@ -8,7 +8,6 @@ package sorting
  * amount of memory: 2 * n
  */
 
-
 fun Array<Int>.radixSort() {
     val array = this
     val array1 = Array(size) { 0 }

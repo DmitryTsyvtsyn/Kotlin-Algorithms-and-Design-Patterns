@@ -1,6 +1,7 @@
 package structures
 
 /**
+ *
  * data structure: doubly linked list
  *
  * description: in a doubly linked list, each element stores a link to the previous and next elements
@@ -8,6 +9,7 @@ package structures
  * time to insert an element at the beginning and end of the list: O(1)
  * insertion time in the middle by index: O(n)
  * delete: O(n)
+ *
  */
 
 class DoubleLinkedList<T>(
@@ -34,11 +36,9 @@ class DoubleLinkedList<T>(
     /**
      * doubly linked list node
      *
-     * @constructor
      * @property value - node value
      * @property prev - link to the previous element (assuming the element is not the first one)
      * @property next - link to the next element (assuming the element is not the last one)
-     *
      */
     class Node<T>(
         private val value: T,
@@ -64,15 +64,12 @@ class DoubleLinkedList<T>(
     }
 
     /**
-     *
-     * @return returns the number of elements in the list
+     * returns the number of elements in the list
      */
     fun size() = count
 
     /**
-     * a simple function that converts a list into a normal Kotlin list for visual representation
-     *
-     * @return returns Kotlin a list of elements
+     * converts a list into a normal Kotlin list for visual representation, returns Kotlin a list of elements
      */
     fun toList() : List<T> {
         if (first == null) return listOf()
@@ -87,11 +84,7 @@ class DoubleLinkedList<T>(
     }
 
     /**
-     * checks if an element is in the list
-     *
-     * @param value - element value
-     *
-     * @return returns true if the value exists in the list
+     * checks if an element [value] is in the list, returns true if the value exists in the list
      */
     fun contains(value: T) : Boolean {
         if (first == null) return false
@@ -107,18 +100,12 @@ class DoubleLinkedList<T>(
     }
 
     /**
-     * checking if the list is empty
-     *
-     * @return returns true if the list is empty
+     * checks if the list is empty, returns true if the list is empty
      */
     fun isEmpty() = first == null
 
     /**
-     * removes an element from the list
-     *
-     * @param value - element value
-     *
-     * @return returns true if the element was successfully removed
+     * removes an element [value] from the list, returns true if the element was successfully removed
      */
     fun remove(value: T) : Boolean {
         if (first == null) return false
@@ -151,12 +138,7 @@ class DoubleLinkedList<T>(
     }
 
     /**
-     * add element by index
-     *
-     * @param index - the index where the new element should be added
-     * @param value - the value of the new element
-     *
-     * @return returns true if the element was successfully added at the specified index
+     * adds element [value] by index [index], returns true if the element was successfully added at the specified index
      */
     fun add(index: Int, value: T) : Boolean {
 
@@ -185,15 +167,12 @@ class DoubleLinkedList<T>(
     }
 
     /**
-     * similar addLast method
-     *
+     * similar addLast [addLast] method
      */
     fun add(value: T) = addLast(value)
 
     /**
-     * adds an element to the beginning of the list
-     *
-     * @param value - element value
+     * adds an element [value] to the beginning of the list
      */
     fun addFirst(value: T) {
         val firstNode = first
@@ -212,9 +191,7 @@ class DoubleLinkedList<T>(
     }
 
     /**
-     * adds an element to the end of the list
-     *
-     * @param value - element value
+     * adds an element [value] to the end of the list
      */
     fun addLast(value: T) {
         val lastNode = last

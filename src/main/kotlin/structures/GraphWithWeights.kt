@@ -1,31 +1,24 @@
 package structures
 
 /**
- * helper class for defining graph weights
- */
-data class VertexConnection<T>(val vertex: Vertex<T>, val cost: Int)
-
-/**
+ *
  * data structure: directed graph with weights
  *
  * description: made up of vertices connected by edges that have direction and weight
  *
  */
+
 class GraphWithWeights<T> {
 
     private val data = linkedMapOf<Vertex<T>, MutableList<VertexConnection<T>>>()
 
     /**
-     * adds a new vertex
-     *
-     * @param value - the value of the new vertex
+     * adds a new vertex with a value [value]
      */
     fun addVertex(value: T) = data.putIfAbsent(Vertex(value), mutableListOf())
 
     /**
-     * removes a vertex from a graph
-     *
-     * @param value - vertex value
+     * removes a vertex by value [value] from a graph
      */
     fun removeVertex(value: T) {
         val removingVertex = Vertex(value)
@@ -36,10 +29,7 @@ class GraphWithWeights<T> {
     }
 
     /**
-     * adds an edge between two vertices
-     *
-     * @param value1 - first vertex value
-     * @param value2 - second vertex value
+     * adds an edge between two vertices, that have values [value1], [value2]
      */
     fun addEdge(value1: T, value2: T, cost: Int) {
         val vertex1 = Vertex(value1)
@@ -48,10 +38,7 @@ class GraphWithWeights<T> {
     }
 
     /**
-     * removes an edge between two vertices
-     *
-     * @param value1 - first vertex value
-     * @param value2 - second vertex value
+     * removes an edge between two vertices, that have values [value1], [value2]
      */
     fun removeEdge(value1: T, value2: T) {
         val vertex1 = Vertex(value1)
@@ -60,16 +47,12 @@ class GraphWithWeights<T> {
     }
 
     /**
-     * returns the associated vertices and their weights with the given vertex
-     *
-     * @param value - vertex value
+     * returns the associated vertices and their weights with the given vertex value [value]
      */
     fun connectedVertexesWithWeights(value: T) = data[Vertex(value)] ?: listOf()
 
     /**
-     * implementation of Dijkstra's algorithm
-     *
-     * returns pairs of a vertex and the minimum weight needed to get to that vertex (the starting vertex is the first added)
+     * implementation of Dijkstra's algorithm, returns pairs of a vertex and the minimum weight needed to get to that vertex (the starting vertex is the first added)
      */
     fun dijkstraAlgorithm(): Map<Vertex<T>, Int> {
         val unvisitedVertexes = linkedMapOf<Vertex<T>, Int>()
@@ -105,3 +88,8 @@ class GraphWithWeights<T> {
     }
 
 }
+
+/**
+ * helper class for defining graph weights
+ */
+data class VertexConnection<T>(val vertex: Vertex<T>, val cost: Int)

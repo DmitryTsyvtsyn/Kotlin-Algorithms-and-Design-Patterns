@@ -12,7 +12,6 @@ import kotlin.random.Random
  * amount of memory: n
  */
 
-
 fun <T : Comparable<T>> Array<T>.quickSort(start: Int = 0, end: Int = size - 1) {
     val array = this
 

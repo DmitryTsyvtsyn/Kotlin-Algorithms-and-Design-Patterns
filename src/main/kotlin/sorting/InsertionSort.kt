@@ -10,7 +10,6 @@ package sorting
  * amount of time: 1
  */
 
-
 fun <T : Comparable<T>> Array<T>.insertionSort() {
     val array = this
     for (i in 1 until size) {

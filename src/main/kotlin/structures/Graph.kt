@@ -4,11 +4,7 @@ import java.util.LinkedList
 import kotlin.collections.LinkedHashSet
 
 /**
- * graph vertex model
- */
-data class Vertex<T>(val value: T)
-
-/**
+ *
  * data structure: undirected graph without weights
  *
  * description: made up of vertices connected by edges
@@ -20,16 +16,12 @@ class Graph<T> {
     private val data = mutableMapOf<Vertex<T>, MutableList<Vertex<T>>>()
 
     /**
-     * adds a new vertex
-     *
-     * @param value - the value of the new vertex
+     * adds a new vertex with a value [value]
      */
     fun addVertex(value: T) = data.putIfAbsent(Vertex(value), mutableListOf())
 
     /**
-     * removes a vertex from a graph
-     *
-     * @param value - vertex value
+     * removes a vertex by value [value] from a graph
      */
     fun removeVertex(value: T) {
         val removingVertex = Vertex(value)
@@ -40,10 +32,7 @@ class Graph<T> {
     }
 
     /**
-     * adds an edge between two vertices
-     *
-     * @param value1 - first vertex value
-     * @param value2 - second vertex value
+     * adds an edge between two vertices, that have values [value1], [value2]
      */
     fun addEdge(value1: T, value2: T) {
         val vertex1 = Vertex(value1)
@@ -53,10 +42,7 @@ class Graph<T> {
     }
 
     /**
-     * removes an edge between two vertices
-     *
-     * @param value1 - first vertex value
-     * @param value2 - second vertex value
+     * removes an edge between two vertices, that have values [value1], [value2]
      */
     fun removeEdge(value1: T, value2: T) {
         val vertex1 = Vertex(value1)
@@ -66,16 +52,12 @@ class Graph<T> {
     }
 
     /**
-     * returns the associated vertices with the given vertex
-     *
-     * @param value - vertex value
+     * returns the associated vertices with the given vertex value [value]
      */
     fun connectedVertexes(value: T) = data[Vertex(value)] ?: listOf()
 
     /**
-     * traversal of the graph in depth
-     *
-     * @return returns all vertices of the graph
+     * traversal of the graph in depth, returns all vertices of the graph
      */
     fun depthFirstTraversal() : List<Vertex<T>> {
         val visited = LinkedHashSet<Vertex<T>>()
@@ -93,9 +75,7 @@ class Graph<T> {
     }
 
     /**
-     * traversal of the graph in breadth
-     *
-     * @return returns all vertices of the graph
+     * traversal of the graph in breadth, returns all vertices of the graph
      */
     fun breadthFirstTraversal() : List<Vertex<T>> {
         val visited = LinkedHashSet<Vertex<T>>()
@@ -117,3 +97,7 @@ class Graph<T> {
 
 }
 
+/**
+ * graph vertex model
+ */
+data class Vertex<T>(val value: T)

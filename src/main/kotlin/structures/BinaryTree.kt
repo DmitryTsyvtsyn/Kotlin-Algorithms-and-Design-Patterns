@@ -31,7 +31,7 @@ class BinaryTree {
     private var root: Node? = null
 
     /**
-     * add a new element [value] to the tree
+     * adds a new element [value] to the tree
      */
     fun add(value: Int) {
         fun addRec(current: Node?, value: Int) : Node {
@@ -50,12 +50,12 @@ class BinaryTree {
     }
 
     /**
-     * check the tree for emptiness and returns true if the tree does not contain any nodes
+     * checks the tree for emptiness and returns true if the tree does not contain any nodes
      */
     fun isEmpty() = root == null
 
     /**
-     * remove an element [value] from the tree
+     * removes an element [value] from the tree
      */
     fun remove(value: Int) {
         fun smallestValue(root: Node) : Int {
@@ -97,7 +97,7 @@ class BinaryTree {
     }
 
     /**
-     * check for the existence of an element [value] in the tree, returns true if the element exists
+     * checks for the existence of an element [value] in the tree, returns true if the element exists
      */
     fun contains(value: Int) : Boolean {
         fun containsRec(current: Node?, value: Int) : Boolean {
@@ -212,11 +212,9 @@ class BinaryTree {
 /**
  * represents a tree node
  *
- * @constructor
  * @property value - node value
  * @property left - left child node
  * @property right - right child node
- *
  */
 class Node(
     private var value: Int,
