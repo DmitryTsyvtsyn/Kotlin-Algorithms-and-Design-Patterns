@@ -82,9 +82,7 @@ Content:
 
 ## Your wishes and ideas
 
-If you are interested in my repository or you have ideas on how to improve it or add something, then let me know in telegram:
-
-<a href="https://t.me/rwcwuwr"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/1024px-Telegram_logo.svg.png" width=160 /></a>
+If you are interested in my repository or you have ideas on how to improve it or add something write: [Telegram](https://t.me/rwcwuwr), [Gmail](mailto:dmitry.kind.2@gmail.com)
 
 ## License
 
