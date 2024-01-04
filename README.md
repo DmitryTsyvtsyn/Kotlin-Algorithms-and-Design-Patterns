@@ -82,7 +82,7 @@ Content:
 
 ## Your wishes and ideas
 
-If you are interested in my repository or you have ideas on how to improve it or add something write: [Telegram](https://t.me/rwcwuwr), [Gmail](mailto:dmitry.kind.2@gmail.com)
+If you are interested in my repository or you have ideas on how to improve it or add something write: [Telegram](https://t.me/dmitry_tsyvtsyn), [Gmail](mailto:dmitry.kind.2@gmail.com)
 
 ## License
 
