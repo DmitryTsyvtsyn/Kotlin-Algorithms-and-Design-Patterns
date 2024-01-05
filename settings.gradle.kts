@@ -1,0 +1,1 @@
+rootProject.name = "Kotlin-Algorithms-and-Design-Patterns"
