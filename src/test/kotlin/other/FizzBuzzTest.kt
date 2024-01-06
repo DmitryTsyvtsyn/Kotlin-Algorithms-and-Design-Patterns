@@ -1,7 +1,7 @@
 package other
 
 import org.junit.Test
-import org.junit.jupiter.api.Assertions.*
+import org.junit.Assert.assertEquals
 
 internal class FizzBuzzTest {
 
@@ -34,4 +34,5 @@ internal class FizzBuzzTest {
         val expected = "1"
         assertEquals(expected, actual)
     }
+
 }

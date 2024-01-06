@@ -1,7 +1,7 @@
 package design_patterns
 
 import org.junit.Test
-import org.junit.jupiter.api.Assertions.*
+import org.junit.Assert.assertEquals
 
 internal class MonostateTest {
 
@@ -20,4 +20,5 @@ internal class MonostateTest {
 
         assertEquals(0, linearLayout.first().textViewCount())
     }
+
 }

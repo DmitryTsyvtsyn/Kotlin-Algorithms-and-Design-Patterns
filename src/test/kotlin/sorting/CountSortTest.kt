@@ -1,7 +1,7 @@
 package sorting
 
 import org.junit.Test
-import org.junit.jupiter.api.Assertions
+import org.junit.Assert.assertEquals
 
 class CountSortTest {
 
@@ -12,7 +12,7 @@ class CountSortTest {
 
         numbers.countSort(0, 5)
 
-        Assertions.assertEquals(expected, numbers.toList())
+        assertEquals(expected, numbers.toList())
     }
 
     @Test
@@ -22,7 +22,7 @@ class CountSortTest {
 
         numbers.countSort(1, 10)
 
-        Assertions.assertEquals(expected, numbers.toList())
+        assertEquals(expected, numbers.toList())
     }
 
     @Test
@@ -32,7 +32,7 @@ class CountSortTest {
 
         numbers.countSort(1, 1000)
 
-        Assertions.assertEquals(expected, numbers.toList())
+        assertEquals(expected, numbers.toList())
     }
 
 }

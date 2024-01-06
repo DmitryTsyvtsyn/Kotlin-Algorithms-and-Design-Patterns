@@ -1,7 +1,7 @@
 package design_patterns
 
 import org.junit.Test
-import org.junit.jupiter.api.Assertions
+import org.junit.Assert.assertEquals
 
 class MementoTest {
 
@@ -25,7 +25,7 @@ class MementoTest {
         // restoring state
         greetingText.onRestoreInstanceState(androidOS.restoreBundle())
 
-        Assertions.assertEquals(greeting, greetingText.text())
+        assertEquals(greeting, greetingText.text())
     }
 
     companion object {

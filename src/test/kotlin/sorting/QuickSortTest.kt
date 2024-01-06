@@ -1,8 +1,7 @@
 package sorting
 
 import org.junit.Test
-import org.junit.jupiter.api.Assertions
-import kotlin.random.Random
+import org.junit.Assert.assertEquals
 
 class QuickSortTest {
 
@@ -13,7 +12,7 @@ class QuickSortTest {
         val actual = expected.reversed().toTypedArray()
         actual.quickSort()
 
-        Assertions.assertEquals(expected, actual.toList())
+        assertEquals(expected, actual.toList())
     }
 
     @Test
@@ -24,7 +23,7 @@ class QuickSortTest {
 
         actual.quickSort()
 
-        Assertions.assertEquals(expected, actual.toList())
+        assertEquals(expected, actual.toList())
     }
 
     @Test
@@ -35,7 +34,7 @@ class QuickSortTest {
         actual.shuffle()
         actual.quickSort()
 
-        Assertions.assertEquals(expected.toList(), actual.toList())
+        assertEquals(expected.toList(), actual.toList())
     }
 
     @Test
@@ -46,7 +45,7 @@ class QuickSortTest {
 
         actual.quickSort()
 
-        Assertions.assertEquals(expected, actual.toList())
+        assertEquals(expected, actual.toList())
     }
 
     @Test
@@ -57,6 +56,7 @@ class QuickSortTest {
 
         actual.quickSort()
 
-        Assertions.assertEquals(expected, actual)
+        assertEquals(expected, actual)
     }
+
 }

@@ -1,9 +1,10 @@
 package design_patterns
 
 import org.junit.Test
-import org.junit.jupiter.api.Assertions.*
+import org.junit.Assert.assertEquals
 
 internal class ObserverTest {
+
     @Test
     fun test() {
         val ponyList = PonyList()
@@ -12,4 +13,5 @@ internal class ObserverTest {
         }
         ponyList.add("Twillight Sparkle")
     }
+
 }

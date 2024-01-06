@@ -1,7 +1,8 @@
 package other
 
 import org.junit.Test
-import org.junit.jupiter.api.Assertions
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNotEquals
 
 internal class SieveOfEratosthenesTest {
 
@@ -10,7 +11,7 @@ internal class SieveOfEratosthenesTest {
         val eratosthenes = SieveOfEratosthenes()
         val actual = eratosthenes.compute(10)
         val expected = listOf(2, 3, 5, 7)
-        Assertions.assertEquals(expected, actual)
+        assertEquals(expected, actual)
     }
 
     @Test
@@ -18,7 +19,7 @@ internal class SieveOfEratosthenesTest {
         val eratosthenes = SieveOfEratosthenes()
         val actual = eratosthenes.compute(5)
         val expected = listOf(4)
-        Assertions.assertNotEquals(expected, actual)
+        assertNotEquals(expected, actual)
     }
 
 }

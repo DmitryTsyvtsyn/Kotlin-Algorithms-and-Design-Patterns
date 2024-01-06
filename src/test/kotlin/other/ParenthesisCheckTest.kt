@@ -1,7 +1,7 @@
 package other
 
 import org.junit.Test
-import org.junit.jupiter.api.Assertions
+import org.junit.Assert.assertEquals
 
 internal class ParenthesisCheckTest {
 
@@ -9,7 +9,7 @@ internal class ParenthesisCheckTest {
 
     @Test
     fun test_default_c_program() {
-        Assertions.assertEquals(true, parenthesisCheck.check())
+        assertEquals(true, parenthesisCheck.check())
     }
 
     @Test
@@ -19,37 +19,37 @@ internal class ParenthesisCheckTest {
                 printf("Hello, World!";
             }
         """.trimIndent()
-        Assertions.assertEquals(false, parenthesisCheck.check(failCode))
+        assertEquals(false, parenthesisCheck.check(failCode))
     }
 
     @Test
     fun test_statement_1() {
         val statement = "(([[]])}".trimIndent()
-        Assertions.assertEquals(false, parenthesisCheck.check(statement))
+        assertEquals(false, parenthesisCheck.check(statement))
     }
 
     @Test
     fun test_statement_2() {
         val statement = "(([[()]])){}{}()".trimIndent()
-        Assertions.assertEquals(true, parenthesisCheck.check(statement))
+        assertEquals(true, parenthesisCheck.check(statement))
     }
 
     @Test
     fun test_statement_3() {
         val statement = "(([[()]])){}{}([)".trimIndent()
-        Assertions.assertEquals(false, parenthesisCheck.check(statement))
+        assertEquals(false, parenthesisCheck.check(statement))
     }
 
     @Test
     fun test_statement_4() {
         val statement = "(([[()]]))("
-        Assertions.assertEquals(false, parenthesisCheck.check(statement))
+        assertEquals(false, parenthesisCheck.check(statement))
     }
 
     @Test
     fun test_statement_5() {
         val statement = "[]{"
-        Assertions.assertEquals(false, parenthesisCheck.check(statement))
+        assertEquals(false, parenthesisCheck.check(statement))
     }
 
 }

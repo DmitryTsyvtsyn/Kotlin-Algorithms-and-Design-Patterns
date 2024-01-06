@@ -1,7 +1,7 @@
 package design_patterns
 
 import org.junit.Test
-import org.junit.jupiter.api.Assertions
+import org.junit.Assert.assertEquals
 
 class ChainOfResponsibilitiesTest {
 
@@ -9,9 +9,9 @@ class ChainOfResponsibilitiesTest {
     fun test_when_we_have_only_stone_pickaxe() {
         val pickaxe = StonePickaxe()
 
-        Assertions.assertEquals(true, pickaxe.mine(StoneBlock()))
-        Assertions.assertEquals(false, pickaxe.mine(DiamondBlock()))
-        Assertions.assertEquals(false, pickaxe.mine(ObsidianBlock()))
+        assertEquals(true, pickaxe.mine(StoneBlock()))
+        assertEquals(false, pickaxe.mine(DiamondBlock()))
+        assertEquals(false, pickaxe.mine(ObsidianBlock()))
     }
 
     @Test
@@ -19,9 +19,9 @@ class ChainOfResponsibilitiesTest {
         val pickaxe = StonePickaxe()
         pickaxe.changeNextPickaxe(IronPickaxe())
 
-        Assertions.assertEquals(true, pickaxe.mine(StoneBlock()))
-        Assertions.assertEquals(true, pickaxe.mine(DiamondBlock()))
-        Assertions.assertEquals(false, pickaxe.mine(ObsidianBlock()))
+        assertEquals(true, pickaxe.mine(StoneBlock()))
+        assertEquals(true, pickaxe.mine(DiamondBlock()))
+        assertEquals(false, pickaxe.mine(ObsidianBlock()))
     }
 
     @Test
@@ -32,10 +32,9 @@ class ChainOfResponsibilitiesTest {
         }
         pickaxe.changeNextPickaxe(ironPickaxe)
 
-        Assertions.assertEquals(true, pickaxe.mine(StoneBlock()))
-        Assertions.assertEquals(true, pickaxe.mine(DiamondBlock()))
-        Assertions.assertEquals(true, pickaxe.mine(ObsidianBlock()))
+        assertEquals(true, pickaxe.mine(StoneBlock()))
+        assertEquals(true, pickaxe.mine(DiamondBlock()))
+        assertEquals(true, pickaxe.mine(ObsidianBlock()))
     }
-
 
 }

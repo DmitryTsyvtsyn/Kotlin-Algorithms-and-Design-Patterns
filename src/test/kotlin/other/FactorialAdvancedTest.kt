@@ -1,7 +1,7 @@
 package other
 
 import org.junit.Test
-import org.junit.jupiter.api.Assertions
+import org.junit.Assert.assertEquals
 
 internal class FactorialAdvancedTest {
 
@@ -10,13 +10,13 @@ internal class FactorialAdvancedTest {
     @Test
     fun test_factorial_30() {
         val actual = factorial.compute(30)
-        Assertions.assertEquals("265252859812191058636308480000000", actual.toString())
+        assertEquals("265252859812191058636308480000000", actual.toString())
     }
 
     @Test
     fun test_factorial_60() {
         val actual = factorial.compute(60)
-        Assertions.assertEquals("8320987112741390144276341183223364380754172606361245952449277696409600000000000000", actual.toString())
+        assertEquals("8320987112741390144276341183223364380754172606361245952449277696409600000000000000", actual.toString())
     }
 
     @Test
@@ -26,7 +26,7 @@ internal class FactorialAdvancedTest {
                 "864000000000000000000000000"
 
         val actual = factorial.compute(100)
-        Assertions.assertEquals(expected, actual.toString())
+        assertEquals(expected, actual.toString())
     }
 
     @Test
@@ -37,7 +37,7 @@ internal class FactorialAdvancedTest {
                 "1904170324062351700858796178922222789623703897374720000000000000000000000000000000000000000000000000"
 
         val actual = factorial.compute(200)
-        Assertions.assertEquals(expected, actual.toString())
+        assertEquals(expected, actual.toString())
     }
 
     @Test
@@ -77,6 +77,7 @@ internal class FactorialAdvancedTest {
                 "000000000000000000000000000000000000000000000000"
 
         val actual = factorial.compute(1000)
-        Assertions.assertEquals(expected, actual.toString())
+        assertEquals(expected, actual.toString())
     }
+
 }

@@ -1,7 +1,7 @@
 package other
 
 import org.junit.Test
-import org.junit.jupiter.api.Assertions.*
+import org.junit.Assert.assertEquals
 
 internal class FactorialTest {
 
@@ -33,6 +33,5 @@ internal class FactorialTest {
         assertEquals(120, factorial.computeRecursiveWithKotlinOptimization(5))
         assertEquals(720, factorial.computeRecursiveWithKotlinOptimization(6))
     }
-
 
 }

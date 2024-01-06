@@ -1,7 +1,7 @@
 package other
 
 import org.junit.Test
-import org.junit.jupiter.api.Assertions.*
+import org.junit.Assert.assertEquals
 
 internal class SwapTest {
 
@@ -46,4 +46,5 @@ internal class SwapTest {
         val expected2 = listOf(2, 1)
         assertEquals(expected2, array.toList())
     }
+
 }

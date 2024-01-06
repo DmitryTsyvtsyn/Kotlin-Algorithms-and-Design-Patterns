@@ -1,7 +1,7 @@
 package other
 
 import org.junit.Test
-import org.junit.jupiter.api.Assertions
+import org.junit.Assert.assertEquals
 
 internal class StringEqualsHashTest {
 
@@ -12,7 +12,7 @@ internal class StringEqualsHashTest {
         val str1 = "Twilight Sparkle"
         val str2 = "Twilight Sparkle"
 
-        Assertions.assertEquals(true, stringEqualsHash.equals(str1, str2))
+        assertEquals(true, stringEqualsHash.equals(str1, str2))
     }
 
     @Test
@@ -20,7 +20,7 @@ internal class StringEqualsHashTest {
         val greeting = "How are you?"
         val pattern = "Happy birthday to me!"
 
-        Assertions.assertEquals(false, stringEqualsHash.equals(greeting, pattern))
+        assertEquals(false, stringEqualsHash.equals(greeting, pattern))
     }
 
 }

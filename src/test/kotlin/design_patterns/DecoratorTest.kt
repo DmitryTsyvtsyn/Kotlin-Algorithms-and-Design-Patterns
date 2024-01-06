@@ -1,9 +1,10 @@
 package design_patterns
 
 import org.junit.Test
-import org.junit.jupiter.api.Assertions
+import org.junit.Assert.assertEquals
 
 class DecoratorTest {
+
     @Test
     fun test() {
         val printer = ExclamationPrinter(
@@ -15,6 +16,7 @@ class DecoratorTest {
                 )
             )
         )
-        Assertions.assertEquals("Hello, World!", printer.printedText())
+        assertEquals("Hello, World!", printer.printedText())
     }
+
 }

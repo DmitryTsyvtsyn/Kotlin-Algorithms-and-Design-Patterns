@@ -1,7 +1,7 @@
 package other
 
 import org.junit.Test
-import org.junit.jupiter.api.Assertions.*
+import junit.framework.TestCase.assertEquals
 
 internal class ReverseArrayTest {
 
@@ -20,4 +20,5 @@ internal class ReverseArrayTest {
         val expected = arrayOf("Apple Jack", "Pinky Pie", "Twillight Sparkle").toList()
         assertEquals(expected, actual)
     }
+
 }

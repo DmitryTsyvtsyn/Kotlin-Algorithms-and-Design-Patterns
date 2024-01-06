@@ -1,8 +1,7 @@
 package sorting
 
 import org.junit.Test
-import org.junit.jupiter.api.Assertions
-import kotlin.random.Random
+import org.junit.Assert.assertEquals
 
 class BubbleSortImprovedTest {
 
@@ -13,7 +12,7 @@ class BubbleSortImprovedTest {
         val actual = expected.reversed().toTypedArray()
         actual.bubbleSortImproved()
 
-        Assertions.assertEquals(expected, actual.toList())
+        assertEquals(expected, actual.toList())
     }
 
     @Test
@@ -24,7 +23,7 @@ class BubbleSortImprovedTest {
 
         actual.bubbleSortImproved()
 
-        Assertions.assertEquals(expected, actual.toList())
+        assertEquals(expected, actual.toList())
     }
 
     @Test
@@ -35,7 +34,7 @@ class BubbleSortImprovedTest {
         actual.shuffle()
         actual.bubbleSortImproved()
 
-        Assertions.assertEquals(expected.toList(), actual.toList())
+        assertEquals(expected.toList(), actual.toList())
     }
 
     @Test
@@ -46,7 +45,7 @@ class BubbleSortImprovedTest {
 
         actual.bubbleSortImproved()
 
-        Assertions.assertEquals(expected, actual.toList())
+        assertEquals(expected, actual.toList())
     }
 
     @Test
@@ -57,7 +56,7 @@ class BubbleSortImprovedTest {
 
         actual.bubbleSortImproved()
 
-        Assertions.assertEquals(expected, actual)
+        assertEquals(expected, actual)
     }
 
 }

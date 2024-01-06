@@ -1,7 +1,7 @@
 package other
 
 import org.junit.Test
-import org.junit.jupiter.api.Assertions.*
+import org.junit.Assert.assertEquals
 
 internal class MinTest {
 
@@ -30,4 +30,5 @@ internal class MinTest {
         val items = listOf(10, 9, 8, 7, 6, 5, 4, 3, 2, 1)
         assertEquals(1, min.computeRecursive(items))
     }
+
 }

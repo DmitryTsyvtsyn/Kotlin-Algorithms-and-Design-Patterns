@@ -1,14 +1,15 @@
 package structures
 
 import org.junit.Test
-import org.junit.jupiter.api.Assertions
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertThrows
 import java.lang.IllegalArgumentException
 
 class MatrixTest {
 
     @Test
     fun `test when number of elements in each row is not the same`() {
-        Assertions.assertThrows(IllegalArgumentException::class.java) {
+        assertThrows(IllegalArgumentException::class.java) {
             matrix {
                 row(1, 2, 3)
                 row(4, 5)
@@ -30,14 +31,14 @@ class MatrixTest {
             row(7, 8, 9)
         }
 
-        Assertions.assertEquals(true, matrix1 == matrix2)
+        assertEquals(true, matrix1 == matrix2)
 
         val matrix3 = matrix {
             row(1, 2, 3)
             row(4, 5, 6)
         }
 
-        Assertions.assertEquals(false, matrix2 == matrix3)
+        assertEquals(false, matrix2 == matrix3)
     }
 
     @Test
@@ -55,7 +56,7 @@ class MatrixTest {
         }
         val actual1 = matrix1 + 2
 
-        Assertions.assertEquals(expected1, actual1)
+        assertEquals(expected1, actual1)
 
         val actual2 = matrix1 - 10
 
@@ -64,7 +65,7 @@ class MatrixTest {
             row(0, 2, 10)
             row(90, 990, -2)
         }
-        Assertions.assertEquals(expected2, actual2)
+        assertEquals(expected2, actual2)
     }
 
     @Test
@@ -80,7 +81,7 @@ class MatrixTest {
         }
         val actual1 = matrix1 * 2
 
-        Assertions.assertEquals(expected1, actual1)
+        assertEquals(expected1, actual1)
 
         val matrix2 = matrix {
             row(100, -95, 1200)
@@ -95,7 +96,7 @@ class MatrixTest {
             row(11, 22, -4)
             row(1, 0, -2)
         }
-        Assertions.assertEquals(expected2, actual2)
+        assertEquals(expected2, actual2)
     }
 
     @Test
@@ -110,7 +111,7 @@ class MatrixTest {
             row(90, 20, 1005)
         }
 
-        Assertions.assertThrows(IllegalArgumentException::class.java) {
+        assertThrows(IllegalArgumentException::class.java) {
             matrix1 + matrix2
         }
 
@@ -120,7 +121,7 @@ class MatrixTest {
             row(5, 28)
         }
 
-        Assertions.assertThrows(IllegalArgumentException::class.java) {
+        assertThrows(IllegalArgumentException::class.java) {
             matrix1 + matrix3
         }
 
@@ -136,7 +137,7 @@ class MatrixTest {
 
         val actual = matrix1 + matrix4
 
-        Assertions.assertEquals(expected, actual)
+        assertEquals(expected, actual)
     }
 
     @Test
@@ -151,7 +152,7 @@ class MatrixTest {
             row(90, 20, 1005)
         }
 
-        Assertions.assertThrows(IllegalArgumentException::class.java) {
+        assertThrows(IllegalArgumentException::class.java) {
             matrix1 - matrix2
         }
 
@@ -161,7 +162,7 @@ class MatrixTest {
             row(5, 28)
         }
 
-        Assertions.assertThrows(IllegalArgumentException::class.java) {
+        assertThrows(IllegalArgumentException::class.java) {
             matrix1 - matrix3
         }
 
@@ -177,7 +178,7 @@ class MatrixTest {
 
         val actual = matrix1 - matrix4
 
-        Assertions.assertEquals(expected, actual)
+        assertEquals(expected, actual)
     }
 
     @Test
@@ -192,7 +193,7 @@ class MatrixTest {
             row(8)
         }
 
-        Assertions.assertThrows(IllegalArgumentException::class.java) { matrix1 * matrix2 }
+        assertThrows(IllegalArgumentException::class.java) { matrix1 * matrix2 }
 
         val matrix3 = matrix {
             row(1, 4)
@@ -211,7 +212,7 @@ class MatrixTest {
         }
         val actual1 = matrix3 * matrix4
 
-        Assertions.assertEquals(expected1, actual1)
+        assertEquals(expected1, actual1)
 
         val matrix5 = matrix {
             row(45, 11, 20, -15)
@@ -232,7 +233,7 @@ class MatrixTest {
         }
         val actual2 = matrix5 * matrix6
 
-        Assertions.assertEquals(expected2, actual2)
+        assertEquals(expected2, actual2)
     }
 
 }

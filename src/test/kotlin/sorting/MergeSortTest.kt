@@ -1,7 +1,7 @@
 package sorting
 
 import org.junit.Test
-import org.junit.jupiter.api.Assertions
+import org.junit.Assert.assertEquals
 
 class MergeSortTest {
 
@@ -12,7 +12,7 @@ class MergeSortTest {
         val actual = expected.reversed().toTypedArray()
         actual.mergeSort()
 
-        Assertions.assertEquals(expected, actual.toList())
+        assertEquals(expected, actual.toList())
     }
 
     @Test
@@ -23,7 +23,7 @@ class MergeSortTest {
 
         actual.mergeSort()
 
-        Assertions.assertEquals(expected, actual.toList())
+        assertEquals(expected, actual.toList())
     }
 
     @Test
@@ -34,7 +34,7 @@ class MergeSortTest {
         actual.shuffle()
         actual.mergeSort()
 
-        Assertions.assertEquals(expected.toList(), actual.toList())
+        assertEquals(expected.toList(), actual.toList())
     }
 
     @Test
@@ -45,7 +45,7 @@ class MergeSortTest {
 
         actual.mergeSort()
 
-        Assertions.assertEquals(expected, actual.toList())
+        assertEquals(expected, actual.toList())
     }
 
     @Test
@@ -56,7 +56,7 @@ class MergeSortTest {
 
         actual.mergeSort()
 
-        Assertions.assertEquals(expected, actual)
+        assertEquals(expected, actual)
     }
 
 }

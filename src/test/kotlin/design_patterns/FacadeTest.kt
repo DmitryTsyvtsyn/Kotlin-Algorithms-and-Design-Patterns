@@ -1,7 +1,7 @@
 package design_patterns
 
 import org.junit.Test
-import org.junit.jupiter.api.Assertions.*
+import org.junit.Assert.assertEquals
 
 internal class FacadeTest {
 
@@ -11,4 +11,5 @@ internal class FacadeTest {
         val data = facade.fetch()
         assertEquals(listOf("Harry Potter", "Ronald Weasley", "Hermione Granger"), data)
     }
+
 }

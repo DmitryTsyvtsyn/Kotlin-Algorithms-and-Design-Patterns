@@ -1,7 +1,7 @@
 package structures
 
 import org.junit.Test
-import org.junit.jupiter.api.Assertions
+import org.junit.Assert.assertEquals
 
 class GraphWithWeightsTest {
 
@@ -21,11 +21,11 @@ class GraphWithWeightsTest {
             VertexConnection(Vertex(20), 1),
             VertexConnection(Vertex(30), 2)
         )
-        Assertions.assertEquals(expected, graph.connectedVertexesWithWeights(10))
+        assertEquals(expected, graph.connectedVertexesWithWeights(10))
 
         graph.removeVertex(10)
 
-        Assertions.assertEquals(emptyList<VertexConnection<Int>>(), graph.connectedVertexesWithWeights(10))
+        assertEquals(emptyList<VertexConnection<Int>>(), graph.connectedVertexesWithWeights(10))
     }
 
     @Test
@@ -44,17 +44,17 @@ class GraphWithWeightsTest {
             VertexConnection(Vertex(20), 1),
             VertexConnection(Vertex(30), 2)
         )
-        Assertions.assertEquals(expected1, graph.connectedVertexesWithWeights(10))
+        assertEquals(expected1, graph.connectedVertexesWithWeights(10))
 
         graph.removeEdge(10, 20)
 
         val expected2 = listOf(VertexConnection(Vertex(30), 2))
-        Assertions.assertEquals(expected2, graph.connectedVertexesWithWeights(10))
+        assertEquals(expected2, graph.connectedVertexesWithWeights(10))
 
         graph.removeEdge(10, 30)
 
-        Assertions.assertEquals(emptyList<VertexConnection<Int>>(), graph.connectedVertexesWithWeights(10))
-        Assertions.assertEquals(listOf(VertexConnection(Vertex(30), 3)), graph.connectedVertexesWithWeights(20))
+        assertEquals(emptyList<VertexConnection<Int>>(), graph.connectedVertexesWithWeights(10))
+        assertEquals(listOf(VertexConnection(Vertex(30), 3)), graph.connectedVertexesWithWeights(20))
     }
 
     @Test
@@ -87,7 +87,7 @@ class GraphWithWeightsTest {
             Vertex(1) to 12,
             Vertex(0) to 17,
         )
-        Assertions.assertEquals(expected, graph.dijkstraAlgorithm())
+        assertEquals(expected, graph.dijkstraAlgorithm())
     }
 
 }
