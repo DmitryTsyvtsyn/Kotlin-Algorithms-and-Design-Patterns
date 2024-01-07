@@ -31,7 +31,6 @@ Content:
     * [Singleton](/src/main/kotlin/design_patterns/Singleton.kt)
     * [Strategy](/src/main/kotlin/design_patterns/Strategy.kt)
     * [Observer](/src/main/kotlin/design_patterns/Observer.kt)
-    * [Dependency Injection](/src/main/kotlin/design_patterns/Dependency%20Injection.kt)
     * [Adapter](/src/main/kotlin/design_patterns/Adapter.kt)
     * [Memento](/src/main/kotlin/design_patterns/Memento.kt)
     * [Chain Of Responsibilities](/src/main/kotlin/design_patterns/Сhain%20Of%20Responsibilities.kt)
@@ -44,7 +43,8 @@ Content:
     * [Directed Graph with weights](/src/main/kotlin/structures/GraphWithWeights.kt)
     * [Matrix](/src/main/kotlin/structures/Matrix.kt)
     * [ArrayList](/src/main/kotlin/structures/MyArrayList.kt)
-    * [Linked list](/src/main/kotlin/structures/LinkedList.kt)
+    * [Single linked list](/src/main/kotlin/structures/SingleLinkedList.kt)
+    * [Double linked list](/src/main/kotlin/structures/DoubleLinkedList.kt)
     * [Min-heap](/src/main/kotlin/structures/MinHeap.kt)
     * [Max-heap](/src/main/kotlin/structures/MaxHeap.kt)
 

@@ -31,7 +31,6 @@
     * [Singleton](/src/main/kotlin/design_patterns/Singleton.kt)
     * [Strategy](/src/main/kotlin/design_patterns/Strategy.kt)
     * [Observer](/src/main/kotlin/design_patterns/Observer.kt)
-    * [Dependency Injection](/src/main/kotlin/design_patterns/Dependency%20Injection.kt)
     * [Adapter](/src/main/kotlin/design_patterns/Adapter.kt)
     * [Memento](/src/main/kotlin/design_patterns/Memento.kt)
     * [Chain Of Responsibilities](/src/main/kotlin/design_patterns/Сhain%20Of%20Responsibilities.kt)
@@ -44,7 +43,8 @@
     * [Ориентированный граф с весами](/src/main/kotlin/structures/GraphWithWeights.kt)
     * [Матрица](/src/main/kotlin/structures/Matrix.kt)
     * [Динамический массив](/src/main/kotlin/structures/MyArrayList.kt)
-    * [Связанный список](/src/main/kotlin/structures/LinkedList.kt)
+    * [Односвязный список](/src/main/kotlin/structures/SingleLinkedList.kt)
+    * [Двусвязный список](/src/main/kotlin/structures/DoubleLinkedList.kt)
     * [Min-куча](/src/main/kotlin/structures/MinHeap.kt)
     * [Max-куча](/src/main/kotlin/structures/MaxHeap.kt)
 
