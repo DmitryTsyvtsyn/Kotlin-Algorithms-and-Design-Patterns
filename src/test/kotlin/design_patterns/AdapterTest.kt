@@ -7,14 +7,15 @@ internal class AdapterTest {
 
     @Test
     fun test() {
-        val list = RecyclerView<Int>()
-        val items = listOf(1, 2, 3)
-        list.changeAdapter(object: Adapter<Int> {
-            override fun getItem(position: Int) = items[position]
-            override fun getItemCount() = items.size
-        })
-        val drawItems = list.draw()
-        assertEquals(items, drawItems)
+        // we don't understand EnglishSpeaker interface
+        val englishSpeaker = EnglishSpeakerImpl()
+        // but we know about SpainSpeaker interface
+        val speakerAdapter = SpainSpeakerAdapter(englishSpeaker)
+
+        // EnglishSpeaker interface was changed to SpainSpeaker interface
+        val actual = speakerAdapter.speakSpanish()
+
+        assertEquals("Hola, amigo!", actual)
     }
 
 }

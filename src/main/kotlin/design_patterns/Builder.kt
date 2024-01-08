@@ -2,37 +2,24 @@ package design_patterns
 
 /**
  *
- * pattern: Builder
+ * Builder is is a generative design pattern that is used to create complex objects,
  *
- * using: used to create complex objects
- *
- * description: to create an object, an auxiliary class Builder is used, which has methods for changing the fields of our main class.
+ * separates the construction of an object from its representation
  *
  */
 
 
 /**
- *
  * The first variant
- *
  */
-
-class Pony1 {
-    private val name: String
-    private val family: String
-    private val cutieMark: String
+class Pony1 private constructor(
+    private val name: String,
+    private val family: String,
+    private val cutieMark: String,
     private val city: String
+) {
 
-    private constructor(name: String, family: String, cutieMark: String, city: String) {
-        this.name = name
-        this.family = family
-        this.cutieMark = cutieMark
-        this.city = city
-    }
-
-    override fun toString(): String {
-        return "$name, $family, $cutieMark, $city"
-    }
+    override fun toString() = "$name, $family, $cutieMark, $city"
 
     class Builder {
         private var name: String = ""
@@ -63,20 +50,15 @@ class Pony1 {
 }
 
 /**
- *
  * The second variant
- *
  */
-
 class Pony2 {
     private var name: String = ""
     private var family: String = ""
     private var cutieMark: String = ""
     private var city: String = ""
 
-    override fun toString(): String {
-        return "$name, $family, $cutieMark, $city"
-    }
+    override fun toString() = "$name, $family, $cutieMark, $city"
 
     companion object {
         fun newBuilder() = Pony2().Builder()
@@ -106,18 +88,13 @@ class Pony2 {
 }
 
 /**
- *
  * Kotlin variant with default arguments
- *
  */
-
 class Pony3(
     private var name: String = "",
     private var family: String = "",
     private var cutieMark: String = "",
     private var city: String = ""
 ) {
-    override fun toString(): String {
-        return "$name, $family, $cutieMark, $city"
-    }
+    override fun toString() = "$name, $family, $cutieMark, $city"
 }

@@ -23,6 +23,10 @@ internal class AbstractFactoryTest {
 
         assertThat(androidButton, instanceOf(AndroidButton::class.java))
         assertThat(androidText, instanceOf(AndroidText::class.java))
+
+        // we can draw iOS and Android components regardless of their implementation
+        listOf(iosButton, androidButton).forEach { it.draw() }
+        listOf(iosText, androidText).forEach { it.draw() }
     }
 
 }

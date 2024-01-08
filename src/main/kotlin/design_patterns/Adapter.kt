@@ -2,44 +2,30 @@ package design_patterns
 
 /**
  *
- * pattern: Adapter
- *
- * using: used when we cannot directly use the functionality of an object
- *
- * description: to use the functionality of an object, a special class is created, which is called an adapter
+ * Adapter is a structural design pattern that allows objects with incompatible interfaces to work together
  *
  */
 
-interface Adapter<T> {
-    fun getItem(position: Int) : T
-    fun getItemCount() : Int
+interface EnglishSpeaker {
+    fun speakEnglish(): String
 }
 
-/**
- * here is a simplified imitation of RecyclerView component from Android
- */
-class RecyclerView<T> {
-
-    private var adapter: Adapter<T>? = null
-
-    fun changeAdapter(adapter: Adapter<T>) {
-        this.adapter = adapter
+class EnglishSpeakerImpl : EnglishSpeaker {
+    override fun speakEnglish(): String {
+        return "Hello, friend!"
     }
+}
 
-    /**
-     * renders elements from the adapter and returns a list of elements to test
-     */
-    fun draw() : List<T> {
-        val items = mutableListOf<T>()
-        val myAdapter = adapter
-        if (myAdapter != null) {
-            val count = myAdapter.getItemCount()
-            for (i in 0 until count) {
-                items.add(myAdapter.getItem(i))
-                // draw item
-            }
+interface SpainSpeaker {
+    fun speakSpanish(): String
+}
+
+class SpainSpeakerAdapter(private val englishSpeaker: EnglishSpeaker) : SpainSpeaker {
+
+    override fun speakSpanish(): String =
+        when (englishSpeaker.speakEnglish()) {
+            "Hello, friend!" -> "Hola, amigo!"
+            else -> "No te entiendo"
         }
-        return items
-    }
 
 }

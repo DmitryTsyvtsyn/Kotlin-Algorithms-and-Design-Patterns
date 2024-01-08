@@ -2,7 +2,7 @@ package design_patterns
 
 /**
  *
- * An abstract factory is a generative design pattern that allows
+ * Abstract factory is a generative design pattern that allows
  *
  * you to create families of related objects without being tied to
  *
