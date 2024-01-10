@@ -7,48 +7,83 @@ internal class BuilderTest {
 
     @Test
     fun test_first_variant() {
+        val dnsServerAddress = "8.8.8.8"
+        val callTimeout = 500
+        val connectTimeout = 3_000
+        val writeTimeout = 3_000
+        val readTimeout = 3_000
 
-        val name = "Twillight Sparkle"
-        val cutieMark = "The magic star"
-        val city = "Canterlot"
-        val family = "Alicorn"
-
-        val pony = Pony1.Builder().changeName(name)
-            .changeCutieMark(cutieMark)
-            .changeCity(city)
-            .changeFamily(family)
+        val httpClient = HttpConnectionClient1.Builder()
+            .dnsServerAddress(dnsServerAddress)
+            .callTimeout(callTimeout)
+            .connectTimeout(connectTimeout)
+            .writeTimeout(writeTimeout)
+            .readTimeout(readTimeout)
             .build()
 
-        assertEquals("$name, $family, $cutieMark, $city", pony.toString())
+        val expected = """
+            dns -> $dnsServerAddress
+            call timeout -> $callTimeout
+            connect timeout -> $connectTimeout
+            read timeout -> $readTimeout
+            write timeout -> $writeTimeout
+        """.trimIndent()
+
+        assertEquals(expected, httpClient.toString())
     }
 
     @Test
     fun test_the_second_variant() {
+        val dnsServerAddress = "8.8.8.8"
+        val callTimeout = 500
+        val connectTimeout = 3_000
+        val writeTimeout = 3_000
+        val readTimeout = 3_000
 
-        val name = "Twillight Sparkle"
-        val cutieMark = "The magic star"
-        val city = "Canterlot"
-        val family = "Alicorn"
-
-        val pony = Pony2.newBuilder().changeName(name)
-            .changeCutieMark(cutieMark)
-            .changeCity(city)
-            .changeFamily(family)
+        val httpClient = HttpConnectionClient2.newBuilder()
+            .dnsServerAddress(dnsServerAddress)
+            .callTimeout(callTimeout)
+            .connectTimeout(connectTimeout)
+            .writeTimeout(writeTimeout)
+            .readTimeout(readTimeout)
             .build()
 
-        assertEquals("$name, $family, $cutieMark, $city", pony.toString())
+        val expected = """
+            dns -> $dnsServerAddress
+            call timeout -> $callTimeout
+            connect timeout -> $connectTimeout
+            read timeout -> $readTimeout
+            write timeout -> $writeTimeout
+        """.trimIndent()
+
+        assertEquals(expected, httpClient.toString())
     }
 
     @Test
     fun test_third_variant() {
+        val dnsServerAddress = "8.8.8.8"
+        val callTimeout = 500
+        val connectTimeout = 3_000
+        val writeTimeout = 3_000
+        val readTimeout = 3_000
 
-        val name = "Twillight Sparkle"
-        val city = "Canterlot"
-        val family = "Alicorn"
+        val httpClient = HttpConnectionClient3(
+            dnsServerAddress = dnsServerAddress,
+            callTimeout = callTimeout,
+            connectTimeout = connectTimeout,
+            readTimeout = readTimeout,
+            writeTimeout = writeTimeout
+        )
 
-        val pony = Pony3(name, family, city = city)
+        val expected = """
+            dns -> $dnsServerAddress
+            call timeout -> $callTimeout
+            connect timeout -> $connectTimeout
+            read timeout -> $readTimeout
+            write timeout -> $writeTimeout
+        """.trimIndent()
 
-        assertEquals("$name, $family, , $city", pony.toString())
+        assertEquals(expected, httpClient.toString())
     }
 
 }

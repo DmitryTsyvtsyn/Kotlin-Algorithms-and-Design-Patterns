@@ -10,18 +10,18 @@ package design_patterns
  *
  */
 
-abstract class Pony4
+abstract class Pony
 
-class EarthPony4 : Pony4()
-class Pegasus4 : Pony4()
-class Unicorn4 : Pony4()
+class EarthPony4 : Pony()
+class Pegasus4 : Pony()
+class Unicorn4 : Pony()
 
 abstract class Place {
     private var numberOfPonies = 0
 
-    abstract fun pony() : Pony4
+    abstract fun pony() : Pony
 
-    fun newPony() : Pony4 {
+    fun newPony() : Pony {
         numberOfPonies++
         return pony()
     }

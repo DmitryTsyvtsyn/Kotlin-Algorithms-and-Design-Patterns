@@ -2,21 +2,38 @@ package design_patterns
 
 /**
  *
- * pattern: Singleton
+ * Singleton is a generative design pattern that guarantees the existence of one instance of a class
  *
- * using: used when we need to have the same object throughout
- * the entire execution of our program
- *
- * description: class allows you to create only a single object
+ * and provides a global access point to it
  *
  */
 
-object LocalData {
-    private val names = mutableListOf<String>()
+object SQLiteDatabase {
 
-    fun addName(nm: String) {
-        names.add(nm)
+    // SQLiteDatabase instance state
+    private var connectionId = -1
+
+    // These methods provide a global access point to SQLiteDatabase instance state
+    fun openConnection() {
+        if (connectionId < 0) {
+            // open connection...
+            connectionId = 1
+        }
     }
 
-    fun names() = names.toList()
+    fun execSQL(sql: String): List<String> {
+        if (connectionId < 0) return emptyList()
+        return when (sql) {
+            "select * from names" -> listOf("Rick", "Morty", "Jerry", "Beth")
+            else -> emptyList()
+        }
+    }
+
+    fun closeConnection() {
+        if (connectionId > 0) {
+            // close connection...
+            connectionId = -1
+        }
+    }
+
 }
