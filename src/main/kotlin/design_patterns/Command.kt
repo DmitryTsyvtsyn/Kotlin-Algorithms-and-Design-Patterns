@@ -2,9 +2,7 @@ package design_patterns
 
 /**
  *
- * pattern: Command
- *
- * description: it's a behavioral pattern that allows you to wrap requests or simple operations in separate objects.
+ * Command is a behavioral pattern that allows you to wrap requests or simple operations in separate objects
  *
  * P.S. Kotlin variant of this pattern is shown in tests
  *
@@ -29,5 +27,16 @@ class MinusCommand(private val subtrahend: Int) : ArithmeticCommand {
 class MultiCommand(private val coefficient: Int) : ArithmeticCommand {
     override fun execute(number: Int): Int {
         return number * coefficient
+    }
+}
+
+// we can also create the command that accepts others
+class MacroCommand(private vararg val commands: ArithmeticCommand) : ArithmeticCommand {
+    override fun execute(number: Int): Int {
+        var result = number
+        commands.forEach {
+            result = it.execute(result)
+        }
+        return result
     }
 }

@@ -2,9 +2,8 @@ package design_patterns
 
 /**
  *
- * pattern: Visitor
+ * Visitor is a behavioral design pattern that allows you to add a new operation
  *
- * description: it's a behavioral pattern that allows you to add a new operation
  * to an entire class hierarchy without changing the code of these classes.
  *
  */

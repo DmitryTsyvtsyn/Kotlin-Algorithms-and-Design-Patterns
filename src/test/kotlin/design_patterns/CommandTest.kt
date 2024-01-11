@@ -6,7 +6,7 @@ import org.junit.Assert.assertEquals
 internal class CommandTest {
 
     @Test
-    fun test_1() {
+    fun `test 1`() {
         val commands = listOf(
             AddCommand(10),
             AddCommand(20),
@@ -23,7 +23,7 @@ internal class CommandTest {
     }
 
     @Test
-    fun test_2() {
+    fun `test 2`() {
         val commands = listOf(
             MultiCommand(2),
             MultiCommand(2),
@@ -42,7 +42,7 @@ internal class CommandTest {
     }
 
     @Test
-    fun test_3() {
+    fun `test 3`() {
         val commands = listOf(
             AddCommand(-1),
             MinusCommand(1000),
@@ -58,7 +58,18 @@ internal class CommandTest {
     }
 
     @Test
-    fun test_kotlin_variant() {
+    fun `test MacroCommand`() {
+        val command = MacroCommand(
+            MultiCommand(2),
+            AddCommand(10),
+            MinusCommand(100)
+        )
+
+        assertEquals(-70, command.execute(10))
+    }
+
+    @Test
+    fun `test Kotlin variant`() {
         val commands: List<(Int) -> Int> = listOf(
             { actual: Int -> actual + 49 },
             { actual: Int -> actual - 20 },
