@@ -10,33 +10,63 @@ package design_patterns
  *
  */
 
-abstract class Pony
+abstract class House(private val address: String, private val price: Int) {
 
-class EarthPony4 : Pony()
-class Pegasus4 : Pony()
-class Unicorn4 : Pony()
+    override fun toString() = """
+        address = $address
+        price = $price
+    """.trimIndent()
 
-abstract class Place {
-    private var numberOfPonies = 0
+}
 
-    abstract fun pony() : Pony
+// the factory method makes sense if we have a hierarchy of objects
+class WoodenCheapHouse(address: String) : House(address, 50_000)
+class WoodenAverageHouse(address: String) : House(address, 250_000)
+class WoodenExpensiveHouse(address: String) : House(address, 1_000_000)
 
-    fun newPony() : Pony {
-        numberOfPonies++
-        return pony()
+class StoneCheapHouse(address: String) : House(address, 45_000)
+class StoneAverageHouse(address: String) : House(address, 230_000)
+class StoneExpensiveHouse(address: String) : House(address, 900_000)
+
+// we have a common logic for every HouseCompany
+abstract class HouseCompany {
+
+    private val alreadyBuiltHouses = mutableListOf<House>()
+
+    val examplesAlreadyBuiltHouses: String
+        get() = alreadyBuiltHouses.joinToString("\n\n")
+
+    fun orderHouse(address: String, cost: HouseCompanyCost): House {
+        val house = buildHouse(address, cost)
+        alreadyBuiltHouses.add(house)
+        return house
     }
 
-    fun count() = numberOfPonies
+    // the subclasses define a specific implementation
+    protected abstract fun buildHouse(address: String, cost: HouseCompanyCost): House
+
+    enum class HouseCompanyCost { CHEAP, AVERAGE, EXPENSIVE }
+
 }
 
-class Cloudsdale : Place() {
-    override fun pony() = Pegasus4()
+// WoodenHouseCompany only builds wooden houses
+class WoodenHouseCompany : HouseCompany() {
+
+    override fun buildHouse(address: String, cost: HouseCompanyCost) = when(cost) {
+        HouseCompanyCost.CHEAP -> WoodenCheapHouse(address)
+        HouseCompanyCost.AVERAGE -> WoodenAverageHouse(address)
+        HouseCompanyCost.EXPENSIVE -> WoodenExpensiveHouse(address)
+    }
+
 }
 
-class Canterlot : Place() {
-    override fun pony() = Unicorn4()
-}
+// StoneHouseCompany only builds stone houses
+class StoneHouseCompany : HouseCompany() {
 
-class Ponyville : Place() {
-    override fun pony() = EarthPony4()
+    override fun buildHouse(address: String, cost: HouseCompanyCost) = when(cost) {
+        HouseCompanyCost.CHEAP -> StoneCheapHouse(address)
+        HouseCompanyCost.AVERAGE -> StoneAverageHouse(address)
+        HouseCompanyCost.EXPENSIVE -> StoneExpensiveHouse(address)
+    }
+
 }
