@@ -6,82 +6,69 @@ import org.junit.Assert.assertEquals
 internal class CommandTest {
 
     @Test
-    fun `test 1`() {
-        val commands = listOf(
-            AddCommand(10),
-            AddCommand(20),
-            MultiCommand(2),
-            MinusCommand(10)
-        )
+    fun `test usual commands`() {
+        val stereoSystem = StereoSystem()
+        val remoteControl = StereoSystemRemoteControl(mapOf(
+            "turnOn" to TurnOnCommand(stereoSystem),
+            "turnOff" to TurnOffCommand(stereoSystem),
+            "volume+" to IncreaseVolumeCommand(stereoSystem),
+            "volume-" to DecreaseVolumeCommand(stereoSystem)
+        ))
 
-        var actual = 0
-        commands.forEach { command ->
-            actual = command.execute(actual)
-        }
+        remoteControl.pressButton("turnOn")
 
-        assertEquals(50, actual)
+        assertEquals("""
+            running status: true
+            volume value: 50
+        """.trimIndent(), stereoSystem.currentState)
+
+        remoteControl.pressButton("volume+")
+        remoteControl.pressButton("volume+")
+        remoteControl.pressButton("volume+")
+
+        assertEquals("""
+            running status: true
+            volume value: 80
+        """.trimIndent(), stereoSystem.currentState)
+
+        remoteControl.pressUndoButton()
+        remoteControl.pressUndoButton()
+        remoteControl.pressUndoButton()
+        remoteControl.pressUndoButton()
+
+        assertEquals("""
+            running status: false
+            volume value: 50
+        """.trimIndent(), stereoSystem.currentState)
     }
 
     @Test
-    fun `test 2`() {
-        val commands = listOf(
-            MultiCommand(2),
-            MultiCommand(2),
-            MultiCommand(2),
-            MultiCommand(2),
-            MinusCommand(100),
-            MultiCommand(-1)
-        )
+    fun `test macro command`() {
+        val stereoSystem = StereoSystem()
+        val remoteControl = StereoSystemRemoteControl(mapOf(
+            "party" to MacroCommand(
+                TurnOnCommand(stereoSystem),
+                IncreaseVolumeCommand(stereoSystem),
+                IncreaseVolumeCommand(stereoSystem),
+                IncreaseVolumeCommand(stereoSystem),
+                IncreaseVolumeCommand(stereoSystem),
+                IncreaseVolumeCommand(stereoSystem)
+            )
+        ))
 
-        var actual = 1
-        commands.forEach { command ->
-            actual = command.execute(actual)
-        }
+        remoteControl.pressButton("party")
 
-        assertEquals(84, actual)
-    }
+        assertEquals("""
+            running status: true
+            volume value: 100
+        """.trimIndent(), stereoSystem.currentState)
 
-    @Test
-    fun `test 3`() {
-        val commands = listOf(
-            AddCommand(-1),
-            MinusCommand(1000),
-            MultiCommand(-2)
-        )
+        remoteControl.pressUndoButton()
 
-        var actual = 1
-        commands.forEach { command ->
-            actual = command.execute(actual)
-        }
-
-        assertEquals(2000, actual)
-    }
-
-    @Test
-    fun `test MacroCommand`() {
-        val command = MacroCommand(
-            MultiCommand(2),
-            AddCommand(10),
-            MinusCommand(100)
-        )
-
-        assertEquals(-70, command.execute(10))
-    }
-
-    @Test
-    fun `test Kotlin variant`() {
-        val commands: List<(Int) -> Int> = listOf(
-            { actual: Int -> actual + 49 },
-            { actual: Int -> actual - 20 },
-            { actual: Int -> actual * 6 }
-        )
-
-        var actual = 1
-        commands.forEach { command ->
-            actual = command.invoke(actual)
-        }
-
-        assertEquals(180, actual)
+        assertEquals("""
+            running status: false
+            volume value: 50
+        """.trimIndent(), stereoSystem.currentState)
     }
 
 }
