@@ -2,35 +2,83 @@ package design_patterns
 
 /**
  *
- * pattern: Strategy
+ * Strategy is a behavioral design pattern used to define a family of algorithms,
  *
- * using: used when we need to change the behavior of an object
+ * encapsulate each one and make them interchangeable
  *
  */
 
-interface ExchangeStrategy {
-    fun into(price: Double) : Double
+// encapsulates the filtering algorithm
+interface FoodFilterStrategy {
+    fun filter(items: List<FoodEntity>): List<FoodEntity>
+}
 
-    class Dollar : ExchangeStrategy {
-        override fun into(price: Double): Double {
-            return price / 70
-        }
-    }
-
-    class Tenge : ExchangeStrategy {
-        override fun into(price: Double): Double {
-            return price * 6
-        }
+class OnlyChipsFilterStrategy : FoodFilterStrategy {
+    override fun filter(items: List<FoodEntity>): List<FoodEntity> {
+        return items.filter { it.category == "chips" }
     }
 }
 
-class RubleExchangeRate {
-    private var strategy : ExchangeStrategy = ExchangeStrategy.Dollar()
+class OnlyChocolateFilterStrategy : FoodFilterStrategy {
+    override fun filter(items: List<FoodEntity>): List<FoodEntity> {
+        return items.filter { it.category == "chocolate" }
+    }
+}
 
-    fun changeStrategy(strategy: ExchangeStrategy) {
-        this.strategy = strategy
+class PriceFilterStrategy(private val price: Int) : FoodFilterStrategy {
+    override fun filter(items: List<FoodEntity>): List<FoodEntity> {
+        return items.filter { it.price >= price }
+    }
+}
+
+class SearchWordFilterStrategy(private val search: String) : FoodFilterStrategy {
+    override fun filter(items: List<FoodEntity>): List<FoodEntity> {
+        return items.filter { it.title.contains(search, ignoreCase = true) }
+    }
+}
+
+data class FoodEntity(
+    val title: String,
+    val price: Int,
+    val category: String
+)
+
+// FoodStore returns a list of food filtered by strategy
+class FoodStore(private var filterStrategy: FoodFilterStrategy) {
+
+    // we can change strategy
+    fun changeStrategy(strategy: FoodFilterStrategy) {
+        filterStrategy = strategy
     }
 
-    fun exchange(priceInRuble: Double) = strategy.into(priceInRuble)
+    fun foodItems(): List<FoodEntity> {
+        val foodItems = fetchFoodItems()
+        return filterStrategy.filter(foodItems)
+    }
+
+    private fun fetchFoodItems() =
+        listOf(
+            FoodEntity(
+                "Lays Potato Chips Fried Crab Flavor",
+                2,
+                "chips"
+            ),
+            FoodEntity(
+                "Lay's Potato Chips, Classic",
+                3,
+                "chips"
+            ),
+            FoodEntity(
+                "Dove Chocolate",
+                3,
+                "chocolate"
+            ),
+            FoodEntity(
+                "Ritter Sport Chocolate",
+                4,
+                "chocolate"
+            )
+        )
+
 }
 
