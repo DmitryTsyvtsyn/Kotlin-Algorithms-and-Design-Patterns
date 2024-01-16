@@ -19,21 +19,24 @@
 Структура:
 
 1. пакет <code>ru.design_patterns</code> - паттерны проектирования
+    * [Abstract Factory](/src/main/kotlin/design_patterns/Abstract%20Factory.kt)
+    * [Adapter](/src/main/kotlin/design_patterns/Adapter.kt)
     * [Builder](/src/main/kotlin/design_patterns/Builder.kt)
-    * [Visitor](/src/main/kotlin/design_patterns/Visitor.kt)
+    * [Chain Of Responsibilities](/src/main/kotlin/design_patterns/Сhain%20Of%20Responsibilities.kt)
     * [Command](/src/main/kotlin/design_patterns/Command.kt)
+    * [Composite](/src/main/kotlin/design_patterns/Composite.kt)
     * [Decorator](/src/main/kotlin/design_patterns/Decorator.kt)
     * [Facade](/src/main/kotlin/design_patterns/Facade.kt)
-    * [Abstract Factory](/src/main/kotlin/design_patterns/Abstract%20Factory.kt)
     * [Factory Method](/src/main/kotlin/design_patterns/Factory%20Method.kt)
-    * [Fluent Interface](/src/main/kotlin/design_patterns/Fluent%20Interface%20Pattern.kt)
-    * [Monostate](/src/main/kotlin/design_patterns/Monostate.kt)
-    * [Singleton](/src/main/kotlin/design_patterns/Singleton.kt)
-    * [Strategy](/src/main/kotlin/design_patterns/Strategy.kt)
-    * [Observer](/src/main/kotlin/design_patterns/Observer.kt)
-    * [Adapter](/src/main/kotlin/design_patterns/Adapter.kt)
+    * [Iterator](/src/main/kotlin/design_patterns/Iterator.kt)
     * [Memento](/src/main/kotlin/design_patterns/Memento.kt)
-    * [Chain Of Responsibilities](/src/main/kotlin/design_patterns/Сhain%20Of%20Responsibilities.kt)
+    * [Observer](/src/main/kotlin/design_patterns/Observer.kt)
+    * [Proxy](/src/main/kotlin/design_patterns/Proxy.kt)
+    * [Singleton](/src/main/kotlin/design_patterns/Singleton.kt)
+    * [State](/src/main/kotlin/design_patterns/State.kt)
+    * [Strategy](/src/main/kotlin/design_patterns/Strategy.kt)
+    * [Template Method](/src/main/kotlin/design_patterns/Template%20Method.kt)
+    * [Visitor](/src/main/kotlin/design_patterns/Visitor.kt)
 
 2. пакет <code>ru.structures</code> - структуры данных
     * [Бинарное дерево](/src/main/kotlin/structures/BinaryTree.kt)
@@ -83,7 +86,6 @@
 ## Ваши пожелания и идеи
 
 Если вы заинтересовались моим репозиторием или у вас появились идеи как его улучшить или что-то добавить, напишите: [Telegram](https://t.me/rwcwuwr), [Gmail](mailto:dmitry.kind.2@gmail.com)
-
 
 ## Лицензия
 
