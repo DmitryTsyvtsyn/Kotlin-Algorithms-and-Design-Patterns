@@ -10,25 +10,23 @@ class MementoTest {
         // start Android system
         val androidOS = AndroidSystem()
 
-        val greetingText = TextView1()
-        greetingText.setText(greeting)
-        greetingText.draw()
+        val greetingText = "Hello, World!"
+        val greetingView = TextView()
+        greetingView.setText(greetingText)
+        greetingView.draw()
 
         // rotating Android device (recreating application components)
-        // saving state
-        androidOS.saveBundle(greetingText.onSaveInstanceState())
+        // Android system saves the states of running applications
+        androidOS.saveBundle(greetingView.onSaveInstanceState())
 
         // the state of the text was lost, but we saved it
-        greetingText.setText("")
+        greetingView.setText("")
 
         // Android device has already rotated
-        // restoring state
-        greetingText.onRestoreInstanceState(androidOS.restoreBundle())
+        // The system restores the states of running applications
+        greetingView.onRestoreInstanceState(androidOS.restoreBundle())
 
-        assertEquals(greeting, greetingText.text())
+        assertEquals(greetingText, greetingView.text())
     }
 
-    companion object {
-        private const val greeting = "Hello, World!"
-    }
 }

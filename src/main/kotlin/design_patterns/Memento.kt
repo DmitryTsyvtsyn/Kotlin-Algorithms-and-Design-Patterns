@@ -2,50 +2,50 @@ package design_patterns
 
 /**
  *
- * pattern: Memento
+ * Memento is a behavioral design pattern that allows without violating encapsulation to capture
  *
- * allows without violating encapsulation, to fix and save the state of an object
- * in such a way as to restore it to this state
+ * and save the internal state of an object so that it can be restored to this state later
  *
  */
 
 
 class Bundle(val str: String)
 
-/**
- * Android system emulating
- */
+// Android system saves the application state in special bundles
+// I gave this as an example, Android system’s saving mechanism is much more complicated
 class AndroidSystem {
-    private var bundle: Bundle = Bundle("")
+
+    private var savedBundle: Bundle = Bundle("")
 
     fun saveBundle(bundle: Bundle) {
-        this.bundle = bundle
+        savedBundle = bundle
     }
 
-    fun restoreBundle() = bundle
+    fun restoreBundle() = savedBundle
 }
 
-/**
- * TextView is an Android component that draws text on the screen
- */
-class TextView1 {
-    private var text: String = ""
+// TextView is an Android component that draws text on the screen
+class TextView {
+
+    private var currentText: String = ""
 
     fun setText(text: String) {
-        this.text = text
+        currentText = text
     }
 
-    fun text() = text
+    fun text() = currentText
 
     fun draw() {
-        println(text)
+        println(currentText)
     }
 
+    // saves the current state of TextView before re-creating it
     fun onSaveInstanceState(): Bundle {
-        return Bundle(text)
+        return Bundle(currentText)
     }
 
+    // restores the current state after TextView is recreated
     fun onRestoreInstanceState(bundle: Bundle) {
-        text = bundle.str
+        currentText = bundle.str
     }
 }

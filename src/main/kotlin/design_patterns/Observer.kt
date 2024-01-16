@@ -2,48 +2,40 @@ package design_patterns
 
 /**
  *
- * pattern: Observer
+ * Observer is is a behavioral design pattern that defines a one-to-many relationship between objects
  *
- * using: used when we need to subscribe to changes of some object
- *
- * description: the object communicates its changes to observers
- * who previously subscribed to its changes
+ * such that when the state of one object changes all dependent objects are automatically notified and updated
  *
  */
 
-fun interface Observer {
+fun interface PonyObserver {
     fun update(item: List<String>)
 }
 
-/**
- * the interface of the object whose changes we will listen to
- */
-interface Observable {
-    fun observe(observer: Observer)
-    fun cancel(observer: Observer)
+interface PonyObservable {
+    fun addObserver(observer: PonyObserver)
+    fun removeObserver(observer: PonyObserver)
     fun notifyObservers()
 }
 
-/**
- * contains some data, when it changes we will notify observers
- */
-class PonyList : Observable {
+// PonyList contains some data and when it changes we will notify observers
+class PonyList : PonyObservable {
 
     private val ponies = mutableListOf<String>()
 
-    private val observers = mutableSetOf<Observer>()
+    private val observers = mutableSetOf<PonyObserver>()
 
     fun add(pony: String) {
         ponies.add(pony)
-        // notify our observers that the data has changed
+        // notify observers that the data has changed
         notifyObservers()
     }
 
-    override fun observe(observer: Observer) {
+    override fun addObserver(observer: PonyObserver) {
         observers.add(observer)
     }
 
-    override fun cancel(observer: Observer) {
+    override fun removeObserver(observer: PonyObserver) {
         observers.remove(observer)
     }
 
