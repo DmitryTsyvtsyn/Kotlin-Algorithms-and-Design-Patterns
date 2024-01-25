@@ -10,6 +10,7 @@ import java.math.BigInteger
 
 class FactorialAdvanced {
 
+    // precomputed factorials
     private val factorials = longArrayOf(
         1L,
         1L,
@@ -43,37 +44,37 @@ class FactorialAdvanced {
             return BigInteger.valueOf(factorials[n])
         }
 
-        // Pre-allocate space for our list of intermediate BigIntegers.
+        // pre-allocate space for our list of intermediate BigIntegers.
         val approxSize = divide(n * log2Celling(n), Long.SIZE_BITS)
         val bigNumbers = ArrayList<BigInteger>(approxSize)
 
-        // Start from the pre-computed maximum long factorial.
+        // start from the pre-computed maximum long factorial.
         val startingNumber = factorials.size
         var number = factorials[startingNumber - 1]
-        // Strip off 2s from this value.
+        // strip off 2s from this value.
         var shift = number.countTrailingZeroBits()
         number = number shr shift
 
-        // Use floor(log2(num)) + 1 to prevent overflow of multiplication.
+        // use floor(log2(num)) + 1 to prevent overflow of multiplication.
         var numberBits = log2Floor(number) + 1
         var bits = log2Floor(startingNumber.toLong()) + 1
-        // Check for the next power of two boundary, to save us a CLZ operation.
+        // check for the next power of two boundary, to save us a CLZ operation.
         var nextPowerOfTwo = 1 shl bits - 1
 
-        // Iteratively multiply the longs as big as they can go.
+        // iteratively multiply the longs as big as they can go.
         for (num in startingNumber..n) {
-            // Check to see if the floor(log2(num)) + 1 has changed.
+            // check to see if the floor(log2(num)) + 1 has changed.
             if ((num and nextPowerOfTwo) != 0) {
                 nextPowerOfTwo = nextPowerOfTwo shl 1
                 bits++
             }
-            // Get rid of the 2s in num.
+            // get rid of the 2s in num.
             val tz = num.toLong().countTrailingZeroBits()
             val normalizedNum = (num shr tz).toLong()
             shift += tz
-            // Adjust floor(log2(num)) + 1.
+            // adjust floor(log2(num)) + 1.
             val normalizedBits = bits - tz
-            // If it won't fit in a long, then we store off the intermediate product.
+            // if it won't fit in a long, then we store off the intermediate product.
             if (normalizedBits + numberBits >= Long.SIZE_BITS) {
                 bigNumbers.add(BigInteger.valueOf(number))
                 number = 1
@@ -82,11 +83,11 @@ class FactorialAdvanced {
             number *= normalizedNum
             numberBits = log2Floor(number) + 1
         }
-        // Check for leftovers.
+        // check for leftovers.
         if (number > 1) {
             bigNumbers.add(BigInteger.valueOf(number))
         }
-        // Efficiently multiply all the intermediate products together.
+        // efficiently multiply all the intermediate products together.
         return listNumbers(bigNumbers).shiftLeft(shift)
     }
 
@@ -116,24 +117,21 @@ class FactorialAdvanced {
             2 -> numbers[start].multiply(numbers[start + 1])
             3 -> numbers[start].multiply(numbers[start + 1]).multiply(numbers[start + 2])
             else -> {
-                // Otherwise, split the list in half and recursively do this.
+                // otherwise, split the list in half and recursively do this.
                 val m = end + start ushr 1
                 listNumbers(numbers, start, m).multiply(listNumbers(numbers, m, end))
             }
         }
     }
 
-    /**
-     * returns the base-2 logarithm of number, rounded according to the celling.
-     */
+    // returns the base-2 logarithm of number, rounded according to the celling.
     private fun log2Celling(number: Int): Int {
         return Int.SIZE_BITS - (number - 1).countLeadingZeroBits()
     }
 
-    /**
-     * returns the base-2 logarithm of number rounded according to the floor.
-     */
+    // returns the base-2 logarithm of number rounded according to the floor.
     private fun log2Floor(number: Long): Int {
         return Long.SIZE_BITS - 1 - number.countLeadingZeroBits()
     }
+
 }

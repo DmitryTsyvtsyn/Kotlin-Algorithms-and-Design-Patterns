@@ -8,20 +8,30 @@ package other
 
 class Euclid {
 
-    /**
-     * finds the greatest common divisor of two numbers and returns it
-     */
-    fun compute(num1: Int, num2: Int) : Int {
-        var copyNum1 = num1
-        var copyNum2 = num2
-        while (copyNum1 != 0 && copyNum2 != 0) {
-            if (copyNum1 > copyNum2) {
-                copyNum1 %= copyNum2
+    fun computeByDivisionWithRemainder(number1: Int, number2: Int) : Int {
+        var copyNumber1 = number1
+        var copyNumber2 = number2
+        while (copyNumber1 != 0 && copyNumber2 != 0) {
+            if (copyNumber1 > copyNumber2) {
+                copyNumber1 %= copyNumber2
             } else {
-                copyNum2 %= copyNum1
+                copyNumber2 %= copyNumber1
             }
         }
-        return copyNum1 + copyNum2
+        return copyNumber1 + copyNumber2
+    }
+
+    fun computeBySubtraction(number1: Int, number2: Int): Int {
+        var copyNumber1 = number1
+        var copyNumber2 = number2
+        while (copyNumber1 != copyNumber2) {
+            if (copyNumber1 > copyNumber2) {
+                copyNumber1 -= copyNumber2
+            } else {
+                copyNumber2 -= copyNumber1
+            }
+        }
+        return copyNumber1
     }
 
 }

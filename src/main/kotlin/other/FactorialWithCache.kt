@@ -13,12 +13,9 @@ class FactorialWithCache {
     private val cache = hashMapOf<Int, Int>()
 
     /**
-     *
      * worst time: O(n)
      * the best time: O(1)
      * amount of memory: O(n)
-     *
-     * @return returns the factorial of a number
      */
     fun compute(number: Int) : Int {
         if (number <= 1) {

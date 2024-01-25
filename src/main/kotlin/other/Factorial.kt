@@ -9,10 +9,9 @@ package other
 class Factorial {
 
     /**
+     * iterative method
      * worst time: O(n)
      * amount of memory: O(1)
-     *
-     * @return returns the factorial of a number by an iterative method
      */
     fun compute(number: Int) : Int {
         if (number <= 1) {
@@ -27,10 +26,9 @@ class Factorial {
     }
 
     /**
+     * recursive method
      * worst time: O(n)
      * amount of memory: O(n) - stack for recursion
-     *
-     * @return returns factorial recursively
      */
     fun computeRecursive(number: Int) : Int {
         return if (number <= 1) {
@@ -40,9 +38,7 @@ class Factorial {
         }
     }
 
-    /**
-     * @see <a href="https://kotlinlang.org/docs/functions.html#tail-recursive-functions">tailrec functions</a>
-     */
+    // read more: https://kotlinlang.org/docs/functions.html#tail-recursive-functions
     tailrec fun computeRecursiveWithKotlinOptimization(number: Int, result: Int = 1) : Int =
         if (number <= 1) result else computeRecursiveWithKotlinOptimization(number - 1, result * number)
 
