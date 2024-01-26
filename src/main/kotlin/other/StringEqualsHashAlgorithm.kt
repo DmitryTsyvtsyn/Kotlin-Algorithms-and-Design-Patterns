@@ -6,7 +6,10 @@ package other
  *
  */
 
-class StringEqualsHash {
+class StringEqualsHashAlgorithm {
+
+    fun equals(source: String, pattern: String) : Boolean =
+        if (source.length != pattern.length) false else source.hash() == pattern.hash()
 
     /**
      *
@@ -14,21 +17,17 @@ class StringEqualsHash {
      *
      * hash(abc) = a.code * primeCoefficient⁰ + b.code * primeCoefficient¹ + c.code * primeCoefficient²
      *
-     * @return returns the hash of the string
-     *
      */
     private fun String.hash() : Int {
         var result = 0
         var factor = 1
         forEach { symbol ->
             result += symbol.code * factor
-            factor *= primeCoefficient
+            factor *= PRIME_COEFFICIENT
         }
+        // the hash can exceed the maximum Int value, so we limit it
         return result.mod(Int.MAX_VALUE)
     }
-
-    fun equals(source: String, pattern: String) : Boolean =
-        if (source.length != pattern.length) false else source.hash() == pattern.hash()
 
     companion object {
         /**
@@ -40,6 +39,6 @@ class StringEqualsHash {
          * size of the alphabet = 26 + 26 + 3 = 55 (is not prime)
          *
          */
-        private const val primeCoefficient = 53
+        private const val PRIME_COEFFICIENT = 53
     }
 }

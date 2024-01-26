@@ -6,7 +6,7 @@ package other
  *
  */
 
-class Euclid {
+class EuclidAlgorithm {
 
     fun computeByDivisionWithRemainder(number1: Int, number2: Int) : Int {
         var copyNumber1 = number1

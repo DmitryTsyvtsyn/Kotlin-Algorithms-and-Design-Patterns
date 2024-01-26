@@ -8,11 +8,9 @@ package other
  *
  */
 
-class SieveOfEratosthenes {
+class SieveOfEratosthenesAlgorithm {
 
-    /**
-     * computes a series of primes up to the maximum value and returns a list of prime numbers
-     */
+    // computes a series of primes up to the maximum value and returns a list of prime numbers
     fun compute(maxNumber: Int) : List<Int> {
         val numbers = Array(maxNumber + 1) { index -> index >= 2 }
 
