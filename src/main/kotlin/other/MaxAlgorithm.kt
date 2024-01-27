@@ -8,14 +8,11 @@ import java.lang.IllegalArgumentException
  *
  */
 
-class Max<T : Comparable<T>> {
+class MaxAlgorithm {
 
-    /**
-     * returns the maximum element from the list
-     */
-    fun compute(items: List<T>) : T {
+    fun <T : Comparable<T>> compute(items: List<T>) : T {
         if (items.isEmpty()) {
-            throw IllegalArgumentException("items is empty!")
+            throw IllegalArgumentException("items list is empty!")
         }
         var max = items[0]
         for (i in 1 until items.size) {
@@ -29,7 +26,10 @@ class Max<T : Comparable<T>> {
     /**
      * returns the maximum element from the list recursively
      */
-    fun computeRecursive(items: List<T>) : T {
+    fun <T : Comparable<T>> computeRecursive(items: List<T>) : T {
+        if (items.isEmpty()) {
+            throw IllegalArgumentException("items list is empty!")
+        }
         if (items.size == 1) {
             return items.first()
         }

@@ -1,29 +1,24 @@
 package search
 
 /**
- * name: linear search algorithm
  *
+ * Linear search algorithm
+ *
+ * best time: 1
  * worst time: n
  * amount of memory: 1
+ *
  */
 
-class LinearSearch<T : Comparable<T>> {
+class LinearSearch {
 
-    /**
-     * returns true if the element was found in the array
-     */
-    fun exists(array: Array<T>, element: T) : Boolean {
-        return search(array, element) != -1
-    }
-
-    /**
-     * returns the index of the searched element, otherwise -1
-     */
-    fun search(array: Array<T>, element: T) : Int {
-        for (i in array.indices) {
-            if (element == array[i]) {
-                return i
+    fun <T : Comparable<T>> search(array: Array<T>, element: T) : Int {
+        var index = 0
+        while (index < array.size) {
+            if (element == array[index]) {
+                return index
             }
+            index++
         }
         return -1
     }

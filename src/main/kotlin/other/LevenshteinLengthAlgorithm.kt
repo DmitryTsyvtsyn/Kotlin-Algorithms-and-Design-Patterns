@@ -8,11 +8,8 @@ import java.lang.Integer.min
  *
  */
 
-class LevenshteinLength {
+class LevenshteinLengthAlgorithm {
 
-    /**
-     * determines the Levenshtein distance for two strings and returns it
-     */
     fun compute(str1: String, str2: String) : Int {
         val matrix = Array(str1.length + 1) {
             Array(str2.length + 1) { 0 }

@@ -6,17 +6,16 @@ package other
  *
  * optimization: caching previous factorial values
  *
+ * worst time: O(n)
+ * the best time: O(1)
+ * amount of memory: O(n)
+ *
  */
 
 class FactorialWithCache {
 
     private val cache = hashMapOf<Int, Int>()
 
-    /**
-     * worst time: O(n)
-     * the best time: O(1)
-     * amount of memory: O(n)
-     */
     fun compute(number: Int) : Int {
         if (number <= 1) {
             return 1

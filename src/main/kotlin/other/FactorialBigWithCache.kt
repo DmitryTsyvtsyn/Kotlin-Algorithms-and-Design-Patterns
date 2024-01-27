@@ -10,18 +10,17 @@ import java.math.BigInteger
  *
  * also adding large numbers
  *
+ * worst time: O(n)
+ * the best time: O(1)
+ * amount of memory: O(n)
+ * problem: creating a huge number of BigInteger objects
+ *
  */
 
 class FactorialBigWithCache {
 
     private val cache = hashMapOf<Int, BigInteger>()
 
-    /**
-     * worst time: O(n)
-     * the best time: O(1)
-     * amount of memory: O(n)
-     * problem: creating a huge number of BigInteger objects
-     */
     fun compute(number: Int) : BigInteger {
         if (number <= 1) {
             return BigInteger.ONE

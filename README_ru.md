@@ -69,24 +69,23 @@
 
 4. пакет <code>ru.search</code> - алгоритмы поиска
     * [Бинарный поиск](/src/main/kotlin/search/BinarySearch.kt)
-    * [Бинарный поиск (рекурсивный)](/src/main/kotlin/search/BinarySearchRecursive.kt)
     * [Линейный поиск](/src/main/kotlin/search/LinearSearch.kt)
 
 5. пакет <code>ru.other</code> - другие алгоритмы
     * [Факториал числа](/src/main/kotlin/other/Factorial.kt)
-    * [Алгоритм Кнута Морриса Пратта для поиска подстроки](/src/main/kotlin/other/KnuthMorrisPratt.kt)
-    * [Расстояние Левенштейна](/src/main/kotlin/other/LevensteinLength.kt)
-    * [Палиндром](/src/main/kotlin/other/Palindrome.kt)
-    * [Алгоритм Эвклида](/src/main/kotlin/other/Euclid.kt)
+    * [Алгоритм Кнута Морриса Пратта для поиска подстроки](/src/main/kotlin/other/KnuthMorrisPrattAlgorithm.kt)
+    * [Расстояние Левенштейна](/src/main/kotlin/other/LevenshteinLengthAlgorithm.kt)
+    * [Палиндром](/src/main/kotlin/other/PalindromeAlgorithm.kt)
+    * [Алгоритм Эвклида](/src/main/kotlin/other/EuclidAlgorithm.kt)
     * [FizzBuzz](/src/main/kotlin/other/FizzBuzz.kt)
-    * [Алгоритм переворота массива](/src/main/kotlin/other/ReverseArray.kt)
-    * [Решето Эратосфена](/src/main/kotlin/other/SieveOfEratosthenes.kt)
-    * [Поиск минимума](/src/main/kotlin/other/Min.kt)
-    * [Поиск максимума](/src/main/kotlin/other/Max.kt)
+    * [Алгоритм переворота массива](/src/main/kotlin/other/ReverseArrayAlgorithm.kt)
+    * [Решето Эратосфена](/src/main/kotlin/other/SieveOfEratosthenesAlgorithm.kt)
+    * [Поиск минимума](/src/main/kotlin/other/MinAlgorithm.kt)
+    * [Поиск максимума](/src/main/kotlin/other/MaxAlgorithm.kt)
     * [Квадратный корень из числа](/src/main/kotlin/other/Sqrt.kt)
     * [Конечный автомат](/src/main/kotlin/other/BinaryDigitsCounter.kt)
-    * [Проверка скобок на корректность](/src/main/kotlin/other/ParenthesisCheck.kt)
-    * [Сравнение строк с помощью хэша](/src/main/kotlin/other/StringEqualsHash.kt)
+    * [Проверка скобок на корректность](/src/main/kotlin/other/ParenthesisCheckAlgorithm.kt)
+    * [Сравнение строк с помощью хэша](/src/main/kotlin/other/StringEqualsHashAlgorithm.kt)
 
 ## Ваши пожелания и идеи
 

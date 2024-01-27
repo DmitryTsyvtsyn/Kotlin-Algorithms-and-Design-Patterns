@@ -69,24 +69,23 @@ Content:
 
 4. package <code>search</code> - search algorithms
     * [Binary search](/src/main/kotlin/search/BinarySearch.kt)
-    * [Binary search (recursive)](/src/main/kotlin/search/BinarySearchRecursive.kt)
     * [Linear search](/src/main/kotlin/search/LinearSearch.kt)
 
 5. package <code>other</code> - other algorithms
     * [Factorial](/src/main/kotlin/other/Factorial.kt)
-    * [Knut Morris Pratt's Algorithm for finding a substring](/src/main/kotlin/other/KnuthMorrisPratt.kt)
-    * [Levenshtein distance](/src/main/kotlin/other/LevensteinLength.kt)
-    * [Palindrome](/src/main/kotlin/other/Palindrome.kt)
-    * [Euclid's algorithm](/src/main/kotlin/other/Euclid.kt)
+    * [Knut Morris Pratt's Algorithm for finding a substring](/src/main/kotlin/other/KnuthMorrisPrattAlgorithm.kt)
+    * [Levenshtein distance](/src/main/kotlin/other/LevenshteinLengthAlgorithm.kt)
+    * [Palindrome](/src/main/kotlin/other/PalindromeAlgorithm.kt)
+    * [Euclid's algorithm](/src/main/kotlin/other/EuclidAlgorithm.kt)
     * [FizzBuzz](/src/main/kotlin/other/FizzBuzz.kt)
-    * [Reverse Array](/src/main/kotlin/other/ReverseArray.kt)
-    * [Sieve of Eratosthenes](/src/main/kotlin/other/SieveOfEratosthenes.kt)
-    * [Finding the minimum](/src/main/kotlin/other/Min.kt)
-    * [Finding the maximum](/src/main/kotlin/other/Max.kt)
+    * [Reverse Array](/src/main/kotlin/other/ReverseArrayAlgorithm.kt)
+    * [Sieve of Eratosthenes](/src/main/kotlin/other/SieveOfEratosthenesAlgorithm.kt)
+    * [Finding the minimum](/src/main/kotlin/other/MinAlgorithm.kt)
+    * [Finding the maximum](/src/main/kotlin/other/MaxAlgorithm.kt)
     * [The square root of a number](/src/main/kotlin/other/Sqrt.kt)
     * [Finite state machine](/src/main/kotlin/other/BinaryDigitsCounter.kt)
-    * [ParenthesisCheck](/src/main/kotlin/other/ParenthesisCheck.kt)
-    * [StringEqualsHash](/src/main/kotlin/other/StringEqualsHash.kt)
+    * [ParenthesisCheck](/src/main/kotlin/other/ParenthesisCheckAlgorithm.kt)
+    * [StringEqualsHash](/src/main/kotlin/other/StringEqualsHashAlgorithm.kt)
 
 ## Your wishes and ideas
 
