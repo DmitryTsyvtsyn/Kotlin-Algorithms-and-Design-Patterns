@@ -72,20 +72,24 @@
     * [Линейный поиск](/src/main/kotlin/search/LinearSearch.kt)
 
 5. пакет <code>ru.other</code> - другие алгоритмы
-    * [Факториал числа](/src/main/kotlin/other/Factorial.kt)
+    * [Конечный автомат](/src/main/kotlin/other/BinaryDigitsCounter.kt)
+    * [Алгоритм Эвклида](/src/main/kotlin/other/EuclidAlgorithm.kt)
+    * [Факториал](/src/main/kotlin/other/Factorial.kt)
+    * [Факториал из Google Guava библиотеки](/src/main/kotlin/other/FactorialAdvanced.kt)
+    * [Факториал BigInteger'ов с кэшем](/src/main/kotlin/other/FactorialBigWithCache.kt)
+    * [Факториал с кэшем](/src/main/kotlin/other/FactorialWithCache.kt)
+    * [FizzBuzz](/src/main/kotlin/other/FizzBuzz.kt)
     * [Алгоритм Кнута Морриса Пратта для поиска подстроки](/src/main/kotlin/other/KnuthMorrisPrattAlgorithm.kt)
     * [Расстояние Левенштейна](/src/main/kotlin/other/LevenshteinLengthAlgorithm.kt)
+    * [Поиск максимума](/src/main/kotlin/other/MaxAlgorithm.kt)
+    * [Поиск минимума](/src/main/kotlin/other/MinAlgorithm.kt)
     * [Палиндром](/src/main/kotlin/other/PalindromeAlgorithm.kt)
-    * [Алгоритм Эвклида](/src/main/kotlin/other/EuclidAlgorithm.kt)
-    * [FizzBuzz](/src/main/kotlin/other/FizzBuzz.kt)
+    * [Проверка скобок на корректность](/src/main/kotlin/other/ParenthesisCheckAlgorithm.kt)
     * [Алгоритм переворота массива](/src/main/kotlin/other/ReverseArrayAlgorithm.kt)
     * [Решето Эратосфена](/src/main/kotlin/other/SieveOfEratosthenesAlgorithm.kt)
-    * [Поиск минимума](/src/main/kotlin/other/MinAlgorithm.kt)
-    * [Поиск максимума](/src/main/kotlin/other/MaxAlgorithm.kt)
     * [Квадратный корень из числа](/src/main/kotlin/other/Sqrt.kt)
-    * [Конечный автомат](/src/main/kotlin/other/BinaryDigitsCounter.kt)
-    * [Проверка скобок на корректность](/src/main/kotlin/other/ParenthesisCheckAlgorithm.kt)
     * [Сравнение строк с помощью хэша](/src/main/kotlin/other/StringEqualsHashAlgorithm.kt)
+    * [Алгоритм обмена двух переменных](/src/main/kotlin/other/SwapAlgorithm.kt)
 
 ## Ваши пожелания и идеи
 

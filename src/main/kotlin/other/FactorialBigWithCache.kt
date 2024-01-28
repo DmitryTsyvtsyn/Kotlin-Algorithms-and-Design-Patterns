@@ -26,8 +26,9 @@ class FactorialBigWithCache {
             return BigInteger.ONE
         }
 
-        if (cache.contains(number)) {
-            return cache[number]!!
+        val cachedResult = cache[number]
+        if (cachedResult != null) {
+            return cachedResult
         }
 
         var result = BigInteger.ONE

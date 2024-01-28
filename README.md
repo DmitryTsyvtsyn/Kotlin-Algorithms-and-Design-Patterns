@@ -72,20 +72,24 @@ Content:
     * [Linear search](/src/main/kotlin/search/LinearSearch.kt)
 
 5. package <code>other</code> - other algorithms
+    * [Finite state machine](/src/main/kotlin/other/BinaryDigitsCounter.kt)
+    * [Euclid's algorithm](/src/main/kotlin/other/EuclidAlgorithm.kt)
     * [Factorial](/src/main/kotlin/other/Factorial.kt)
+    * [Factorial from Google Guava library](/src/main/kotlin/other/FactorialAdvanced.kt)
+    * [Factorial of BigInteger's with cache](/src/main/kotlin/other/FactorialBigWithCache.kt)
+    * [Factorial with cache](/src/main/kotlin/other/FactorialWithCache.kt)
+    * [FizzBuzz](/src/main/kotlin/other/FizzBuzz.kt)
     * [Knut Morris Pratt's Algorithm for finding a substring](/src/main/kotlin/other/KnuthMorrisPrattAlgorithm.kt)
     * [Levenshtein distance](/src/main/kotlin/other/LevenshteinLengthAlgorithm.kt)
+    * [Finding the maximum](/src/main/kotlin/other/MaxAlgorithm.kt)
+    * [Finding the minimum](/src/main/kotlin/other/MinAlgorithm.kt)
     * [Palindrome](/src/main/kotlin/other/PalindromeAlgorithm.kt)
-    * [Euclid's algorithm](/src/main/kotlin/other/EuclidAlgorithm.kt)
-    * [FizzBuzz](/src/main/kotlin/other/FizzBuzz.kt)
+    * [Parenthesis checking algorithm](/src/main/kotlin/other/ParenthesisCheckAlgorithm.kt)
     * [Reverse Array](/src/main/kotlin/other/ReverseArrayAlgorithm.kt)
     * [Sieve of Eratosthenes](/src/main/kotlin/other/SieveOfEratosthenesAlgorithm.kt)
-    * [Finding the minimum](/src/main/kotlin/other/MinAlgorithm.kt)
-    * [Finding the maximum](/src/main/kotlin/other/MaxAlgorithm.kt)
     * [The square root of a number](/src/main/kotlin/other/Sqrt.kt)
-    * [Finite state machine](/src/main/kotlin/other/BinaryDigitsCounter.kt)
-    * [ParenthesisCheck](/src/main/kotlin/other/ParenthesisCheckAlgorithm.kt)
     * [StringEqualsHash](/src/main/kotlin/other/StringEqualsHashAlgorithm.kt)
+    * [Swap algorithm](/src/main/kotlin/other/SwapAlgorithm.kt)
 
 ## Your wishes and ideas
 

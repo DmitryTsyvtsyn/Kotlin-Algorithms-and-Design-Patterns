@@ -21,8 +21,9 @@ class FactorialWithCache {
             return 1
         }
 
-        if (cache.contains(number)) {
-            return cache[number]!!
+        val cachedResult = cache[number]
+        if (cachedResult != null) {
+            return cachedResult
         }
 
         var result = 1
