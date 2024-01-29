@@ -1,62 +1,59 @@
 package sorting
 
+import org.junit.Assert
 import org.junit.Test
-import org.junit.Assert.assertEquals
+import kotlin.random.Random
 
 class MergeSortTest {
 
+    private val mergeSort = MergeSort()
+
     @Test
-    fun test_reversed_array() {
-        val expected = TestUtils.list(100000)
+    fun `test sort`() {
+        val expected1 = Array(1_000_000) { it }
+        val actual1 = expected1.reversedArray()
+        mergeSort.sort(actual1)
+        Assert.assertArrayEquals(expected1, actual1)
 
-        val actual = expected.reversed().toTypedArray()
-        actual.mergeSort()
+        val actual2 = Array(1_000_000) { Random.nextInt(1_000_000) }
+        val expected2 = actual2.sortedArray()
+        mergeSort.sort(actual2)
+        Assert.assertArrayEquals(expected2, actual2)
 
-        assertEquals(expected, actual.toList())
+        val expected3 = Array(1_000_000) { it }
+        val actual3 = expected3.copyOf()
+        actual3.shuffle()
+        mergeSort.sort(actual3)
+        Assert.assertArrayEquals(expected3, actual3)
+
+        val expected4 = Array(1_000_000) { it }
+        val actual4 = expected3.copyOf()
+        mergeSort.sort(actual3)
+        Assert.assertArrayEquals(expected4, actual4)
     }
 
     @Test
-    fun test_random_array() {
-        val actual = TestUtils.randomArray(50000)
+    fun `test sort recursive`() {
+        val expected1 = Array(1_000_000) { it }
+        val actual1 = expected1.reversedArray()
+        mergeSort.sortRecursive(actual1)
+        Assert.assertArrayEquals(expected1, actual1)
 
-        val expected = actual.sorted()
+        val actual2 = Array(1_000_000) { Random.nextInt(1_000_000) }
+        val expected2 = actual2.sortedArray()
+        mergeSort.sortRecursive(actual2)
+        Assert.assertArrayEquals(expected2, actual2)
 
-        actual.mergeSort()
+        val expected3 = Array(1_000_000) { it }
+        val actual3 = expected3.copyOf()
+        actual3.shuffle()
+        mergeSort.sortRecursive(actual3)
+        Assert.assertArrayEquals(expected3, actual3)
 
-        assertEquals(expected, actual.toList())
-    }
-
-    @Test
-    fun test_shuffled_array() {
-        val expected = TestUtils.sortedArray(100000)
-
-        val actual = expected.copyOf()
-        actual.shuffle()
-        actual.mergeSort()
-
-        assertEquals(expected.toList(), actual.toList())
-    }
-
-    @Test
-    fun test_sorted_array() {
-        val actual = TestUtils.sortedArray(100000)
-
-        val expected = actual.toList()
-
-        actual.mergeSort()
-
-        assertEquals(expected, actual.toList())
-    }
-
-    @Test
-    fun test_random_list() {
-        val actual = TestUtils.mutableRandomList(500000)
-
-        val expected = actual.sorted()
-
-        actual.mergeSort()
-
-        assertEquals(expected, actual)
+        val expected4 = Array(1_000_000) { it }
+        val actual4 = expected3.copyOf()
+        mergeSort.sortRecursive(actual3)
+        Assert.assertArrayEquals(expected4, actual4)
     }
 
 }

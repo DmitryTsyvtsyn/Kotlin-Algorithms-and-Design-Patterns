@@ -58,7 +58,6 @@ Content:
 
 3. package <code>sorting</code> - sorting algorithms
     * [Bubble sort](/src/main/kotlin/sorting/BubbleSort.kt)
-    * [Bubble sort (improved)](/src/main/kotlin/sorting/BubbleSortImproved.kt)
     * [Insertion sort](/src/main/kotlin/sorting/InsertionSort.kt)
     * [Merge sort](/src/main/kotlin/sorting/MergeSort.kt)
     * [Quick sort](/src/main/kotlin/sorting/QuickSort.kt)

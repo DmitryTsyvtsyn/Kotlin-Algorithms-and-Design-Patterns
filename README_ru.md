@@ -58,7 +58,6 @@
 
 3. пакет <code>ru.sorting</code> - алгоритмы сортировки
     * [Пузырьковая сортировка](/src/main/kotlin/sorting/BubbleSort.kt)
-    * [Пузырьковая сортировка (улучшенная)](/src/main/kotlin/sorting/BubbleSortImproved.kt)
     * [Сортировка вставками](/src/main/kotlin/sorting/InsertionSort.kt)
     * [Сортировака слиянием](/src/main/kotlin/sorting/MergeSort.kt)
     * [Быстрая сортировка](/src/main/kotlin/sorting/QuickSort.kt)

@@ -1,62 +1,59 @@
 package sorting
 
 import org.junit.Test
-import org.junit.Assert.assertEquals
+import org.junit.Assert.assertArrayEquals
+import kotlin.random.Random
 
 internal class BubbleSortTest {
 
+    private val bubbleSort = BubbleSort()
+
     @Test
-    fun test_reversed_array() {
-        val expected = TestUtils.list(1000)
+    fun `test sort`() {
+        val expected1 = Array(1000) { it }
+        val actual1 = expected1.reversedArray()
+        bubbleSort.sort(actual1)
+        assertArrayEquals(expected1, actual1)
 
-        val actual = expected.reversed().toTypedArray()
-        actual.bubbleSort()
+        val actual2 = Array(1000) { Random.nextInt(1000) }
+        val expected2 = actual2.sortedArray()
+        bubbleSort.sort(actual2)
+        assertArrayEquals(expected2, actual2)
 
-        assertEquals(expected, actual.toList())
+        val expected3 = Array(1000) { it }
+        val actual3 = expected3.copyOf()
+        actual3.shuffle()
+        bubbleSort.sort(actual3)
+        assertArrayEquals(expected3, actual3)
+
+        val expected4 = Array(1000) { it }
+        val actual4 = expected3.copyOf()
+        bubbleSort.sort(actual3)
+        assertArrayEquals(expected4, actual4)
     }
 
     @Test
-    fun test_random_array() {
-        val actual = TestUtils.randomArray(500)
+    fun `test sort improved`() {
+        val expected1 = Array(1000) { it }
+        val actual1 = expected1.reversedArray()
+        bubbleSort.sortImproved(actual1)
+        assertArrayEquals(expected1, actual1)
 
-        val expected = actual.sorted()
+        val actual2 = Array(1000) { Random.nextInt(1000) }
+        val expected2 = actual2.sortedArray()
+        bubbleSort.sortImproved(actual2)
+        assertArrayEquals(expected2, actual2)
 
-        actual.bubbleSort()
+        val expected3 = Array(1000) { it }
+        val actual3 = expected3.copyOf()
+        actual3.shuffle()
+        bubbleSort.sortImproved(actual3)
+        assertArrayEquals(expected3, actual3)
 
-        assertEquals(expected, actual.toList())
-    }
-
-    @Test
-    fun test_shuffled_array() {
-        val expected = TestUtils.sortedArray(1000)
-
-        val actual = expected.copyOf()
-        actual.shuffle()
-        actual.bubbleSort()
-
-        assertEquals(expected.toList(), actual.toList())
-    }
-
-    @Test
-    fun test_sorted_array() {
-        val actual = TestUtils.sortedArray(1000)
-
-        val expected = actual.toList()
-
-        actual.bubbleSort()
-
-        assertEquals(expected, actual.toList())
-    }
-
-    @Test
-    fun test_random_list() {
-        val actual = TestUtils.mutableRandomList(5000)
-
-        val expected = actual.sorted()
-
-        actual.bubbleSort()
-
-        assertEquals(expected, actual)
+        val expected4 = Array(1000) { it }
+        val actual4 = expected3.copyOf()
+        bubbleSort.sortImproved(actual3)
+        assertArrayEquals(expected4, actual4)
     }
 
 }
