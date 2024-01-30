@@ -64,7 +64,7 @@
     * [Сортировка выбором](/src/main/kotlin/sorting/SelectionSort.kt)
     * [Поразрядная сортировка](/src/main/kotlin/sorting/RadixSort.kt)
     * [Tim sort](/src/main/kotlin/sorting/TimSort.kt)
-    * [Сортировка подсчётом](/src/main/kotlin/sorting/CountSort.kt)
+    * [Сортировка подсчётом](/src/main/kotlin/sorting/CountingSort.kt)
 
 4. пакет <code>ru.search</code> - алгоритмы поиска
     * [Бинарный поиск](/src/main/kotlin/search/BinarySearch.kt)

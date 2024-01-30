@@ -1,62 +1,35 @@
 package sorting
 
 import org.junit.Test
-import org.junit.Assert.assertEquals
+import org.junit.Assert.assertArrayEquals
+import kotlin.random.Random
 
 class SelectionSortTest {
 
     @Test
-    fun test_reversed_array() {
-        val expected = TestUtils.list(1000)
+    fun test() {
+        val selectionSort = SelectionSort()
 
-        val actual = expected.reversed().toTypedArray()
-        actual.selectionSort()
+        val expected1 = Array(1000) { it }
+        val actual1 = expected1.reversedArray()
+        selectionSort.sort(actual1)
+        assertArrayEquals(expected1, actual1)
 
-        assertEquals(expected, actual.toList())
-    }
+        val actual2 = Array(1000) { Random.nextInt(1000) }
+        val expected2 = actual2.sortedArray()
+        selectionSort.sort(actual2)
+        assertArrayEquals(expected2, actual2)
 
-    @Test
-    fun test_random_array() {
-        val actual = TestUtils.randomArray(500)
+        val expected3 = Array(1000) { it }
+        val actual3 = expected3.copyOf()
+        actual3.shuffle()
+        selectionSort.sort(actual3)
+        assertArrayEquals(expected3, actual3)
 
-        val expected = actual.sorted()
-
-        actual.selectionSort()
-
-        assertEquals(expected, actual.toList())
-    }
-
-    @Test
-    fun test_shuffled_array() {
-        val expected = TestUtils.sortedArray(1000)
-
-        val actual = expected.copyOf()
-        actual.shuffle()
-        actual.selectionSort()
-
-        assertEquals(expected.toList(), actual.toList())
-    }
-
-    @Test
-    fun test_sorted_array() {
-        val actual = TestUtils.sortedArray(1000)
-
-        val expected = actual.toList()
-
-        actual.selectionSort()
-
-        assertEquals(expected, actual.toList())
-    }
-
-    @Test
-    fun test_random_list() {
-        val actual = TestUtils.mutableRandomList(5000)
-
-        val expected = actual.sorted()
-
-        actual.selectionSort()
-
-        assertEquals(expected, actual)
+        val expected4 = Array(1000) { it }
+        val actual4 = expected3.copyOf()
+        selectionSort.sort(actual3)
+        assertArrayEquals(expected4, actual4)
     }
 
 }

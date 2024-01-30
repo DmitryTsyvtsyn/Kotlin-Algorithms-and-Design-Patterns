@@ -1,45 +1,38 @@
 package sorting
 
 /**
- * selection sort algorithm
+ *
+ * Selection sort is a simple and efficient sorting algorithm that works by repeatedly selecting
+ *
+ * the smallest (or largest) element from the unsorted portion of the list and
+ *
+ * moving it to the sorted portion of the list.
  *
  * worst time: n²
- * the best time: n²
+ * best time: n²
  * average time: n²
  *
  * amount of memory: 1
+ *
  */
 
-fun <T : Comparable<T>> Array<T>.selectionSort() {
-    val array = this
-    for (i in 0 until size - 1) {
-        var min = i
-        for (j in i + 1 until size) {
-            if (array[min] > array[j]) {
-                min = j
-            }
-        }
-        if (min != i) {
-            array[min] = array[i].apply {
-                array[i] = array[min]
-            }
-        }
-    }
-}
+class SelectionSort {
 
-fun <T : Comparable<T>> MutableList<T>.selectionSort() {
-    val list = this
-    for (i in 0 until size - 1) {
-        var min = i
-        for (j in i + 1 until size) {
-            if (list[min] > list[j]) {
-                min = j
+    fun <T : Comparable<T>> sort(array: Array<T>) {
+        val arraySize = array.size
+        for (i in 0 until arraySize - 1) {
+            var min = i
+            for (j in i + 1 until arraySize) {
+                if (array[min] > array[j]) {
+                    min = j
+                }
             }
-        }
-        if (min != i) {
-            list[min] = list[i].apply {
-                list[i] = list[min]
+            if (min != i) {
+                val tmp = array[i]
+                array[i] = array[min]
+                array[min] = tmp
             }
         }
     }
+
 }

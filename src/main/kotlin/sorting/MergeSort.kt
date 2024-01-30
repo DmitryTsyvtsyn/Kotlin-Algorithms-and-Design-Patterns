@@ -16,9 +16,9 @@ package sorting
 class MergeSort {
 
     /**
+     * worst time: n * log(n)
      * best time: n * log(n)
      * average time: n * log(n)
-     * worst time: n * log(n)
      *
      * amount of memory: n
      */
@@ -76,9 +76,9 @@ class MergeSort {
     }
 
     /**
+     * worst time: n * log(n)
      * best time: n * log(n)
      * average time: n * log(n)
-     * worst time: n * log(n)
      *
      * amount of memory: n * log(n)
      */

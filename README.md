@@ -64,7 +64,7 @@ Content:
     * [Selection sort](/src/main/kotlin/sorting/SelectionSort.kt)
     * [Radix sort](/src/main/kotlin/sorting/RadixSort.kt)
     * [Tim sort](/src/main/kotlin/sorting/TimSort.kt)
-    * [Count sort](/src/main/kotlin/sorting/CountSort.kt)
+    * [Count sort](/src/main/kotlin/sorting/CountingSort.kt)
 
 4. package <code>search</code> - search algorithms
     * [Binary search](/src/main/kotlin/search/BinarySearch.kt)
