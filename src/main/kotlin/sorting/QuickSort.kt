@@ -3,75 +3,51 @@ package sorting
 import kotlin.random.Random
 
 /**
- * quicksort algorithm
+ *
+ * QuickSort is a sorting algorithm based on the Divide and Conquer algorithm
+ *
+ * that picks an element as a pivot and partitions the given array around the picked pivot
+ *
+ * by placing the pivot in its correct position in the sorted array.
+ *
  *
  * worst time: n²
- * the best time: n * log(n)
+ * best time: n * log(n)
  * average time: n * log(n)
  *
  * amount of memory: n
+ *
  */
 
-fun <T : Comparable<T>> Array<T>.quickSort(start: Int = 0, end: Int = size - 1) {
-    val array = this
+class QuickSort {
 
-    if (array.isEmpty()) return
-    if (start >= end) return
+    fun <T : Comparable<T>> sort(array: Array<T>, start: Int = 0, end: Int = array.size - 1) {
+        if (array.isEmpty()) return
+        if (start >= end) return
 
-    val pivotIndex = Random.nextInt(start, end + 1)
-    val pivot = array[pivotIndex]
+        val pivotIndex = Random.nextInt(start, end + 1)
+        val pivot = array[pivotIndex]
 
-    var i = start
-    var j = end
-
-    while (i <= j) {
-        while (array[i] < pivot) {
-            i++
-        }
-        while (array[j] > pivot) {
-            j--
-        }
-        if (i <= j) {
-            array[i] = array[j].apply {
-                array[j] = array[i]
+        var i = start
+        var j = end
+        while (i <= j) {
+            while (array[i] < pivot) {
+                i++
             }
-            i++
-            j--
+            while (array[j] > pivot) {
+                j--
+            }
+            if (i <= j) {
+                val tmp = array[i]
+                array[i] = array[j]
+                array[j] = tmp
+                i++
+                j--
+            }
         }
+
+        if (i < end) sort(array, i, end)
+        if (0 < j) sort(array, start, j)
     }
 
-    if (i < end) quickSort(i, end)
-    if (0 < j) quickSort(start, j)
-}
-
-fun <T : Comparable<T>> MutableList<T>.quickSort(start: Int = 0, end: Int = size - 1) {
-    val list = this
-
-    if (list.isEmpty()) return
-    if (start >= end) return
-
-    val pivotIndex = Random.nextInt(start, end + 1)
-    val pivot = list[pivotIndex]
-
-    var i = start
-    var j = end
-
-    while (i <= j) {
-        while (list[i] < pivot) {
-            i++
-        }
-        while (list[j] > pivot) {
-            j--
-        }
-        if (i <= j) {
-            list[i] = list[j].apply {
-                list[j] = list[i]
-            }
-            i++
-            j--
-        }
-    }
-
-    if (i < end) quickSort(i, end)
-    if (0 < j) quickSort(start, j)
 }
