@@ -45,7 +45,8 @@
 
 2. пакет <code>ru.structures</code> - структуры данных
     * [Бинарное дерево](/src/main/kotlin/structures/BinaryTree.kt)
-    * [Стэк](/src/main/kotlin/structures/Stack.kt)
+    * [Стэк 1-ая реализация](/src/main/kotlin/structures/ArrayListStack.kt)
+    * [Стэк 2-ая реализация](/src/main/kotlin/structures/LinkedListStack.kt)
     * [Очередь](/src/main/kotlin/structures/Queue.kt)
     * [Неориентированный граф](/src/main/kotlin/structures/Graph.kt)
     * [Ориентированный граф с весами](/src/main/kotlin/structures/GraphWithWeights.kt)

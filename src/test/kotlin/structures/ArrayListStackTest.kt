@@ -5,30 +5,36 @@ import org.junit.Assert.assertEquals
 
 class ArrayListStackTest {
 
-    private val arrayListStack = Stack.ArrayListStack<Int>()
-
     @Test
-    fun test_push() {
-        arrayListStack.push(10)
-        assertEquals(10, arrayListStack.peek())
-    }
+    fun test() {
+        val stack = ArrayListStack<Int>()
 
-    @Test
-    fun test_pop() {
-        arrayListStack.push(20)
-        assertEquals(20, arrayListStack.pop())
-    }
+        stack.push(1)
+        stack.push(2)
+        stack.push(3)
 
-    @Test
-    fun test_is_empty() {
-        arrayListStack.clear()
-        assertEquals(true, arrayListStack.isEmpty())
-    }
+        assertEquals(false, stack.isEmpty)
+        assertEquals(3, stack.size)
 
-    @Test
-    fun test_is_not_empty() {
-        arrayListStack.push(20)
-        assertEquals(false, arrayListStack.isEmpty())
+        assertEquals(3, stack.pop())
+        assertEquals(2, stack.pop())
+        assertEquals(1, stack.pop())
+
+        assertEquals(true, stack.isEmpty)
+        assertEquals(0, stack.size)
+
+        stack.push(10)
+        stack.push(20)
+        stack.push(30)
+
+        assertEquals(3, stack.size)
+        assertEquals(30, stack.peek())
+        assertEquals(3, stack.size)
+
+        stack.clear()
+
+        assertEquals(true, stack.isEmpty)
+        assertEquals(0, stack.size)
     }
 
 }
