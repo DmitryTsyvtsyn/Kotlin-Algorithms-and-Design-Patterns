@@ -5,15 +5,14 @@ import java.util.ArrayList
 
 /**
  *
- * Stack is a linear data structure that follows the LIFO (Last-In-First-Out) principle
+ * Stack is a linear data structure that follows the LIFO (last in first out) principle
  *
  * LIFO implies that the element that is inserted last, comes out first.
  *
  * The main operations:
  *
- *     push() - when we insert an element in a stack then the operation is known as a push.
- *     pop() - when we delete an element from the stack, the operation is known as a pop.
- *     If the stack is empty means that no element exists in the stack.
+ * 1) push() - when we insert an element in a stack then the operation is known as a push
+ * 2) pop() - when we delete an element from the stack, the operation is known as a pop
  *
  * All these operations performed in O(1) time.
  *

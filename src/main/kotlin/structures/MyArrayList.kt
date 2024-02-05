@@ -4,17 +4,18 @@ import java.lang.IllegalStateException
 
 /**
  *
- * data structure: simple java.util.ArrayList implementation
+ * The simple java.util.ArrayList implementation
  *
- * description: wrapper over a regular array, in which indexes are checked and
- * when the array overflows, its size increases dynamically
+ * It is a wrapper over a regular array, in which indexes are checked and
  *
- * @property capacity initial array size
+ * when the array overflows its size increases dynamically
  *
- * P.S. Kotlin lists use under the hood java.util.ArrayList
- * for example:
+ * P.S. Kotlin lists use under the hood java.util.ArrayList on the JVM
+ * 
+ * Example:
  *     val numbers = listOf(1, 2, 3) // java.util.ArrayList
  *     val symbols = mutableListOf('a', 'b', 'c') // also java.util.ArrayList
+ *     
  */
 
 class MyArrayList(private var capacity: Int = 10) {
