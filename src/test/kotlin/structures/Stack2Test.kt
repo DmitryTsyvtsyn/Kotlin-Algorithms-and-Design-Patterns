@@ -3,11 +3,11 @@ package structures
 import org.junit.Test
 import org.junit.Assert.assertEquals
 
-class LinkedListStackTest {
+class Stack2Test {
 
     @Test
     fun test() {
-        val stack = LinkedListStack<Int>()
+        val stack = Stack2<Int>()
 
         stack.push(1)
         stack.push(2)

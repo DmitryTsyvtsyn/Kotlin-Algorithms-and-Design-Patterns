@@ -45,13 +45,13 @@ Content:
 
 2. package <code>structures</code> - data structure
     * [Binary tree](/src/main/kotlin/structures/BinaryTree.kt)
-    * [Stack 1st implementation](/src/main/kotlin/structures/ArrayListStack.kt)
-    * [Stack 2nd implementation](/src/main/kotlin/structures/LinkedListStack.kt)
+    * [Stack 1st implementation](/src/main/kotlin/structures/Stack1.kt)
+    * [Stack 2nd implementation](/src/main/kotlin/structures/Stack2.kt)
     * [Queue](/src/main/kotlin/structures/Queue.kt)
     * [Undirected Graph](/src/main/kotlin/structures/Graph.kt)
     * [Directed Graph with weights](/src/main/kotlin/structures/GraphWithWeights.kt)
     * [Matrix](/src/main/kotlin/structures/Matrix.kt)
-    * [ArrayList](/src/main/kotlin/structures/MyArrayList.kt)
+    * [Dynamic Array](/src/main/kotlin/structures/DynamicArray.kt)
     * [Single linked list](/src/main/kotlin/structures/SingleLinkedList.kt)
     * [Double linked list](/src/main/kotlin/structures/DoubleLinkedList.kt)
     * [Min-heap](/src/main/kotlin/structures/MinHeap.kt)
