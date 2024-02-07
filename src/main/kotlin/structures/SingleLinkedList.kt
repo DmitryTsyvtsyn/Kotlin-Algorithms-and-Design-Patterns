@@ -2,180 +2,202 @@ package structures
 
 /**
  *
- * data structure: singly linked list
+ * LinkedList a data structure consisting of a collection of nodes that contain a link to the next/previous node.
  *
- * description: in a singly linked list, each element stores a link only to the next element
- *
- * time to insert an element at the beginning and end of the list: O(1)
- * insertion time in the middle by index: O(n)
- * delete: O(n)
+ * In the single LinkedList each node contains a link only to the next element
  *
  */
 
-class SingleLinkedList<T>(
-    /**
-     * stores a reference to the first element of the list
-     *
-     * if the list is empty, then the reference is null
-     */
-    private var first: Node<T>? = null,
-    /**
-     * stores a reference to the last element of the list
-     *
-     * if the list is empty, then the reference is null
-     */
-    private var last: Node<T>? = null,
-) {
+class SingleLinkedList<T>() {
+
+    private var head: Node<T>? = null
+    private var tail: Node<T>? = null
+
+    private var size: Int = 0
+
+    val isEmpty: Boolean
+        get() = head == null
 
     /**
-     *  stores the number of elements in the list
+     * Complexity:
+     * worst time: O(n)
+     * best time: O(1)
+     * average time: O(n)
      */
-    private var count: Int = 0
+    fun add(index: Int, value: T) : Boolean {
+        if (head == null) return false
 
-    /**
-     * singly linked list node
-     *
-     * @property value - node value
-     * @property next - link to the next element (assuming the element is not the last one)
-     */
-    class Node<T>(
-        private val value: T,
-        private var next: Node<T>? = null
-    ) {
-
-        fun changeNext(next: Node<T>? = null) {
-            this.next = next
-        }
-
-        fun next() = next
-        fun value() = value
-    }
-
-    /**
-     * returns the number of elements in the list
-     */
-    fun size() = count
-
-    /**
-     * converts a list into a normal Kotlin list for visual representation and returns it
-     */
-    fun toList() : List<T> {
-        if (first == null) return listOf()
-
-        val list = mutableListOf<T>()
-        var node = first
-        while (node != null) {
-            list.add(node.value())
+        var i = 0
+        var node = head
+        var prevNode = head
+        while (prevNode != null && node != null) {
+            if (i == index) {
+                val newNode = Node(value)
+                newNode.changeNext(node)
+                prevNode.changeNext(newNode)
+                size++
+                return true
+            }
+            i++
+            prevNode = node
             node = node.next()
         }
-        return list
+
+        return false
+    }
+
+    fun add(value: T) = addLast(value)
+
+    /**
+     * Complexity:
+     * worst time: O(1)
+     * best time: O(1)
+     * average time: O(1)
+     */
+    fun addFirst(value: T) {
+        val node = Node(value)
+        if (head == null) {
+            head = node
+            tail = node
+        } else {
+            node.changeNext(head)
+            head = node
+        }
+        size++
     }
 
     /**
-     * checks if an element [value] is in the list, returns true if the value exists in the list
+     * Complexity:
+     * worst time: O(1)
+     * best time: O(1)
+     * average time: O(1)
+     */
+    fun addLast(value: T) {
+        val node = Node(value)
+        if (head == null) {
+            head = node
+            tail = node
+        } else {
+            tail?.changeNext(node)
+            tail = node
+        }
+        size++
+    }
+
+    /**
+     * Complexity:
+     * worst time: O(n)
+     * best time: O(1)
+     * average time: O(n)
      */
     fun contains(value: T) : Boolean {
-        if (first == null) return false
+        if (head == null) return false
 
-        var node = first
+        var node = head
         while (node != null) {
             if (node.value() == value) {
                 return true
             }
             node = node.next()
         }
+
         return false
     }
 
     /**
-     * checks if the list is empty, returns true if the list is empty
-     */
-    fun isEmpty() = first == null
-
-    /**
-     * removes an element [value] from the list, returns true if the element was successfully removed
+     * Complexity:
+     * worst time: O(n)
+     * best time: O(1)
+     * average time: O(n)
      */
     fun remove(value: T) : Boolean {
-        if (first == null) {
-            return false
-        }
+        if (head == null) return false
 
-        var prev = first
-        var node = first
+        var prev = head
+        var node = head
 
         while (node != null) {
             if (node.value() == value) {
-                if (prev?.value() == node.value()) {
-                    this.first = null
-                    this.last = null
+                if (head === node) {
+                    val oldHead = head
+                    head = node.next()
+                    if (oldHead === tail) {
+                        tail = head
+                    }
+
+                    node.changeNext(null)
+                    node.changeValue(null)
                 } else {
                     prev?.changeNext(node.next())
                 }
-                count--
+
+                size--
                 return true
             }
             prev = node
             node = node.next()
         }
+
         return false
     }
 
     /**
-     * adds element [value] by index [index], returns true if the element was successfully added at the specified index
+     * Complexity:
+     * worst time: O(n)
+     * best time: O(1)
+     * average time: O(n)
      */
-    fun add(index: Int, value: T) : Boolean {
-
-        if (first == null) return false
-
-        var i = 0
-        var node = first
+    fun clear() {
+        var node = head
         while (node != null) {
-            if (i == index) {
-                val newNode = Node(value)
-                node.changeNext(newNode)
-                count++
-                return true
-            }
-            i++
+            val currentNode = node
+
             node = node.next()
+
+            currentNode.changeNext(null)
+            currentNode.changeValue(null)
         }
 
-        return false
+        head = null
+        tail = null
+        size = 0
     }
 
-    /**
-     * similar addLast method
-     */
-    fun add(value: T) = addLast(value)
+    override fun toString(): String {
+        val builder = StringBuilder()
+        builder.append("size: $size\n")
+        builder.append("elements: ")
 
-    /**
-     * adds an element [value] to the beginning of the list
-     */
-    fun addFirst(value: T) {
-        val node = Node(value)
-        if (first == null) {
-            this.first = node
-            this.last = node
-        } else {
-            node.changeNext(first)
-            this.first = node
+        var node = head
+        var next = node?.next()
+        while (node != null && next != null) {
+            builder.append("${node.value()}, ")
+
+            node = node.next()
+            next = node?.next()
         }
-        count++
+        if (node != null) {
+            builder.append(node.value())
+        }
+
+        return builder.toString()
     }
 
-    /**
-     * adds an element [value] to the end of the list
-     */
-    fun addLast(value: T) {
-        val newNode = Node(value)
-        if (first == null) {
-            this.first = newNode
-            this.last = newNode
-        } else {
-            this.last?.changeNext(newNode)
-            this.last = newNode
+    class Node<T>(
+        private var value: T? = null,
+        private var next: Node<T>? = null
+    ) {
+
+        fun next() = next
+        fun changeNext(node: Node<T>? = null) {
+            next = node
         }
-        count++
+
+        fun value() = value
+        fun changeValue(newValue: T?) {
+            value = newValue
+        }
+
     }
 
 }
