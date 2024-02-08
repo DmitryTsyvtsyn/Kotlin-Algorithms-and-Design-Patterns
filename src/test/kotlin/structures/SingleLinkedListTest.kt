@@ -34,7 +34,7 @@ internal class SingleLinkedListTest {
 
         assertEquals("""
             size: 3
-            elements: 1, 3, 5
+            elements: 1 - 3 - 5
         """.trimIndent(), list.toString())
 
         list.add(1, 2)
@@ -42,7 +42,7 @@ internal class SingleLinkedListTest {
 
         assertEquals("""
             size: 5
-            elements: 1, 2, 3, 4, 5
+            elements: 1 - 2 - 3 - 4 - 5
         """.trimIndent(), list.toString())
     }
 
@@ -58,7 +58,7 @@ internal class SingleLinkedListTest {
 
         assertEquals("""
             size: 5
-            elements: 20, 40, 60, 80, 100
+            elements: 20 - 40 - 60 - 80 - 100
         """.trimIndent(), list.toString())
 
         list.remove(80)
@@ -66,14 +66,14 @@ internal class SingleLinkedListTest {
 
         assertEquals("""
             size: 3
-            elements: 20, 60, 100
+            elements: 20 - 60 - 100
         """.trimIndent(), list.toString())
 
         list.addFirst(0)
 
         assertEquals("""
             size: 4
-            elements: 0, 20, 60, 100
+            elements: 0 - 20 - 60 - 100
         """.trimIndent(), list.toString())
     }
 
@@ -91,7 +91,7 @@ internal class SingleLinkedListTest {
 
         assertEquals("""
             size: 7
-            elements: 100, 200, 300, 400, 500, 600, 700
+            elements: 100 - 200 - 300 - 400 - 500 - 600 - 700
         """.trimIndent(), list.toString())
 
         list.remove(200)
@@ -100,14 +100,14 @@ internal class SingleLinkedListTest {
 
         assertEquals("""
             size: 4
-            elements: 100, 300, 500, 700
+            elements: 100 - 300 - 500 - 700
         """.trimIndent(), list.toString())
 
         list.addLast(900)
 
         assertEquals("""
             size: 5
-            elements: 100, 300, 500, 700, 900
+            elements: 100 - 300 - 500 - 700 - 900
         """.trimIndent(), list.toString())
     }
 
@@ -152,7 +152,7 @@ internal class SingleLinkedListTest {
 
         assertEquals("""
             size: 5
-            elements: 1, 2, 3, 4, 5
+            elements: 1 - 2 - 3 - 4 - 5
         """.trimIndent(), list.toString())
 
         assertEquals(true, list.remove(1))
@@ -161,7 +161,7 @@ internal class SingleLinkedListTest {
 
         assertEquals("""
             size: 2
-            elements: 2, 4
+            elements: 2 - 4
         """.trimIndent(), list.toString())
 
         assertEquals(true, list.remove(2))
@@ -176,7 +176,7 @@ internal class SingleLinkedListTest {
 
         assertEquals("""
             size: 4
-            elements: 6, 7, 11, 13
+            elements: 6 - 7 - 11 - 13
         """.trimIndent(), list.toString())
 
         list.clear()

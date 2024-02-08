@@ -113,40 +113,36 @@ class SingleLinkedList<T>() {
     fun remove(value: T) : Boolean {
         if (head == null) return false
 
-        var prev = head
+        var previous: Node<T>? = null
         var node = head
 
         while (node != null) {
             if (node.value() == value) {
-                if (head === node) {
-                    val oldHead = head
-                    head = node.next()
-                    if (oldHead === tail) {
-                        tail = head
-                    }
+                val nextNode = node.next()
+                previous?.changeNext(nextNode)
 
-                    node.changeNext(null)
-                    node.changeValue(null)
-                } else {
-                    prev?.changeNext(node.next())
+                if (head === node) {
+                    head = nextNode
                 }
+
+                if (tail === node) {
+                    tail = previous
+                }
+
+                node.changeNext(null)
+                node.changeValue(null)
 
                 size--
                 return true
             }
-            prev = node
+            previous = node
             node = node.next()
         }
 
         return false
     }
 
-    /**
-     * Complexity:
-     * worst time: O(n)
-     * best time: O(1)
-     * average time: O(n)
-     */
+    // Complexity: O(n)
     fun clear() {
         var node = head
         while (node != null) {
@@ -169,15 +165,15 @@ class SingleLinkedList<T>() {
         builder.append("elements: ")
 
         var node = head
-        var next = node?.next()
-        while (node != null && next != null) {
-            builder.append("${node.value()}, ")
+        while (node != null) {
+            builder.append(node.value())
+
+            // it's necessary to see the correct node connections
+            if (node.next() != null) {
+                builder.append(" - ")
+            }
 
             node = node.next()
-            next = node?.next()
-        }
-        if (node != null) {
-            builder.append(node.value())
         }
 
         return builder.toString()
