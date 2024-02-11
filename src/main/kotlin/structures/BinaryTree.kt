@@ -1,17 +1,19 @@
 package structures
 
+import java.util.LinkedList
+
 /**
  *
- * data structure: binary tree
+ * Binary tree consists of nodes each of which has a maximum of two children.
  *
- * description: consists of nodes, each of which has a maximum of two children,
- * child nodes satisfy the following requirements:
- *  - the left child is less than the parent;
- *  - right child is larger than parent;
+ * Child nodes satisfy the following requirements:
  *
- * average search time: log(n)
- * worst search time: n
- * because the situation is possible when the elements follow each other 1,2,3,4... and the tree takes the following form:
+ *  - the left child is less than the parent
+ *  - right child is larger than parent
+ *
+ * Hint: the worst time may be O(n) because the situation is possible when the elements follow each other 1,2,3,4...
+ * and the tree takes the following form:
+ *
  *  1
  *   \
  *    2
@@ -19,50 +21,52 @@ package structures
  *      3
  *       \
  *        4
- * the same complexity is true for adding and removing nodes
  *
  */
 
-class BinaryTree {
+class BinaryTree<T : Comparable<T>> {
+
+    private var root: Node<T>? = null
+
+    val isEmpty: Boolean
+        get() = root == null
 
     /**
-     * binary tree root
+     * Complexity:
+     * worst time: O(n), read the hint in the description
+     * best time: O(log(n))
+     * average time: O(log(n))
      */
-    private var root: Node? = null
-
-    /**
-     * adds a new element [value] to the tree
-     */
-    fun add(value: Int) {
-        fun addRec(current: Node?, value: Int) : Node {
+    fun add(value: T) {
+        fun addRecursive(current: Node<T>?, value: T): Node<T> {
             if (current == null) {
                 return Node(value)
             }
             if (value < current.value()) {
-                current.changeLeft(addRec(current.leftNode(), value))
+                current.changeLeft(addRecursive(current.leftNode(), value))
             } else if (value > current.value()) {
-                current.changeRight(addRec(current.rightNode(), value))
+                current.changeRight(addRecursive(current.rightNode(), value))
             }
             return current
         }
 
-        root = addRec(root, value)
+        root = addRecursive(root, value)
     }
 
     /**
-     * checks the tree for emptiness and returns true if the tree does not contain any nodes
+     * Complexity:
+     * worst time: O(n), read the hint in the description
+     * best time: O(1)
+     * average time: O(log(n))
      */
-    fun isEmpty() = root == null
-
-    /**
-     * removes an element [value] from the tree
-     */
-    fun remove(value: Int) {
-        fun smallestValue(root: Node) : Int {
-            return if (root.leftNode() == null) root.value() else smallestValue(root.leftNode()!!)
+    fun remove(value: T) {
+        fun smallestValue(root: Node<T>): T {
+            val leftNode = root.leftNode()
+            if (leftNode === null) return root.value()
+            return smallestValue(leftNode)
         }
 
-        fun removeRec(current: Node?, value: Int) : Node? {
+        fun removeRecursive(current: Node<T>?, value: T): Node<T>? {
             if (current == null) {
                 return null
             }
@@ -80,27 +84,30 @@ class BinaryTree {
 
                 val smallestValue = smallestValue(current.rightNode()!!)
                 current.changeValue(smallestValue)
-                current.changeRight(removeRec(current.rightNode(), smallestValue))
+                current.changeRight(removeRecursive(current.rightNode(), smallestValue))
                 return current
             }
 
             if (value < current.value()) {
-                current.changeLeft(removeRec(current.leftNode(), value))
+                current.changeLeft(removeRecursive(current.leftNode(), value))
             } else {
-                current.changeRight(removeRec(current.rightNode(), value))
+                current.changeRight(removeRecursive(current.rightNode(), value))
             }
 
             return current
         }
 
-        root = removeRec(root, value)
+        root = removeRecursive(root, value)
     }
 
     /**
-     * checks for the existence of an element [value] in the tree, returns true if the element exists
+     * Complexity:
+     * worst time: O(n), read the hint in the description
+     * best time: O(1)
+     * average time: O(log(n))
      */
-    fun contains(value: Int) : Boolean {
-        fun containsRec(current: Node?, value: Int) : Boolean {
+    fun contains(value: T): Boolean {
+        fun containsRecursive(current: Node<T>?, value: T): Boolean {
             if (current == null) {
                 return false
             }
@@ -108,66 +115,66 @@ class BinaryTree {
                 return true
             }
             return if (value < current.value()) {
-                containsRec(current.leftNode(), value)
+                containsRecursive(current.leftNode(), value)
             } else {
-                containsRec(current.rightNode(), value)
+                containsRecursive(current.rightNode(), value)
             }
         }
 
-        return containsRec(root, value)
+        return containsRecursive(root, value)
     }
 
     /**
-     * traversal of the binary tree in depth
      *
-     * first the left child, then the parent, then the right child
+     * Traversal of the binary tree in depth
      *
-     * @return returns the elements of the tree
+     * order: the left child, the parent, the right child
+     *
      */
-    fun traverseInOrder() : List<Int> {
-        fun traverseInOrderRec(node: Node?, nodes: MutableList<Int>) {
+    fun traverseInOrder(): List<T> {
+        fun traverseInOrderRecursive(node: Node<T>?, nodes: MutableList<T>) {
             if (node != null) {
-                traverseInOrderRec(node.leftNode(), nodes)
+                traverseInOrderRecursive(node.leftNode(), nodes)
                 nodes.add(node.value())
-                traverseInOrderRec(node.rightNode(), nodes)
+                traverseInOrderRecursive(node.rightNode(), nodes)
             }
         }
 
-        return mutableListOf<Int>().apply {
-            traverseInOrderRec(root, this)
-        }
+        val nodes = mutableListOf<T>()
+        traverseInOrderRecursive(root, nodes)
+        return nodes
     }
 
     /**
-     * traversal of the binary tree in depth
      *
-     * parent first, then left and right children
+     * Traversal of the binary tree in depth
      *
-     * @return returns the elements of the tree
+     * order: the parent, the left child, the right child
+     *
      */
-    fun traversePreOrder() : List<Int> {
-        fun traversePreOrderRec(node: Node?, nodes: MutableList<Int>) {
+    fun traversePreOrder(): List<T> {
+        fun traversePreOrderRecursive(node: Node<T>?, nodes: MutableList<T>) {
             if (node != null) {
                 nodes.add(node.value())
-                traversePreOrderRec(node.leftNode(), nodes)
-                traversePreOrderRec(node.rightNode(), nodes)
+                traversePreOrderRecursive(node.leftNode(), nodes)
+                traversePreOrderRecursive(node.rightNode(), nodes)
             }
         }
 
-        return mutableListOf<Int>().apply {
-            traversePreOrderRec(root, this)
-        }
+        val nodes = mutableListOf<T>()
+        traversePreOrderRecursive(root, nodes)
+        return nodes
     }
 
     /**
-     * traversal of the binary tree in depth
      *
-     * first the left and right children, then the parent
+     * Traversal of the binary tree in depth
      *
-     * @return returns the elements of the tree
+     * order: the left child, the right child, the parent
+     *
      */
-    fun traversePostOrder() : List<Int> {
-        fun traversePostOrderRec(node: Node?, nodes: MutableList<Int>) {
+    fun traversePostOrder(): List<T> {
+        fun traversePostOrderRec(node: Node<T>?, nodes: MutableList<T>) {
             if (node != null) {
                 traversePostOrderRec(node.leftNode(), nodes)
                 traversePostOrderRec(node.rightNode(), nodes)
@@ -175,85 +182,66 @@ class BinaryTree {
             }
         }
 
-        return mutableListOf<Int>().apply {
-            traversePostOrderRec(root, this)
-        }
+        val nodes = mutableListOf<T>()
+        traversePostOrderRec(root, nodes)
+        return nodes
     }
 
     /**
-     * traversal of the binary tree in breadth
      *
-     * uses an additional data structure - a queue into which new tree
+     * Traversal of the binary tree in breadth uses an additional data structure - a queue into which new tree
+     *
      * nodes are added until the last node is added
      *
-     * @return returns the elements of the tree
      */
-    fun traverseLevelOrder() : List<Int> {
-        val root = this.root ?: return listOf()
+    fun traverseLevelOrder(): List<T> {
+        val current = root ?: return emptyList()
 
-        val queue = java.util.LinkedList<Node>()
-        queue.add(root)
+        val queue = LinkedList<Node<T>>()
+        queue.add(current)
 
-        val items = mutableListOf<Int>()
+        val nodeValues = mutableListOf<T>()
 
         while (queue.isNotEmpty()) {
-            val node = queue.remove()
-            items.add(node.value())
+            val node = queue.removeFirst()
 
-            node.leftNode()?.let(queue::add)
-            node.rightNode()?.let(queue::add)
+            nodeValues.add(node.value())
+
+            val leftNode = node.leftNode()
+            if (leftNode != null) {
+                queue.add(leftNode)
+            }
+
+            val rightNode = node.rightNode()
+            if (rightNode != null) {
+                queue.add(rightNode)
+            }
         }
 
-        return items
+        return nodeValues
     }
 
-}
+    class Node<T>(
+        private var value: T,
+        private var left: Node<T>? = null,
+        private var right: Node<T>? = null
+    ) {
 
-/**
- * represents a tree node
- *
- * @property value - node value
- * @property left - left child node
- * @property right - right child node
- */
-class Node(
-    private var value: Int,
-    private var left: Node? = null,
-    private var right: Node? = null
-) {
-    /**
-     * returns the value of the node
-     */
-    fun value() = value
+        fun value() = value
+        fun changeValue(newValue: T) {
+            value = newValue
+        }
 
-    /**
-     * changes the value of a node
-     */
-    fun changeValue(value: Int) {
-        this.value = value
+        fun leftNode() = left
+        fun changeLeft(node: Node<T>?) {
+            left = node
+        }
+
+        fun rightNode() = right
+        fun changeRight(node: Node<T>?) {
+            right = node
+        }
+
     }
 
-    /**
-     * changes the left child node
-     */
-    fun changeLeft(left: Node?) {
-        this.left = left
-    }
-
-    /**
-     * changes the right child node
-     */
-    fun changeRight(right: Node?) {
-        this.right = right
-    }
-
-    /**
-     * returns the left child node
-     */
-    fun leftNode() = left
-
-    /**
-     * returns the right child node
-     */
-    fun rightNode() = right
 }
