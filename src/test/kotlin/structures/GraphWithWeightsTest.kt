@@ -6,7 +6,7 @@ import org.junit.Assert.assertEquals
 class GraphWithWeightsTest {
 
     @Test
-    fun test_add_and_remove_vertexes() {
+    fun `test add and remove vertexes`() {
         val graph = GraphWithWeights<Int>()
 
         graph.addVertex(10)
@@ -17,19 +17,24 @@ class GraphWithWeightsTest {
         graph.addEdge(10, 30, 2)
         graph.addEdge(20, 30, 3)
 
-        val expected = listOf(
-            VertexConnection(Vertex(20), 1),
-            VertexConnection(Vertex(30), 2)
-        )
-        assertEquals(expected, graph.connectedVertexesWithWeights(10))
+        assertEquals(listOf(
+            "vertex -> 20, cost -> 1",
+            "vertex -> 30, cost -> 2"
+        ), graph.connectedVertexesWithWeights(10))
 
         graph.removeVertex(10)
 
-        assertEquals(emptyList<VertexConnection<Int>>(), graph.connectedVertexesWithWeights(10))
+        assertEquals(listOf<String>(), graph.connectedVertexesWithWeights(10))
+
+        assertEquals(listOf("vertex -> 30, cost -> 3"), graph.connectedVertexesWithWeights(20))
+
+        graph.removeVertex(20)
+
+        assertEquals(listOf<String>(), graph.connectedVertexesWithWeights(10))
     }
 
     @Test
-    fun test_remove_edges() {
+    fun `test remove edges`() {
         val graph = GraphWithWeights<Int>()
 
         graph.addVertex(10)
@@ -40,54 +45,72 @@ class GraphWithWeightsTest {
         graph.addEdge(10, 30, 2)
         graph.addEdge(20, 30, 3)
 
-        val expected1 = listOf(
-            VertexConnection(Vertex(20), 1),
-            VertexConnection(Vertex(30), 2)
-        )
-        assertEquals(expected1, graph.connectedVertexesWithWeights(10))
+        assertEquals(listOf(
+            "vertex -> 20, cost -> 1",
+            "vertex -> 30, cost -> 2"
+        ), graph.connectedVertexesWithWeights(10))
 
         graph.removeEdge(10, 20)
 
-        val expected2 = listOf(VertexConnection(Vertex(30), 2))
-        assertEquals(expected2, graph.connectedVertexesWithWeights(10))
+        assertEquals(listOf("vertex -> 30, cost -> 2"), graph.connectedVertexesWithWeights(10))
 
         graph.removeEdge(10, 30)
 
-        assertEquals(emptyList<VertexConnection<Int>>(), graph.connectedVertexesWithWeights(10))
-        assertEquals(listOf(VertexConnection(Vertex(30), 3)), graph.connectedVertexesWithWeights(20))
+        assertEquals(listOf<String>(), graph.connectedVertexesWithWeights(10))
+        assertEquals(listOf("vertex -> 30, cost -> 3"), graph.connectedVertexesWithWeights(20))
+
+        graph.removeEdge(20, 30)
+
+        assertEquals(listOf<String>(), graph.connectedVertexesWithWeights(10))
     }
 
     @Test
     fun test_dijkstraAlgorithm() {
         val graph = GraphWithWeights<Int>()
 
-        graph.addVertex(3)
         graph.addVertex(1)
-        graph.addVertex(5)
-        graph.addVertex(4)
         graph.addVertex(2)
-        graph.addVertex(6)
-        graph.addVertex(0)
+        graph.addVertex(3)
+        graph.addVertex(4)
+        graph.addVertex(5)
 
-        graph.addEdge(3, 1, 12)
-        graph.addEdge(3, 5, 6)
-        graph.addEdge(3, 4, 3)
-        graph.addEdge(1, 0, 5)
-        graph.addEdge(5, 2, 4)
-        graph.addEdge(4, 2, 8)
-        graph.addEdge(4, 6, 7)
-        graph.addEdge(2, 0, 8)
+        graph.addEdge(1, 2, 10)
+        graph.addEdge(1, 5, 100)
+        graph.addEdge(2, 3, 20)
+        graph.addEdge(2, 4, 5)
+        graph.addEdge(3, 4, 15)
+        graph.addEdge(4, 5, 5)
 
-        val expected = linkedMapOf(
-            Vertex(3) to 0,
-            Vertex(4) to 3,
-            Vertex(5) to 6,
-            Vertex(2) to 10,
-            Vertex(6) to 10,
-            Vertex(1) to 12,
-            Vertex(0) to 17,
-        )
-        assertEquals(expected, graph.dijkstraAlgorithm())
+        assertEquals(linkedMapOf(
+            1 to 0,
+            2 to 10,
+            3 to 30,
+            4 to 15,
+            5 to 20
+        ), graph.dijkstraAlgorithm())
+
+        graph.removeVertex(4)
+
+        assertEquals(linkedMapOf(
+            1 to 0,
+            2 to 10,
+            3 to 30,
+            5 to 100
+        ), graph.dijkstraAlgorithm())
+
+        graph.removeVertex(5)
+
+        assertEquals(linkedMapOf(
+            1 to 0,
+            2 to 10,
+            3 to 30
+        ), graph.dijkstraAlgorithm())
+
+        graph.removeVertex(1)
+        graph.removeVertex(2)
+        graph.removeVertex(3)
+
+        assertEquals(mapOf<Int, Int>(), graph.dijkstraAlgorithm())
     }
 
 }
