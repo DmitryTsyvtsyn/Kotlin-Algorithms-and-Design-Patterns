@@ -7,58 +7,56 @@ import org.junit.Assert.assertEquals
 internal class MaxHeapTest {
 
     @Test
-    fun test_add() {
-        val heap = MaxHeap(2)
+    fun `test operations`() {
+        val heap = MaxHeap(10)
 
-        assertEquals(true, heap.isEmpty())
+        assertEquals(true, heap.isEmpty)
 
-        heap.add(2)
-        heap.add(6)
-
-        assertEquals(false, heap.isEmpty())
-
-    }
-
-    @Test
-    fun test_peek_max() {
-        val heap = MaxHeap(5)
-
+        heap.add(10)
         heap.add(17)
-        heap.add(2)
-        heap.add(100)
+        heap.add(20)
 
-        assertEquals(100, heap.peekMax())
+        assertEquals(false, heap.isEmpty)
+
+        assertEquals(20, heap.peekMax())
+        assertEquals(20, heap.popMax())
 
         heap.add(1)
-        heap.add(200)
+        heap.add(5)
 
-        assertEquals(200, heap.peekMax())
+        assertEquals(17, heap.peekMax())
+        assertEquals(17, heap.popMax())
 
+        assertEquals(10, heap.peekMax())
+        assertEquals(10, heap.popMax())
+
+        heap.set(1, 100)
+
+        assertEquals(100, heap.peekMax())
+        assertEquals(100, heap.popMax())
+
+        assertEquals(1, heap.peekMax())
+        assertEquals(1, heap.popMax())
+
+        assertEquals(true, heap.isEmpty)
     }
 
     @Test
-    fun test_pop_max() {
-        val heap = MaxHeap(8).apply {
-            add(10)
-            add(40)
-            add(1)
-            add(1000)
-            add(555)
-            add(5)
-            add(7)
-            add(2)
-        }
+    fun `test creating from array`() {
+        val array = intArrayOf(10, 2, 11, 17, 5, -1, 9, 0)
 
-        assertEquals(1000, heap.popMax())
-        assertEquals(555, heap.popMax())
-        assertEquals(40, heap.popMax())
+        val heap = MaxHeap.create(array)
+
+        assertEquals(17, heap.popMax())
+        assertEquals(11, heap.popMax())
         assertEquals(10, heap.popMax())
-        assertEquals(7, heap.popMax())
+        assertEquals(9, heap.popMax())
         assertEquals(5, heap.popMax())
         assertEquals(2, heap.popMax())
-        assertEquals(1, heap.popMax())
+        assertEquals(0, heap.popMax())
+        assertEquals(-1, heap.popMax())
 
-        assertEquals(true, heap.isEmpty())
+        assertEquals(true, heap.isEmpty)
 
     }
 

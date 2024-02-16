@@ -1,79 +1,117 @@
 package structures
 
+import java.lang.IllegalArgumentException
+
 /**
  *
- * data structure: max-heap
- *
- * | operation                         | time
- * ----------------------------------------------
- * | getting the maximum element       | O(1)
- * | --------------------------------------------
- * | inserting a new element           | O(logn)
- * | --------------------------------------------
- * | deleting an element               | O(logn)
- *
- * description: max-heap is a binary tree in which each parent is greater than its children
+ * Max-heap is a binary tree in which each parent is greater than its children
  *
  */
 
 class MaxHeap(private val maxSize: Int) {
-    private val heap = Array(maxSize + 1) { 0 }.apply {
-        this[0] = Int.MAX_VALUE
-    }
+
+    private val data = IntArray(maxSize + 1) { Int.MIN_VALUE }
 
     private val root = 1
     private var size = 0
 
-    private fun parent(pos: Int) = pos / 2
-    private fun leftChild(pos: Int) = 2 * pos
-    private fun rightChild(pos: Int) = 2 * pos + 1
+    val isEmpty: Boolean
+        get() = size == 0
 
-    private fun swap(old: Int, new: Int) {
-        heap[old] = heap[new].apply { heap[new] = heap[old] }
+    private val Int.parent
+        get() = this / 2
+
+    private val Int.leftChild
+        get() = this * 2
+
+    private val Int.rightChild
+        get() = this * 2 + 1
+
+    init {
+        if (maxSize <= 0) throw IllegalArgumentException("The heap must have maxSize larger than zero")
+
+        data[0] = Int.MAX_VALUE
     }
 
-    fun isEmpty() = size == 0
-
+    // Complexity: O(logn)
     fun add(element: Int) {
-        fun heapifyUp(pos: Int) {
-            var current = pos
-            val temp = heap[pos]
-            while (current > 0 && temp > heap[parent(current)]) {
-                heap[current] = heap[parent(current)]
-                current = parent(current)
-            }
-            heap[current] = temp
-        }
+        if (size >= maxSize) throw IllegalStateException("The heap is full!")
 
-        heap[++size] = element
-        heapifyUp(size)
+        data[++size] = Int.MIN_VALUE
+        set(size, element)
     }
 
-    fun peekMax() = heap[root]
+    // Complexity: O(logn)
+    fun set(index: Int, newValue: Int) {
+        if (index < root || index > maxSize) throw IllegalArgumentException("The heap doesn't have the such index: $index!")
+        if (newValue < data[index]) throw IllegalArgumentException("The new value $newValue is less than the previous: ${data[index]}")
 
-    fun popMax(): Int {
-        fun downHeapify(pos: Int) {
-            if (pos >= size / 2 && pos <= size) return
-            if (pos == maxSize - 1) return
+        data[index] = newValue
 
-            if (heap[pos] < heap[leftChild(pos)] ||
-                heap[pos] < heap[rightChild(pos)]
-            ) {
-                if (heap[leftChild(pos)] > heap[rightChild(pos)]) {
-                    swap(pos, leftChild(pos))
-                    downHeapify(leftChild(pos))
-                } else {
-                    swap(pos, rightChild(pos))
-                    downHeapify(rightChild(pos))
-                }
-            }
+        var current = index
+        while (current > root && data[current.parent] < data[current]) {
+            swap(current, current.parent)
+            current = current.parent
         }
+    }
 
-        val max = heap[root]
-        heap[root] = heap[size--]
-        downHeapify(root)
+    // Complexity: O(1)
+    fun peekMax() = data[root]
+
+    // Complexity: O(logn)
+    fun popMax(): Int {
+        if (size < 1) throw IllegalStateException("The heap is empty!")
+
+        val max = data[root]
+        data[root] = data[size--]
+        heapify(root)
         return max
     }
 
+    private tailrec fun heapify(pos: Int) {
+        val leftChild = pos.leftChild
+        val rightChild = pos.rightChild
+        var largest = pos
+
+        if (leftChild <= size && data[leftChild] > data[largest]) {
+            largest = leftChild
+        }
+
+        if (rightChild <= size && data[rightChild] > data[largest]) {
+            largest = rightChild
+        }
+
+        if (largest != pos) {
+            swap(pos, largest)
+            heapify(largest)
+        }
+    }
+
+    private fun swap(index1: Int, index2: Int) {
+        val tmp = data[index1]
+        data[index1] = data[index2]
+        data[index2] = tmp
+    }
+
+    companion object {
+        fun create(intArray: IntArray): MaxHeap {
+            val arraySize = intArray.size
+            val heap = MaxHeap(arraySize)
+            heap.size = intArray.size
+
+            var index = 0
+            while (index < arraySize) {
+                heap.data[index + 1] = intArray[index]
+                index++
+            }
+
+            var pos = arraySize / 2
+            while (pos >= 0) {
+                heap.heapify(pos)
+                pos--
+            }
+            return heap
+        }
+    }
 
 }

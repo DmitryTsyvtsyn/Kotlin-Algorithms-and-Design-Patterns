@@ -7,8 +7,8 @@ internal class MinHeapTest {
 
     @Test
     fun test_add() {
-        val heap = MaxHeap(2)
-        
+        val heap = MinHeap(2)
+
         assertEquals(true, heap.isEmpty())
 
         heap.add(2)
