@@ -6,62 +6,56 @@ import org.junit.Assert.assertEquals
 internal class MinHeapTest {
 
     @Test
-    fun test_add() {
-        val heap = MinHeap(2)
+    fun `test operations`() {
+        val heap = MinHeap(10)
 
-        assertEquals(true, heap.isEmpty())
+        assertEquals(true, heap.isEmpty)
 
-        heap.add(2)
-        heap.add(6)
-
-        assertEquals(false, heap.isEmpty())
-
-    }
-
-    @Test
-    fun test_peek_min() {
-        val heap = MinHeap(6)
-
+        heap.add(10)
         heap.add(17)
-        heap.add(2)
-        heap.add(100)
+        heap.add(20)
 
-        assertEquals(2, heap.peekMin())
+        assertEquals(false, heap.isEmpty)
+
+        assertEquals(10, heap.peekMin())
+        assertEquals(10, heap.popMin())
 
         heap.add(1)
-        heap.add(200)
+        heap.add(5)
 
         assertEquals(1, heap.peekMin())
+        assertEquals(1, heap.popMin())
 
-        heap.add(0)
+        assertEquals(5, heap.peekMin())
+        assertEquals(5, heap.popMin())
 
-        assertEquals(0, heap.peekMin())
+        heap.set(1, 15)
 
+        assertEquals(15, heap.peekMin())
+        assertEquals(15, heap.popMin())
+
+        assertEquals(20, heap.peekMin())
+        assertEquals(20, heap.popMin())
+
+        assertEquals(true, heap.isEmpty)
     }
 
     @Test
-    fun test_pop_min() {
-        val heap = MinHeap(8).apply {
-            add(10)
-            add(40)
-            add(1)
-            add(1000)
-            add(555)
-            add(5)
-            add(7)
-            add(2)
-        }
+    fun `test creating from array`() {
+        val array = intArrayOf(10, 2, 11, 17, 5, -1, 9, 0)
 
-        assertEquals(1, heap.popMin())
+        val heap = MinHeap.create(array)
+
+        assertEquals(-1, heap.popMin())
+        assertEquals(0, heap.popMin())
         assertEquals(2, heap.popMin())
         assertEquals(5, heap.popMin())
-        assertEquals(7, heap.popMin())
+        assertEquals(9, heap.popMin())
         assertEquals(10, heap.popMin())
-        assertEquals(40, heap.popMin())
-        assertEquals(555, heap.popMin())
-        assertEquals(1000, heap.popMin())
+        assertEquals(11, heap.popMin())
+        assertEquals(17, heap.popMin())
 
-        assertEquals(true, heap.isEmpty())
+        assertEquals(true, heap.isEmpty)
 
     }
 

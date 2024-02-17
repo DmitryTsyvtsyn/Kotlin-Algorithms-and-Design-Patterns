@@ -1,87 +1,117 @@
 package structures
 
+import java.lang.IllegalArgumentException
+
 
 /**
  *
- * data structure: min-heap
- *
- * | operation                       | time
- * ----------------------------------------------
- * | getting the minimum element     | O(1)
- * | --------------------------------------------
- * | inserting a new element         | O(logn)
- * | --------------------------------------------
- * | deleting an element             | O(logn)
- *
- * description: min-heap is a binary tree in which each parent is smaller than its children
+ * Min-heap is a binary tree in which each parent is smaller than its children
  *
  */
 
-class MinHeap(maxSize: Int) {
+class MinHeap(private val maxSize: Int) {
 
-    private val heap = Array(maxSize) { 0 }
+    private val data = IntArray(maxSize + 1) { Int.MAX_VALUE }
 
+    private val root = 1
     private var size = 0
-    private val front = 0
 
-    fun add(item: Int) {
-        heap[size++] = item
+    val isEmpty: Boolean
+        get() = size == 0
 
-        var current = size - 1
-        var parent = parent(current)
+    private val Int.parent
+        get() = this / 2
 
-        while (parent != current && heap[current] < heap[parent]) {
-            swap(current, parent)
-            current = parent
-            parent = parent(current)
+    private val Int.leftChild
+        get() = this * 2
+
+    private val Int.rightChild
+        get() = this * 2 + 1
+
+    init {
+        if (maxSize <= 0) throw IllegalArgumentException("The heap must have maxSize larger than zero")
+
+        data[0] = Int.MIN_VALUE
+    }
+
+    // Complexity: O(logn)
+    fun add(element: Int) {
+        if (size >= maxSize) throw IllegalStateException("The heap is full!")
+
+        data[++size] = Int.MAX_VALUE
+        set(size, element)
+    }
+
+    // Complexity: O(logn)
+    fun set(index: Int, newValue: Int) {
+        if (index < root || index > maxSize) throw IllegalArgumentException("The heap doesn't have the such index: $index!")
+        if (newValue > data[index]) throw IllegalArgumentException("The new value $newValue is more than the previous: ${data[index]}")
+
+        data[index] = newValue
+
+        var current = index
+        while (current > root && data[current.parent] > data[current]) {
+            swap(current, current.parent)
+            current = current.parent
         }
     }
 
-    fun minHeapify(pos: Int) {
-        val left = left(pos)
-        val right = right(pos)
+    // Complexity: O(1)
+    fun peekMin() = data[root]
 
-        var smallest = if (left <= size && heap[left] < heap[pos]) {
-            left
-        } else {
-            pos
+    // Complexity: O(logn)
+    fun popMin(): Int {
+        if (size < 1) throw IllegalStateException("The heap is empty!")
+
+        val max = data[root]
+        data[root] = data[size--]
+        heapify(root)
+        return max
+    }
+
+    private tailrec fun heapify(pos: Int) {
+        val leftChild = pos.leftChild
+        val rightChild = pos.rightChild
+        var minimum = pos
+
+        if (leftChild <= size && data[leftChild] < data[minimum]) {
+            minimum = leftChild
         }
 
-        if (right <= size && heap[right] < heap[smallest]) {
-            smallest = right
+        if (rightChild <= size && data[rightChild] < data[minimum]) {
+            minimum = rightChild
         }
 
-        if (smallest != pos) {
-            swap(pos, smallest)
-            minHeapify(smallest)
+        if (minimum != pos) {
+            swap(pos, minimum)
+            heapify(minimum)
         }
     }
 
-    fun popMin() : Int {
-        if (size == 1) {
-            return heap[--size]
-        }
-
-        val min = heap[front]
-        heap[front] = heap[size - 1]
-
-        size--
-
-        minHeapify(front)
-
-        return min
+    private fun swap(index1: Int, index2: Int) {
+        val tmp = data[index1]
+        data[index1] = data[index2]
+        data[index2] = tmp
     }
 
-    fun peekMin() = heap[front]
+    companion object {
+        fun create(intArray: IntArray): MinHeap {
+            val arraySize = intArray.size
+            val heap = MinHeap(arraySize)
+            heap.size = intArray.size
 
-    fun isEmpty() = size == 0
+            var index = 0
+            while (index < arraySize) {
+                heap.data[index + 1] = intArray[index]
+                index++
+            }
 
-    private fun left(pos: Int) = 2 * pos + 1
-    private fun right(pos: Int) = 2 * pos + 2
-    private fun parent(pos: Int) = if (pos % 2 == 1) pos / 2 else (pos - 1) / 2
-    private fun swap(old: Int, new: Int) {
-        heap[new] = heap[old].apply {
-            heap[old] = heap[new]
+            var pos = arraySize / 2
+            while (pos >= 0) {
+                heap.heapify(pos)
+                pos--
+            }
+            return heap
         }
     }
 
