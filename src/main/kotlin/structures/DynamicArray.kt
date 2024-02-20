@@ -125,12 +125,16 @@ class DynamicArray<T>(private var capacity: Int = 10) {
     }
 
     private fun increaseSize() {
-        capacity *= 2
+        capacity = (capacity * INCREASE_SIZE_COEFFICIENT).toInt()
         val newArray = arrayOfNulls<Any>(capacity)
         for (i in data.indices) {
             newArray[i] = data[i]
         }
         data = newArray
+    }
+
+    companion object {
+        private const val INCREASE_SIZE_COEFFICIENT = 1.5f
     }
 
 }
